@@ -83,7 +83,7 @@ export default function NumbersSection() {
             
             {/* Main Headline */}
             <h2 className="text-[2.5rem] md:text-[3.25rem] lg:text-[3.5rem] font-bold text-white leading-[1.15] mb-6 tracking-tight">
-              Numbers That<br />Weren't Announced.<br />They Were Built.
+              Numbers That<br />Weren&apos;t Announced.<br />They Were Built.
             </h2>
             
             {/* Sub-headline */}

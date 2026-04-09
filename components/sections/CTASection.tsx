@@ -44,7 +44,7 @@ export default function CTASection() {
 
             {/* Headlines */}
             <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-[1.2] mb-6">
-              You've been watching the market.<br />
+              You&apos;ve been watching the market.<br />
               <span className="text-[#71CF56]">Now watch how we read it.</span>
             </h2>
 

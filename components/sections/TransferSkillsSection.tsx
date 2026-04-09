@@ -49,7 +49,7 @@ export default function TransferSkillsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
-            We Don't Sell Courses. We Transfer Skills.
+            We Don&apos;t Sell Courses. We Transfer Skills.
           </h2>
           <p className="text-gray-300 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
             Our frameworks are built against institutional standards of process and repeatability. You learn to think — not copy.

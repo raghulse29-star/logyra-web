@@ -55,7 +55,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className="noise-overlay bg-[var(--color-bg)] antialiased">
+      <body className="noise-overlay bg-[var(--color-bg)] antialiased" suppressHydrationWarning>
         {children}
       </body>
     </html>

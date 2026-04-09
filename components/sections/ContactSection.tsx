@@ -37,7 +37,7 @@ export default function ContactSection() {
               Get in Touch
             </h2>
             <p className="text-[#9CA3AF] text-lg mb-10 max-w-md leading-relaxed">
-              Have a question or need assistance? Drop us a message and we'll get back to you promptly.
+              Have a question or need assistance? Drop us a message and we&apos;ll get back to you promptly.
             </p>
 
             {/* Form */}
@@ -154,11 +154,10 @@ export default function ContactSection() {
             className="w-full lg:w-[45%] flex items-center justify-center h-full pt-10 lg:pt-0"
           >
             <div className="w-full h-full min-h-[400px] lg:min-h-[600px] flex items-center justify-center relative">
-               <img 
-                 src="/images/chart-graphic.png" 
-                 alt="Trading Chart Graphic" 
+               <img
+                 src="/images/img11.webp"
+                 alt="Trading Chart Graphic"
                  className="w-full h-auto object-contain max-w-[500px]"
-                 // Replace src with your actual image path
                />
             </div>
           </motion.div>

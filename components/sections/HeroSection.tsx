@@ -15,7 +15,7 @@ export default function HeroSection() {
       ref={ref}
       id="hero"
       className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#18261b] pt-20"
-      style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
+      style={{ position: 'relative', fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
     >
       {/* Texture / Noise Overlay */}
       <div className="absolute inset-0 pointer-events-none opacity-20 mix-blend-overlay" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")' }} />
@@ -94,9 +94,9 @@ export default function HeroSection() {
               className="absolute inset-0 flex items-center justify-end w-[130%] -right-[15%]"
             >
               {/* Replace this src with the path to your exported chart image */}
-              <img 
-                src="/hero-chart-image.png" 
-                alt="Market intelligence chart visualization" 
+              <img
+                src="/images/img1.webp"
+                alt="Market intelligence chart visualization"
                 className="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(107,194,139,0.15)]"
               />
             </motion.div>
