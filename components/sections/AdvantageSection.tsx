@@ -89,8 +89,8 @@ const itemVar = {
 
 export default function AdvantageSection() {
   return (
-    <section id="advantage" className="relative py-24 bg-[#111315]">
-      <div className="container mx-auto px-4 max-w-7xl">
+    <section id="advantage" className="relative py-14 md:py-20 lg:py-28 bg-[#111315]">
+      <div className="container mx-auto px-4 sm:px-6 max-w-[1200px]">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -102,7 +102,7 @@ export default function AdvantageSection() {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             The Logyra Advantage
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-400 max-w-2xl mx-auto text-[15px] md:text-[17px] leading-relaxed">
             Advanced market insights and research-driven trading education built for serious participants
           </p>
         </motion.div>

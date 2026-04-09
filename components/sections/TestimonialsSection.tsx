@@ -78,8 +78,8 @@ const cardVar = {
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-24 lg:py-32 bg-[#050505]">
-      <div className="container mx-auto px-4 max-w-[1400px]">
+    <section className="py-14 md:py-20 lg:py-32 bg-[#050505]">
+      <div className="container mx-auto px-4 sm:px-6 max-w-[1200px]">
         
         {/* Header Section */}
         <motion.div

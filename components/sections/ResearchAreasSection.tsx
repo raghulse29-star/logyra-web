@@ -53,8 +53,8 @@ const cardVar = {
 
 export default function ResearchAreasSection() {
   return (
-    <section id="research-areas" className="py-24 bg-[#111215]">
-      <div className="container mx-auto px-4 max-w-[1100px]">
+    <section id="research-areas" className="py-14 md:py-20 lg:py-28 bg-[#111215]">
+      <div className="container mx-auto px-4 sm:px-6 max-w-[1200px]">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -63,10 +63,10 @@ export default function ResearchAreasSection() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
             Core Research Areas
           </h2>
-          <p className="text-gray-400 text-sm md:text-base">
+          <p className="text-gray-400 text-[15px] md:text-[17px] leading-relaxed">
             Specialized market intelligence across diverse asset classes and trading domains
           </p>
         </motion.div>

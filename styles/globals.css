@@ -61,6 +61,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;        /* prevent horizontal overflow at root level */
 }
 
 body {
@@ -68,6 +69,9 @@ body {
   color: var(--color-text-body);
   font-family: var(--font-body);
   overflow-x: hidden;
+  touch-action: manipulation; /* removes 300ms tap delay and prevents double-tap zoom */
+  -webkit-text-size-adjust: 100%; /* prevent iOS font scaling */
+  text-size-adjust: 100%;
 }
 
 /* Custom scrollbar */

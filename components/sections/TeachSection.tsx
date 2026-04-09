@@ -44,7 +44,7 @@ const cardVar = {
 
 export default function TeachSection() {
   return (
-    <section id="teach" className="relative py-24 lg:py-32 bg-[#0B0F17]">
+    <section id="teach" className="relative py-14 md:py-20 lg:py-32 bg-[#0B0F17]">
       <div className="container mx-auto px-4 max-w-[1200px]">
 
         {/* Header */}
@@ -65,11 +65,11 @@ export default function TeachSection() {
             Forge Intelligence
           </motion.div>
 
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
             What We Teach, and How We Teach It
           </h2>
 
-          <p className="text-[#8B95A5] max-w-3xl mx-auto text-sm md:text-base leading-relaxed">
+          <p className="text-[#8B95A5] max-w-3xl mx-auto text-[15px] md:text-[17px] leading-relaxed">
             Percentages reflect curriculum depth and framework coverage — not trading performance or return
             <br className="hidden md:block" /> expectations. Educational content only.
           </p>

@@ -63,7 +63,7 @@ const cardVar = {
 
 export default function NumbersSection() {
   return (
-    <section id="numbers" className="relative py-24 lg:py-32 bg-[#1B1D21] flex items-center justify-center">
+    <section id="numbers" className="relative py-14 md:py-20 lg:py-32 bg-[#1B1D21] flex items-center justify-center">
       <div className="container mx-auto px-4 max-w-[1200px]">
         
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-8">

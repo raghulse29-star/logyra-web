@@ -11,7 +11,7 @@ const TelegramIcon = () => (
 
 export default function CTASection() {
   return (
-    <section id="cta" className="relative py-24 lg:py-32 bg-[#111315] flex items-center justify-center px-4">
+    <section id="cta" className="relative py-14 md:py-20 lg:py-32 bg-[#111315] flex items-center justify-center px-4">
       <div className="container mx-auto max-w-[900px] relative z-10">
         
         <motion.div
@@ -43,7 +43,7 @@ export default function CTASection() {
             </div>
 
             {/* Headlines */}
-            <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-[1.2] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight leading-[1.2] mb-6">
               You&apos;ve been watching the market.<br />
               <span className="text-[#71CF56]">Now watch how we read it.</span>
             </h2>

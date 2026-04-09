@@ -133,16 +133,12 @@ export default function Navbar() {
             transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="flex items-center gap-3"
           >
-            <motion.div
-              animate={{ rotate: [0, 360] }}
-              transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-              className="shrink-0"
-            >
+            <div className="shrink-0">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="24" height="24" rx="6" fill="#6bc28b" />
                 <circle cx="12" cy="12" r="5" fill="#1b2a22" />
               </svg>
-            </motion.div>
+            </div>
             <span className="text-xl sm:text-2xl font-bold tracking-wide text-white">
               Logyra
             </span>

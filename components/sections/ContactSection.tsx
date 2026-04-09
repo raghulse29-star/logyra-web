@@ -16,11 +16,12 @@ export default function ContactSection() {
     console.log(form);
   };
 
+  // text-base = 16px — prevents iOS Safari from auto-zooming on input focus
   const inputClass =
-    'w-full px-4 py-3 rounded-[8px] text-[15px] text-white bg-[#30313A] border border-transparent focus:outline-none focus:border-[#4ADE80] transition-all placeholder:text-[#9CA3AF] font-sans';
+    'w-full px-4 py-3 rounded-[8px] text-base text-white bg-[#30313A] border border-transparent focus:outline-none focus:border-[#4ADE80] transition-all placeholder:text-[#9CA3AF] font-sans';
 
   return (
-    <section id="contact" className="py-24 lg:py-32 bg-[#050505]">
+    <section id="contact" className="py-14 md:py-20 lg:py-32 bg-[#050505]">
       <div className="container mx-auto px-4 max-w-[1200px]">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
           
@@ -33,10 +34,10 @@ export default function ContactSection() {
             className="w-full lg:w-[55%]"
           >
             {/* Header */}
-            <h2 className="text-[3rem] md:text-[4rem] font-bold text-white mb-4 tracking-tight leading-none">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight leading-tight">
               Get in Touch
             </h2>
-            <p className="text-[#9CA3AF] text-lg mb-10 max-w-md leading-relaxed">
+            <p className="text-[#9CA3AF] text-[15px] md:text-[17px] mb-10 max-w-md leading-relaxed">
               Have a question or need assistance? Drop us a message and we&apos;ll get back to you promptly.
             </p>
 

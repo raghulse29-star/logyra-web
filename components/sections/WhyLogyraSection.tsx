@@ -71,9 +71,9 @@ export default function WhyLogyraSection() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="why-logyra" className="relative py-24 lg:py-32 bg-[#121517] font-sans">
+    <section id="why-logyra" className="relative py-14 md:py-20 lg:py-32 bg-[#121517] font-sans">
       
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
