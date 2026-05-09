@@ -178,24 +178,28 @@ function MobileMenuItem({ item, setMenuOpen }: { item: MenuItem; setMenuOpen: (v
 
   return (
     <div className="flex flex-col w-full">
-      <div
-        onClick={(e) => {
-          if (hasChildren) {
-            e.preventDefault();
-            setIsOpen(!isOpen);
-          } else {
-            setMenuOpen(false);
-          }
-        }}
-        className={`group flex items-center justify-between py-3 px-3 rounded-xl text-[15px] font-medium transition-all duration-200 cursor-pointer ${
-          isActive ? 'text-[#6bc28b] bg-[#6bc28b]/10' : 'text-gray-200 hover:text-white hover:bg-white/[0.06]'
-        }`}
-      >
-        <Link href={item.href} className="flex-1 pointer-events-none">{item.label}</Link>
+      <div className={`flex items-center rounded-xl text-[15px] font-medium transition-all duration-200 ${
+        isActive ? 'text-[#6bc28b] bg-[#6bc28b]/10' : 'text-gray-200'
+      }`}>
+        {/* Label — always navigates */}
+        <Link
+          href={item.href}
+          onClick={() => { if (!hasChildren) setMenuOpen(false); }}
+          className="flex-1 py-3 px-3 hover:text-white transition-colors"
+        >
+          {item.label}
+        </Link>
+        {/* Chevron — only toggles submenu */}
         {hasChildren && (
-          <motion.svg animate={{ rotate: isOpen ? 180 : 0 }} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-50">
-            <polyline points="6 9 12 15 18 9" />
-          </motion.svg>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="px-3 py-3 shrink-0 hover:text-white transition-colors"
+            aria-label="Expand"
+          >
+            <motion.svg animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-50">
+              <polyline points="6 9 12 15 18 9" />
+            </motion.svg>
+          </button>
         )}
       </div>
 
@@ -298,7 +302,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Hamburger */}
-        <motion.button whileTap={{ scale: 0.9 }} className="lg:hidden flex flex-col gap-[5px] p-2 rounded-lg hover:bg-white/10 transition-colors" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+        <motion.button whileTap={{ scale: 0.9 }} className="lg:hidden flex flex-col gap-[5px] min-w-[44px] min-h-[44px] items-center justify-center p-2.5 rounded-lg hover:bg-white/10 transition-colors" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
           <motion.span animate={menuOpen ? { rotate: 45, y: 6.5 } : { rotate: 0, y: 0 }} transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }} className="block w-5 h-0.5 bg-white rounded-full origin-center" />
           <motion.span animate={menuOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }} transition={{ duration: 0.2 }} className="block w-5 h-0.5 bg-white rounded-full" />
           <motion.span animate={menuOpen ? { rotate: -45, y: -6.5 } : { rotate: 0, y: 0 }} transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }} className="block w-5 h-0.5 bg-white rounded-full origin-center" />
@@ -322,17 +326,17 @@ export default function Navbar() {
                 </motion.div>
               ))}
 
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="flex items-center gap-4 py-3 px-3 mt-2 border-t border-white/10 text-gray-300">
-                <motion.button whileTap={{ scale: 0.9 }} className="hover:text-white transition-colors p-1.5 rounded-lg hover:bg-white/10">
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="flex items-center gap-2 py-2 px-3 mt-2 border-t border-white/10 text-gray-300">
+                <motion.button whileTap={{ scale: 0.9 }} className="hover:text-white transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-white/10">
                   <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg>
                 </motion.button>
-                <motion.button whileTap={{ scale: 0.9 }} className="hover:text-white transition-colors p-1.5 rounded-lg hover:bg-white/10">
+                <motion.button whileTap={{ scale: 0.9 }} className="hover:text-white transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-white/10">
                   <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" /></svg>
                 </motion.button>
               </motion.div>
 
               <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45, duration: 0.35, ease: [0.22, 1, 0.36, 1] }} className="mt-2">
-                <Link href="#contact" onClick={() => setMenuOpen(false)} className="relative block w-full bg-[#6bc28b] text-white font-bold tracking-wider py-4 rounded-xl text-center uppercase text-sm overflow-hidden" style={{ boxShadow: '0 0 24px rgba(107,194,139,0.35)' }}>
+                <Link href="/#contact" onClick={() => setMenuOpen(false)} className="relative flex items-center justify-center w-full bg-[#6bc28b] text-white font-bold tracking-wider min-h-[44px] rounded-xl text-center uppercase text-sm overflow-hidden" style={{ boxShadow: '0 0 24px rgba(107,194,139,0.35)' }}>
                   CONNECT WITH US
                 </Link>
               </motion.div>

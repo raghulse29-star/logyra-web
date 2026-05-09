@@ -12,7 +12,7 @@ const plans = [
     savings: null,
     badge: null,
     featured: false,
-    payLink: 'https://payments.cashfree.com/forms/logyra-fno-1month',
+    payLink: '/pay/monthly',
     features: ['Daily F&O pre-market brief', 'Intraday educational context', 'Private Telegram channel', 'Weekly review notes'],
   },
   {
@@ -23,7 +23,7 @@ const plans = [
     savings: 'Save ₹3,498 vs monthly',
     badge: 'MOST CHOSEN',
     featured: true,
-    payLink: 'https://payments.cashfree.com/forms/logyra-fno-3month',
+    payLink: '/pay/quarterly',
     features: ['Everything in monthly', 'Market structure walkthroughs', 'Sector rotation analysis', 'Priority support'],
   },
   {
@@ -34,7 +34,7 @@ const plans = [
     savings: 'Save ₹10,404 vs monthly',
     badge: null,
     featured: false,
-    payLink: 'https://payments.cashfree.com/forms?code=logyra-fno-6month',
+    payLink: '/pay/half-yearly',
     features: ['Everything in quarterly', 'Monthly deep-dive report', 'Early access to new modules', 'Direct researcher access'],
   },
 ];
@@ -66,7 +66,7 @@ export default function PricingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`relative flex flex-col p-8 ${
+              className={`relative flex flex-col p-5 sm:p-7 md:p-8 ${
                 plan.featured
                   ? 'bg-[#0f1f13] ring-1 ring-[#6bc28b]/40 z-10'
                   : 'bg-[#17221a]'
@@ -105,10 +105,8 @@ export default function PricingSection() {
                 ))}
               </ul>
 
-              <a
+              <Link
                 href={plan.payLink}
-                target="_blank"
-                rel="noopener noreferrer"
                 className={`block w-full py-3.5 text-center text-[11px] font-bold tracking-[0.15em] uppercase rounded-lg transition-all duration-200 ${
                   plan.featured
                     ? 'bg-[#6bc28b] text-[#0d1a10] hover:bg-[#B8FD4B]'
@@ -116,7 +114,7 @@ export default function PricingSection() {
                 }`}
               >
                 Subscribe →
-              </a>
+              </Link>
             </motion.div>
           ))}
         </div>

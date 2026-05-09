@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 
@@ -54,7 +55,7 @@ const plans = [
     savings: null,
     badge: null,
     featured: false,
-    payLink: 'https://payments.cashfree.com/forms/logyra-fno-1month',
+    payLink: '/pay/monthly',
     features: [
       'Daily F&O pre-market brief',
       'Intraday educational context',
@@ -71,7 +72,7 @@ const plans = [
     savings: '₹3,498 VS MONTHLY',
     badge: 'MOST CHOSEN',
     featured: true,
-    payLink: 'https://payments.cashfree.com/forms/logyra-fno-3month',
+    payLink: '/pay/quarterly',
     features: [
       'Everything in monthly',
       'Market structure walkthroughs',
@@ -88,7 +89,7 @@ const plans = [
     savings: '₹10,404 VS MONTHLY',
     badge: null,
     featured: false,
-    payLink: 'https://payments.cashfree.com/forms?code=logyra-fno-6month',
+    payLink: '/pay/half-yearly',
     features: [
       'Everything in quarterly',
       'Monthly deep-dive report',
@@ -132,8 +133,9 @@ const policies = [
 function scrollToSection(id: string) {
   const el = document.getElementById(id);
   if (!el) return;
-  const offset = 148;
-  const top = el.getBoundingClientRect().top + window.scrollY - offset;
+  const navbar = window.innerWidth < 640 ? 64 : 80;
+  const sectionNav = 48;
+  const top = el.getBoundingClientRect().top + window.scrollY - navbar - sectionNav - 8;
   window.scrollTo({ top, behavior: 'smooth' });
 }
 
@@ -161,9 +163,9 @@ export default function InnerCirclePage() {
       <Navbar />
 
       {/* ── Hero ── */}
-      <section className="relative bg-[#18261b] pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
+      <section className="relative bg-[#18261b] pt-24 pb-12 sm:pt-28 sm:pb-16 md:pt-36 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[320px] bg-[#4ade80]/6 blur-[140px] rounded-full" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[280px] sm:w-[480px] md:w-[700px] h-[200px] sm:h-[260px] md:h-[320px] bg-[#4ade80]/6 blur-[140px] rounded-full" />
         </div>
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
@@ -218,13 +220,16 @@ export default function InnerCirclePage() {
 
       {/* ── Sticky Section Nav ── */}
       <div className="sticky top-16 sm:top-20 z-40 bg-[#111d14]/98 backdrop-blur-xl border-b border-white/10">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
-          <div className="flex items-center overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
+        <div className="max-w-[1200px] mx-auto px-2 sm:px-6">
+          <div
+            className="flex items-center overflow-x-auto [&::-webkit-scrollbar]:hidden"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
             {sectionNavItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative flex-shrink-0 text-[11px] font-semibold tracking-[0.1em] uppercase px-5 py-4 transition-colors duration-200 ${
+                className={`relative flex-shrink-0 text-[10px] sm:text-[11px] font-semibold tracking-[0.08em] sm:tracking-[0.1em] uppercase px-3 sm:px-5 py-4 transition-colors duration-200 ${
                   activeSection === item.id ? 'text-[#6bc28b]' : 'text-gray-400 hover:text-gray-200'
                 }`}
               >
@@ -242,7 +247,7 @@ export default function InnerCirclePage() {
       </div>
 
       {/* ── Derivatives Coverage ── */}
-      <section id="derivatives" className="bg-[#111315] py-20 md:py-28">
+      <section id="derivatives" className="bg-[#111315] py-14 md:py-20 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-14">
             <div className="flex items-center gap-4 mb-5">
@@ -280,7 +285,7 @@ export default function InnerCirclePage() {
       </section>
 
       {/* ── Daily Research Briefs ── */}
-      <section id="research-briefs" className="bg-[#18261b] py-20 md:py-28">
+      <section id="research-briefs" className="bg-[#18261b] py-14 md:py-20 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-14">
             <div className="flex items-center gap-4 mb-5">
@@ -320,9 +325,9 @@ export default function InnerCirclePage() {
       </section>
 
       {/* ── Private Telegram Access ── */}
-      <section id="telegram" className="bg-[#111315] py-20 md:py-28">
+      <section id="telegram" className="bg-[#111315] py-14 md:py-20 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
             <div>
               <div className="flex items-center gap-4 mb-5">
                 <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Private Telegram Access</span>
@@ -396,7 +401,7 @@ export default function InnerCirclePage() {
       </section>
 
       {/* ── Subscription Plans ── */}
-      <section id="plans" className="bg-[#18261b] py-20 md:py-28">
+      <section id="plans" className="bg-[#18261b] py-14 md:py-20 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-14">
             <div className="flex items-center gap-4 mb-5">
@@ -417,7 +422,7 @@ export default function InnerCirclePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`relative flex flex-col p-8 ${
+                className={`relative flex flex-col p-5 sm:p-7 md:p-8 ${
                   plan.featured
                     ? 'bg-[#0f1f13] ring-1 ring-[#6bc28b]/40 z-10'
                     : 'bg-[#17221a]'
@@ -463,10 +468,8 @@ export default function InnerCirclePage() {
                   ))}
                 </ul>
 
-                <a
+                <Link
                   href={plan.payLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className={`block w-full py-3.5 text-center text-[11px] font-bold tracking-[0.15em] uppercase rounded-lg transition-all duration-200 ${
                     plan.featured
                       ? 'bg-[#6bc28b] text-[#0d1a10] hover:bg-[#B8FD4B]'
@@ -474,7 +477,7 @@ export default function InnerCirclePage() {
                   }`}
                 >
                   Subscribe →
-                </a>
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -482,7 +485,7 @@ export default function InnerCirclePage() {
       </section>
 
       {/* ── Legal ── */}
-      <section id="legal" className="bg-[#111315] py-20 md:py-28">
+      <section id="legal" className="bg-[#111315] py-14 md:py-20 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-14">
             <div className="flex items-center gap-4 mb-5">
@@ -503,7 +506,7 @@ export default function InnerCirclePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: (i % 2) * 0.1 }}
-                className={`p-8 bg-[#17221a] ${i % 2 === 0 ? 'md:border-r border-white/[0.07]' : ''} ${i < 2 ? 'border-b border-white/[0.07]' : ''}`}
+                className={`p-6 sm:p-8 bg-[#17221a] ${i % 2 === 0 ? 'md:border-r border-white/[0.07]' : ''} ${i < policies.length - 1 ? 'border-b border-white/[0.07]' : ''} ${i >= 2 ? 'md:border-b-0' : ''}`}
               >
                 <div className="flex items-center gap-3 mb-4">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#B8FD4B] shrink-0" />

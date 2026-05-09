@@ -65,7 +65,7 @@ export default function Footer() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
           transition={{ staggerChildren: 0.1 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12 sm:mb-16"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-8 mb-10 sm:mb-16"
         >
 
           {/* Brand */}
@@ -160,7 +160,7 @@ export default function Footer() {
                   key={s.label}
                   href="#"
                   aria-label={s.label}
-                  className="w-10 h-10 bg-[#E8F5E9] hover:bg-white text-[#1E2922] flex items-center justify-center rounded-sm transition-colors duration-200 hover:-translate-y-0.5 active:scale-95"
+                  className="w-11 h-11 bg-[#E8F5E9] hover:bg-white text-[#1E2922] flex items-center justify-center rounded-sm transition-colors duration-200 hover:-translate-y-0.5 active:scale-95"
                   style={{ transition: 'background-color 0.2s, transform 0.15s' }}
                 >
                   {s.icon}
