@@ -3,22 +3,24 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 // 1. Updated Data Structure to support infinite nesting
 type MenuItem = {
   label: string;
   href: string;
-  active?: boolean;
+  activeOn?: string[];
   hasDropdown?: boolean;
   children?: MenuItem[];
 };
 
 const navLinks: MenuItem[] = [
-  { label: 'Home', href: '/', active: true },
+  { label: 'Home', href: '/', activeOn: ['/'] },
   {
     label: 'Research Desk',
     href: '/#research',
     hasDropdown: true,
+    activeOn: ['/inner-circle'],
     children: [
       { label: 'Open Channel', href: '/#open-channel' },
       {
@@ -87,6 +89,8 @@ function DesktopSubMenuItem({ item }: { item: MenuItem }) {
 // 3. Updated Desktop Top-Level Link
 function NavLink({ link, index }: { link: MenuItem; index: number }) {
   const [hovered, setHovered] = useState(false);
+  const pathname = usePathname();
+  const isActive = link.activeOn?.includes(pathname) ?? false;
   const hasChildren = link.children && link.children.length > 0;
 
   return (
@@ -101,11 +105,11 @@ function NavLink({ link, index }: { link: MenuItem; index: number }) {
       <Link
         href={link.href}
         className={`relative text-[14px] xl:text-[15px] font-medium flex items-center gap-1.5 py-1 transition-colors duration-200 ${
-          link.active ? 'text-[#6bc28b]' : 'text-gray-200 hover:text-white'
+          isActive ? 'text-[#6bc28b]' : 'text-gray-200 hover:text-white'
         }`}
       >
         <AnimatePresence>
-          {hovered && !link.active && (
+          {hovered && !isActive && (
             <motion.span
               layoutId="nav-hover-bg"
               initial={{ opacity: 0, scale: 0.85 }}
@@ -150,10 +154,10 @@ function NavLink({ link, index }: { link: MenuItem; index: number }) {
         </AnimatePresence>
       )}
 
-      {link.active && (
+      {isActive && (
         <motion.span layoutId="active-underline" className="absolute -bottom-[22px] left-0 w-full h-[2px] rounded-full bg-[#6bc28b]" />
       )}
-      {!link.active && (
+      {!isActive && (
         <motion.span
           animate={{ scaleX: hovered ? 1 : 0, opacity: hovered ? 1 : 0 }}
           initial={{ scaleX: 0, opacity: 0 }}
@@ -168,6 +172,8 @@ function NavLink({ link, index }: { link: MenuItem; index: number }) {
 // 4. Mobile Accordion Menu Component
 function MobileMenuItem({ item, setMenuOpen }: { item: MenuItem; setMenuOpen: (v: boolean) => void }) {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const isActive = item.activeOn?.includes(pathname) ?? false;
   const hasChildren = item.children && item.children.length > 0;
 
   return (
@@ -182,7 +188,7 @@ function MobileMenuItem({ item, setMenuOpen }: { item: MenuItem; setMenuOpen: (v
           }
         }}
         className={`group flex items-center justify-between py-3 px-3 rounded-xl text-[15px] font-medium transition-all duration-200 cursor-pointer ${
-          item.active ? 'text-[#6bc28b] bg-[#6bc28b]/10' : 'text-gray-200 hover:text-white hover:bg-white/[0.06]'
+          isActive ? 'text-[#6bc28b] bg-[#6bc28b]/10' : 'text-gray-200 hover:text-white hover:bg-white/[0.06]'
         }`}
       >
         <Link href={item.href} className="flex-1 pointer-events-none">{item.label}</Link>
