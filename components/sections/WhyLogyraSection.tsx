@@ -84,7 +84,7 @@ export default function WhyLogyraSection() {
         >
           {/* Badge */}
           <div className="inline-block border border-[#2e3b30] bg-[#17221a] text-[#B8FD4B] text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-sm">
-            Forge Intelligence
+            The market has a structure. We read it.
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold text-white mt-6 mb-4 tracking-tight">

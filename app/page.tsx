@@ -10,6 +10,7 @@ import NumbersSection from '@/components/sections/NumbersSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import CTASection from '@/components/sections/CTASection';
 import ContactSection from '@/components/sections/ContactSection';
+import PricingSection from '@/components/sections/PricingSection';
 import TickerBar from '@/components/ui/TickerBar';
 
 export default function HomePage() {
@@ -20,12 +21,13 @@ export default function HomePage() {
       <HeroSection />
       <WhyLogyraSection />
       <AdvantageSection />
-      <ResearchAreasSection />
+      {/* <ResearchAreasSection /> */}
       <TeachSection />
-      <TransferSkillsSection />
+      {/* <TransferSkillsSection /> */}
       <NumbersSection />
-      <TestimonialsSection />
-      <CTASection />
+      {/* <TestimonialsSection /> */}
+      {/* <CTASection /> */}
+      {/* <PricingSection /> */}
       <ContactSection />
       <Footer />
     </main>

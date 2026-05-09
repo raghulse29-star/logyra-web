@@ -58,7 +58,7 @@ export default function TransferSkillsSection() {
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="inline-block border border-[#2e3b30] bg-[#17221a] text-[#A8E02C] text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-sm mb-6"
           >
-            Platforms
+            MILESTONE
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">

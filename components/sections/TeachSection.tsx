@@ -1,31 +1,35 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const platforms = [
   {
-    badge: 'LOGYRA INTELLIGENCE — TELEGRAM',
+    badge: 'FREE · OPEN · ALWAYS ON',
     title: 'Logyra Intelligence — Telegram',
     desc: 'Daily market bias. Multi-asset research notes. HTF context and liquidity zone analysis. Zero noise.',
     cta: 'JOIN FREE ON TELEGRAM',
+    ctaLink: '#',
     image: '/images/img8.webp',
     accentColor: '#0088CC',
     glowColor: 'rgba(0, 136, 204, 0.4)',
   },
   {
-    badge: 'PAID - INVITE-ONLY',
-    title: 'Logyra Discord — The Floor',
-    desc: 'Structured trade discussions. Live session access. Institutional thinking culture. For serious participants only.',
-    cta: 'VIEW MEMBERSHIP ACCESS',
+    badge: 'PAID · PRIVATE · DAILY RESEARCH',
+    title: 'F&O Insights Inner Circle',
+    desc: 'Full daily research package. Pre-market briefs, intraday educational setups, EOD wraps, and weekly structure reviews — delivered to your private Telegram every market day.',
+    cta: 'SUBSCRIBE - FROM - ₹3,399/MONTH',
+    ctaLink: '/inner-circle#plans',
     image: '/images/img9.webp',
     accentColor: '#5865F2',
     glowColor: 'rgba(88, 101, 242, 0.4)',
   },
   {
-    badge: 'RESEARCH PRO - INSTITUTIONAL',
-    title: 'Logyra Research Access — Whop',
-    desc: 'Full research desk access. Advanced framework breakdowns. Multi-asset weekly intelligence reports.',
-    cta: 'VIEW RESEARCH TIERS',
+    badge: 'INVITE ONLY · LIVE · STRUCTURED',
+    title: 'Trade Floor — The Floor',
+    desc: 'Live structured research environment. Real-time market commentary. Institutional thinking in practice. For serious participants by application only',
+    cta: 'APPLY FOR ACCESS',
+    ctaLink: '/#contact',
     image: '/images/img10.webp',
     accentColor: '#FF5C00',
     glowColor: 'rgba(255, 92, 0, 0.4)',
@@ -62,16 +66,16 @@ export default function TeachSection() {
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="inline-block bg-[#D3FF33] text-black text-[10px] sm:text-xs font-bold px-3 py-1 mb-6 uppercase tracking-[0.2em] rounded-sm"
           >
-            Forge Intelligence
+            LOGYRA INSIGHTS
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-            What We Teach, and How We Teach It
+            We Don't Sell Courses. We Transfer Skills.
           </h2>
 
           <p className="text-[#8B95A5] max-w-3xl mx-auto text-[15px] md:text-[17px] leading-relaxed">
-            Percentages reflect curriculum depth and framework coverage — not trading performance or return
-            <br className="hidden md:block" /> expectations. Educational content only.
+            Section subheading	Our frameworks are built against institutional standards of process and repeatability. You learn to think — not copy.
+            <br className="hidden md:block" /> 
           </p>
         </motion.div>
 
@@ -145,18 +149,20 @@ export default function TeachSection() {
                   </p>
 
                   {/* CTA Button */}
-                  <motion.button
-                    whileHover={{
-                      scale: 1.03,
-                      y: -2,
-                      boxShadow: '0 0 28px rgba(211,255,51,0.3)',
-                    }}
-                    whileTap={{ scale: 0.97 }}
-                    transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                    className="w-full bg-[#1E2B22] hover:bg-[#273D2C] text-[#D3FF33] font-bold text-[13px] py-4 px-6 rounded-xl transition-colors uppercase tracking-wide border border-[#D3FF33]/10 hover:border-[#D3FF33]/30"
-                  >
-                    {p.cta}
-                  </motion.button>
+                  <Link href={p.ctaLink}>
+                    <motion.span
+                      whileHover={{
+                        scale: 1.03,
+                        y: -2,
+                        boxShadow: '0 0 28px rgba(211,255,51,0.3)',
+                      }}
+                      whileTap={{ scale: 0.97 }}
+                      transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                      className="block w-full bg-[#1E2B22] hover:bg-[#273D2C] text-[#D3FF33] font-bold text-[13px] py-4 px-6 rounded-xl transition-colors uppercase tracking-wide border border-[#D3FF33]/10 hover:border-[#D3FF33]/30 text-center cursor-pointer"
+                    >
+                      {p.cta}
+                    </motion.span>
+                  </Link>
                 </div>
               </div>
             </motion.div>

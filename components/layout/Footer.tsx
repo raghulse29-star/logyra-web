@@ -33,9 +33,9 @@ const footerLinks = {
     { label: 'Blog', href: '#' },
   ],
   Company: [
-    { label: 'Pricing', href: '#' },
-    { label: 'About', href: '#' },
-    { label: 'Contact', href: '#' },
+    { label: 'Pricing', href: '/inner-circle#plans' },
+    { label: 'About', href: '/#about' },
+    { label: 'Contact', href: '/#contact' },
   ],
 };
 
@@ -184,9 +184,12 @@ export default function Footer() {
             <span className="text-[#00D47E] font-medium">NOT SEBI REGISTERED | EDUCATIONAL CONTENT ONLY</span>
           </div>
           <div className="flex items-center gap-6">
-            {['PRIVACY POLICY', 'TERMS OF SERVICE', 'API DOCS'].map((label) => (
-              <Link key={label} href="#" className="hover:text-white transition-colors duration-150">
-                {label}
+            {[
+              { label: 'PRIVACY POLICY', href: '/inner-circle#legal' },
+              { label: 'TERMS & CONDITIONS', href: '/inner-circle#legal' },
+            ].map((item) => (
+              <Link key={item.label} href={item.href} className="hover:text-white transition-colors duration-150">
+                {item.label}
               </Link>
             ))}
           </div>

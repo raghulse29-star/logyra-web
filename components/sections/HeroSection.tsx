@@ -25,9 +25,9 @@ export default function HeroSection() {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="mb-5 sm:mb-6"
             >
-              <span className="inline-block bg-[#a3f585] text-[#18261b] text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-sm">
-                Forge Intelligence
-              </span>
+              <h1 className="inline-block bg-[#a3f585] text-[#18261b] text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-sm">
+                 Primary	Read the market. Not the noise.
+              </h1>
             </motion.div>
 
             {/* Heading */}

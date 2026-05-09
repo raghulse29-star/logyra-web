@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://logyra.com'),
   title: 'Logyra Research | Think Like the Market Moves',
   description: 'Logyra Research delivers institutional-grade market intelligence, forex research, data-driven strategies, and real-time trade insights to traders at every level.',
   keywords: ['forex research', 'market analysis', 'trade intelligence', 'logyra', 'stock market', 'trading strategies'],
