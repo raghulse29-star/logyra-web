@@ -90,7 +90,7 @@ export default function ResearchDeskPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.08] mb-5 max-w-3xl"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.08] mb-5 max-w-3xl"
           >
             One platform.<br />
             Two levels of{' '}
@@ -161,7 +161,7 @@ export default function ResearchDeskPage() {
               <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Choose Your Access Level</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Start free.<br />
               <span className="text-[#6bc28b]">Upgrade when ready.</span>
             </h2>
@@ -187,7 +187,7 @@ export default function ResearchDeskPage() {
                   <path d="M21 5L2 12.5L9 13.5M21 5L18.5 19L9 13.5M21 5L9 13.5M9 13.5V19L12.2 16" />
                 </svg>
               </div>
-              <h3 className="font-display text-2xl font-bold text-white mb-2">Open Channel</h3>
+              <h3 className="text-2xl font-bold text-white mb-2">Open Channel</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
                 Logyra&apos;s public intelligence feed — daily market reads, educational setups, and performance visibility. Zero cost. Zero noise.
               </p>
@@ -227,7 +227,7 @@ export default function ResearchDeskPage() {
                   <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                 </svg>
               </div>
-              <h3 className="font-display text-2xl font-bold text-white mb-2">Inner Circle</h3>
+              <h3 className="text-2xl font-bold text-white mb-2">Inner Circle</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
                 Private Telegram access. Full research depth. Real-time market structure coverage across your chosen market — every market day.
               </p>
@@ -260,7 +260,7 @@ export default function ResearchDeskPage() {
               <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Tier Comparison</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               What&apos;s the<br />
               <span className="text-[#6bc28b]">actual difference?</span>
             </h2>
@@ -309,7 +309,7 @@ export default function ResearchDeskPage() {
               <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Self-Qualify</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Which tier<br />
               <span className="text-[#6bc28b]">is right for you?</span>
             </h2>
@@ -355,7 +355,7 @@ export default function ResearchDeskPage() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="bg-[#17221a] border border-white/[0.06] rounded-2xl p-8"
               >
-                <h3 className="font-display text-xl font-bold text-white mb-3">{persona.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{persona.title}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed mb-6">{persona.desc}</p>
                 <ul className="space-y-2.5">
                   {persona.points.map((p) => (

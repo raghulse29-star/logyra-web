@@ -104,7 +104,7 @@ function ProductCard({ product, onNotify }: { product: Product; onNotify: (name:
           Live Now
         </span>
         <div className="text-[11px] font-bold tracking-[0.08em] uppercase text-gray-500 mb-2">{product.num}</div>
-        <h3 className="font-display text-2xl font-bold text-white mb-1.5 whitespace-pre-line leading-tight">{product.name}</h3>
+        <h3 className="text-2xl font-bold text-white mb-1.5 whitespace-pre-line leading-tight">{product.name}</h3>
         <div className="text-sm text-gray-500 mb-4">{product.market}</div>
         <p className="text-sm text-gray-400 leading-relaxed mb-6 flex-1">{product.desc}</p>
         <div className="h-px bg-white/[0.07] mb-5" />
@@ -117,7 +117,7 @@ function ProductCard({ product, onNotify }: { product: Product; onNotify: (name:
           ))}
         </ul>
         <div className="flex items-baseline gap-2 mb-5">
-          <span className="font-display text-3xl font-bold text-white">{product.price}</span>
+          <span className="text-3xl font-bold text-white">{product.price}</span>
           <span className="text-xs text-gray-500">/ month (GST incl.)</span>
         </div>
         <Link
@@ -143,7 +143,7 @@ function ProductCard({ product, onNotify }: { product: Product; onNotify: (name:
         Coming Soon
       </span>
       <div className="text-[11px] font-bold tracking-[0.08em] uppercase text-gray-600 mb-2">{product.num}</div>
-      <h3 className="font-display text-2xl font-bold text-gray-500 mb-1.5 whitespace-pre-line leading-tight">{product.name}</h3>
+      <h3 className="text-2xl font-bold text-gray-500 mb-1.5 whitespace-pre-line leading-tight">{product.name}</h3>
       <div className="text-sm text-gray-600 mb-4">{product.market}</div>
       <p className="text-sm text-gray-500 leading-relaxed mb-6 flex-1">{product.desc}</p>
       <div className="h-px bg-white/[0.05] mb-5" />
@@ -199,7 +199,7 @@ export default function InnerCircleHubPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.08] mb-5 max-w-3xl"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.08] mb-5 max-w-3xl"
           >
             Private research.<br />
             Real-time depth.<br />
@@ -228,7 +228,7 @@ export default function InnerCircleHubPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.07 }}
               >
-                <div className="font-display text-2xl md:text-3xl font-bold text-[#6bc28b] mb-1">{stat.val}</div>
+                <div className="text-2xl md:text-3xl font-bold text-[#6bc28b] mb-1">{stat.val}</div>
                 <div className="text-xs text-gray-500">{stat.label}</div>
               </motion.div>
             ))}
@@ -246,7 +246,7 @@ export default function InnerCircleHubPage() {
                 className={`p-7 ${i < promises.length - 1 ? 'border-b sm:border-b-0 sm:border-r border-white/[0.06]' : ''} ${i < 2 ? 'lg:border-b-0' : ''}`}
               >
                 <div className="text-2xl mb-3">{p.icon}</div>
-                <h4 className="font-display text-base font-bold text-white mb-2">{p.title}</h4>
+                <h4 className="text-base font-bold text-white mb-2">{p.title}</h4>
                 <p className="text-[13px] text-gray-400 leading-relaxed">{p.desc}</p>
               </div>
             ))}
@@ -262,7 +262,7 @@ export default function InnerCircleHubPage() {
               <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Choose Your Market</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Select a segment.<br />
               <span className="text-[#6bc28b]">Get the full desk.</span>
             </h2>
@@ -311,7 +311,7 @@ export default function InnerCircleHubPage() {
               <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Access Flow</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               From payment<br />
               <span className="text-[#6bc28b]">to private channel.</span>
             </h2>
@@ -331,7 +331,7 @@ export default function InnerCircleHubPage() {
                 className={`p-5 sm:pr-6 ${i < hiwSteps.length - 1 ? 'sm:border-r border-white/[0.07]' : ''}`}
               >
                 <div className="text-[11px] font-bold tracking-[0.08em] uppercase text-gray-500 mb-3">{step.num}</div>
-                <h4 className="font-display text-base font-bold text-white mb-2">{step.title}</h4>
+                <h4 className="text-base font-bold text-white mb-2">{step.title}</h4>
                 <p className="text-[13px] text-gray-400 leading-relaxed">{step.desc}</p>
               </motion.div>
             ))}
@@ -342,7 +342,7 @@ export default function InnerCircleHubPage() {
       {/* ── CTA Band ── */}
       <section className="bg-gradient-to-br from-[#17221a] via-[#1c2e1c] to-[#162016] border-y border-[#6bc28b]/25 py-16 md:py-20 text-center">
         <div className="max-w-[800px] mx-auto px-4 sm:px-6">
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-white mb-4 leading-[1.05]">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-[1.05]">
             One market.<br />
             <span className="text-[#6bc28b]">Full desk intelligence.</span>
           </h2>
@@ -400,7 +400,7 @@ export default function InnerCircleHubPage() {
 
               {!submitted ? (
                 <>
-                  <h3 className="font-display text-2xl font-bold text-white mb-2">Stay in the loop</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2">Stay in the loop</h3>
                   <p className="text-sm text-gray-400 mb-6">
                     We&apos;ll notify you when <span className="text-[#6bc28b] font-semibold">{notifyProduct}</span> opens for access.
                   </p>
@@ -441,7 +441,7 @@ export default function InnerCircleHubPage() {
               ) : (
                 <div className="text-center py-6">
                   <div className="text-4xl mb-3">✓</div>
-                  <h3 className="font-display text-xl font-bold text-white mb-2">Registered.</h3>
+                  <h3 className="text-xl font-bold text-white mb-2">Registered.</h3>
                   <p className="text-sm text-gray-400">We&apos;ll reach you when this product goes live. No spam.</p>
                 </div>
               )}

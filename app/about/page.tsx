@@ -124,7 +124,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.06] tracking-tight mb-8 max-w-3xl"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.06] tracking-tight mb-8 max-w-3xl"
           >
             Built to read<br />
             the market.<br />
@@ -153,7 +153,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="max-w-[720px] border-l-2 border-[#6bc28b] pl-7"
           >
-            <p className="font-display text-lg md:text-xl lg:text-2xl font-semibold leading-snug text-gray-300 tracking-tight">
+            <p className="text-lg md:text-xl lg:text-2xl font-semibold leading-snug text-gray-300 tracking-tight">
               <span className="text-white font-bold">Most participants lose not because they lack information</span> — they lose because they have too much of the wrong kind. Unstructured data. Borrowed opinions. Reactive decisions. We were built to fix that. <span className="text-white font-bold">Not with more information. With better thinking.</span>
             </p>
           </motion.blockquote>
@@ -168,7 +168,7 @@ export default function AboutPage() {
               <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Our Conviction</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1]">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1]">
               What we<br />
               <span className="text-[#6bc28b]">actually believe.</span>
             </h2>
@@ -187,9 +187,9 @@ export default function AboutPage() {
                 transition={{ duration: 0.5, delay: i * 0.06 }}
                 className="grid grid-cols-[40px_1fr] sm:grid-cols-[60px_1fr] gap-5 sm:gap-7 py-8 sm:py-9 border-b border-white/[0.07]"
               >
-                <div className="font-display text-[13px] font-bold text-gray-500 tracking-[0.08em] pt-1">{b.num}</div>
+                <div className="text-[13px] font-bold text-gray-500 tracking-[0.08em] pt-1">{b.num}</div>
                 <div>
-                  <h3 className="font-display text-lg sm:text-xl md:text-[22px] font-bold text-white mb-2.5 leading-snug">{b.title}</h3>
+                  <h3 className="text-lg sm:text-xl md:text-[22px] font-bold text-white mb-2.5 leading-snug">{b.title}</h3>
                   <p className="text-[15px] text-gray-400 leading-[1.75]">{b.desc}</p>
                 </div>
               </motion.div>
@@ -206,7 +206,7 @@ export default function AboutPage() {
               <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Track Record</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1]">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1]">
               Numbers that<br />
               <span className="text-[#6bc28b]">were built, not announced.</span>
             </h2>
@@ -228,7 +228,7 @@ export default function AboutPage() {
                 } ${i < 2 ? 'sm:border-b lg:border-b-0 border-white/[0.07]' : ''}`}
               >
                 <span className="absolute top-0 left-0 right-0 h-[2px] bg-[#6bc28b] opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="font-display text-3xl sm:text-4xl md:text-[44px] font-bold text-[#6bc28b] tracking-tight leading-none mb-3">{n.val}</div>
+                <div className="text-3xl sm:text-4xl md:text-[44px] font-bold text-[#6bc28b] tracking-tight leading-none mb-3">{n.val}</div>
                 <div className="text-[13px] text-gray-400 leading-[1.55]">{n.label}</div>
               </motion.div>
             ))}
@@ -244,7 +244,7 @@ export default function AboutPage() {
               <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Research Coverage</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1]">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1]">
               One framework.<br />
               <span className="text-[#6bc28b]">Every market.</span>
             </h2>
@@ -266,7 +266,7 @@ export default function AboutPage() {
                 <div className="w-11 h-11 rounded-lg bg-[#111711] border border-white/[0.08] flex items-center justify-center mb-5">
                   <div className="w-5 h-5">{c.icon}</div>
                 </div>
-                <h3 className="font-display text-lg font-bold text-white mb-2.5">{c.title}</h3>
+                <h3 className="text-lg font-bold text-white mb-2.5">{c.title}</h3>
                 <p className="text-sm text-gray-400 leading-[1.65]">{c.desc}</p>
               </motion.div>
             ))}
@@ -282,7 +282,7 @@ export default function AboutPage() {
               <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Research Philosophy</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1]">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1]">
               How we<br />
               <span className="text-[#6bc28b]">read the market.</span>
             </h2>
@@ -297,7 +297,7 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6 }}
-              className="font-display text-xl sm:text-2xl md:text-3xl lg:text-[34px] font-extrabold leading-snug tracking-tight text-white mb-8"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-[34px] font-extrabold leading-snug tracking-tight text-white mb-8"
             >
               We study <span className="text-[#6bc28b]">liquidity, order flow,</span> and market structure.<br />
               Not sentiment. Not headlines. Not retail opinion.
@@ -324,7 +324,7 @@ export default function AboutPage() {
                   className="bg-[#17221a] border border-white/[0.07] rounded-xl p-7"
                 >
                   <div className="w-8 h-[3px] bg-[#6bc28b] rounded-sm mb-5" />
-                  <h4 className="font-display text-base font-bold text-white mb-2">{p.title}</h4>
+                  <h4 className="text-base font-bold text-white mb-2">{p.title}</h4>
                   <p className="text-[13px] text-gray-400 leading-[1.65]">{p.desc}</p>
                 </motion.div>
               ))}
@@ -341,7 +341,7 @@ export default function AboutPage() {
               <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Absolute Clarity</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1]">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1]">
               What Logyra is.<br />
               <span className="text-[#6bc28b]">What it will never be.</span>
             </h2>
@@ -408,7 +408,7 @@ export default function AboutPage() {
       {/* ── CTA Band ── */}
       <section className="bg-gradient-to-br from-[#162416] via-[#1c2e1c] to-[#162016] border-y border-[#6bc28b]/25 py-16 md:py-24 text-center">
         <div className="max-w-[820px] mx-auto px-4 sm:px-6">
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1] tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1] tracking-tight">
             The research is live.<br />
             <span className="text-[#6bc28b]">Access starts free.</span>
           </h2>

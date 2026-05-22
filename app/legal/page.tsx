@@ -22,7 +22,7 @@ const sidebarItems: SidebarItem[] = [
 function PolicyBlock({ heading, children }: { heading: string; children: React.ReactNode }) {
   return (
     <div className="mb-9">
-      <h3 className="font-display text-base font-bold text-white mb-3.5 flex items-center gap-2.5">
+      <h3 className="text-base font-bold text-white mb-3.5 flex items-center gap-2.5">
         <span className="w-5 h-[2px] bg-[#6bc28b] rounded-sm shrink-0" />
         {heading}
       </h3>
@@ -80,7 +80,7 @@ function PolicySection({
   return (
     <section id={id} className="pb-16 mb-16 border-b border-white/[0.07] last:border-b-0 last:mb-0 last:pb-0 scroll-mt-32">
       <div className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#6bc28b] mb-3">{num}</div>
-      <h2 className="font-display text-2xl sm:text-3xl md:text-[34px] font-extrabold text-white leading-tight tracking-tight mb-2">
+      <h2 className="text-2xl sm:text-3xl md:text-[34px] font-extrabold text-white leading-tight tracking-tight mb-2">
         {title}
       </h2>
       <div className="text-xs text-gray-500 pb-6 mb-8 border-b border-white/[0.07]">{effective}</div>
@@ -138,7 +138,7 @@ export default function LegalPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-extrabold text-white leading-[1.1] tracking-tight mb-5"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-extrabold text-white leading-[1.1] tracking-tight mb-5"
           >
             Transparent by design,<br />
             <span className="text-[#6bc28b]">clear on every term.</span>
@@ -332,7 +332,7 @@ export default function LegalPage() {
             </PolicyBlock>
 
             <div className="bg-[#17221a] border border-white/[0.07] rounded-xl p-7 mt-6">
-              <h4 className="font-display text-[15px] font-bold text-white mb-2.5">Access issues or queries</h4>
+              <h4 className="text-[15px] font-bold text-white mb-2.5">Access issues or queries</h4>
               <p className="text-sm text-gray-400 leading-[1.65]">
                 For technical access issues only, contact us via the <Link href="/#contact" className="text-[#6bc28b] hover:underline">contact form on logyra.in</Link> within 48 hours of your payment confirmation. Please include your registered email address and payment reference number.
               </p>
@@ -505,14 +505,14 @@ export default function LegalPage() {
           {/* Contact */}
           <section id="contact-legal" className="scroll-mt-32">
             <div className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#6bc28b] mb-3">Queries & Concerns</div>
-            <h2 className="font-display text-xl sm:text-2xl md:text-[28px] font-extrabold text-white leading-tight tracking-tight mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-[28px] font-extrabold text-white leading-tight tracking-tight mb-4">
               Legal queries or data requests
             </h2>
             <p className="text-sm text-gray-400 leading-[1.7] mb-6">
               For any queries related to these legal documents, data access requests, or concerns regarding platform use, contact Logyra Research Pvt Ltd directly.
             </p>
             <div className="bg-[#17221a] border border-white/[0.07] rounded-xl p-7">
-              <h4 className="font-display text-[15px] font-bold text-white mb-3">Logyra Research Pvt Ltd</h4>
+              <h4 className="text-[15px] font-bold text-white mb-3">Logyra Research Pvt Ltd</h4>
               <p className="text-sm text-gray-400 leading-[1.75]">
                 Website: <Link href="/" className="text-[#6bc28b] hover:underline">logyra.in</Link><br />
                 Contact: <Link href="/#contact" className="text-[#6bc28b] hover:underline">logyra.in/contact</Link><br />

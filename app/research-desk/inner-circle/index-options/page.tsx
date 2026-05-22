@@ -234,7 +234,7 @@ export default function IndexOptionsProductPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5 max-w-3xl"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5 max-w-3xl"
               >
                 Structured market research,{' '}
                 <span className="text-[#6bc28b]">delivered daily.</span>
@@ -311,7 +311,7 @@ export default function IndexOptionsProductPage() {
 
               {/* Price display */}
               <div className="mb-6">
-                <div className="font-display text-4xl sm:text-5xl font-bold text-white tracking-tight">
+                <div className="text-4xl sm:text-5xl font-bold text-white tracking-tight">
                   {currentTier.price}
                 </div>
                 <div className="text-xs text-gray-500 mt-1">Incl. GST · {currentTier.duration}</div>
@@ -391,7 +391,7 @@ export default function IndexOptionsProductPage() {
               <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Derivatives Coverage</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               F&amp;O markets, decoded<br />
               <span className="text-[#6bc28b]">without the noise.</span>
             </h2>
@@ -429,7 +429,7 @@ export default function IndexOptionsProductPage() {
               <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Daily Research Briefs</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Every session, covered<br />
               <span className="text-[#6bc28b]">from open to close.</span>
             </h2>
@@ -470,7 +470,7 @@ export default function IndexOptionsProductPage() {
                 <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Private Telegram Access</span>
                 <div className="flex-1 h-px bg-white/10" />
               </div>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Research delivered<br />
                 <span className="text-[#6bc28b]">where you already are.</span>
               </h2>
@@ -545,7 +545,7 @@ export default function IndexOptionsProductPage() {
               <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Clarity Check</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               What this is.<br />
               <span className="text-[#6bc28b]">What this is not.</span>
             </h2>
@@ -619,7 +619,7 @@ export default function IndexOptionsProductPage() {
               <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Subscription Plans</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Choose your access,<br />
               <span className="text-[#6bc28b]">start learning today.</span>
             </h2>
@@ -703,7 +703,7 @@ export default function IndexOptionsProductPage() {
               <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Policies &amp; Terms</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Transparent by design,<br />
               <span className="text-[#6bc28b]">clear on every term.</span>
             </h2>

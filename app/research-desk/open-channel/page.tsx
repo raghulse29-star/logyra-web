@@ -149,7 +149,7 @@ export default function OpenChannelPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.08] mb-5"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.08] mb-5"
               >
                 The market,<br />
                 read every day.<br />
@@ -199,7 +199,7 @@ export default function OpenChannelPage() {
             >
               <div className="bg-[#17222a] rounded-2xl border border-white/10 overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.6)]">
                 <div className="bg-[#1f2c3a] px-5 py-3.5 flex items-center gap-3 border-b border-white/[0.06]">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#4CAF50] to-[#2e7d32] flex items-center justify-center font-display font-bold text-white">L</div>
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#4CAF50] to-[#2e7d32] flex items-center justify-center font-bold text-white">L</div>
                   <div>
                     <div className="text-white text-sm font-semibold">Logyra Intelligence</div>
                     <div className="text-gray-500 text-xs">@logyra_insights</div>
@@ -232,7 +232,7 @@ export default function OpenChannelPage() {
               <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">What&apos;s Inside</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Not updates.<br />
               <span className="text-[#6bc28b]">Structured intelligence.</span>
             </h2>
@@ -257,7 +257,7 @@ export default function OpenChannelPage() {
                   </svg>
                 </div>
                 <div className="text-[10px] font-bold tracking-[0.12em] uppercase text-[#6bc28b] mb-2">{item.time}</div>
-                <h3 className="font-display text-lg font-bold text-white mb-2">{item.title}</h3>
+                <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
                 <p className="text-sm text-gray-400 leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
@@ -273,7 +273,7 @@ export default function OpenChannelPage() {
               <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Daily Delivery Schedule</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Every session.<br />
               <span className="text-[#6bc28b]">From open to close.</span>
             </h2>
@@ -299,7 +299,7 @@ export default function OpenChannelPage() {
                   {item.time}
                 </div>
                 <div className="pt-1">
-                  <h4 className="font-display text-base font-bold text-white mb-1.5">{item.title}</h4>
+                  <h4 className="text-base font-bold text-white mb-1.5">{item.title}</h4>
                   <p className="text-sm text-gray-400 leading-relaxed mb-2">{item.desc}</p>
                   <span
                     className="inline-block text-[10px] font-bold tracking-[0.08em] uppercase px-2 py-0.5 rounded-sm"
@@ -329,7 +329,7 @@ export default function OpenChannelPage() {
               <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Markets Covered</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               All markets.<br />
               <span className="text-[#6bc28b]">One channel.</span>
             </h2>
@@ -350,7 +350,7 @@ export default function OpenChannelPage() {
               >
                 <div className="flex items-center gap-3 mb-3">
                   <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ background: m.dot }} />
-                  <h3 className="font-display text-lg font-bold text-white">{m.title}</h3>
+                  <h3 className="text-lg font-bold text-white">{m.title}</h3>
                 </div>
                 <p className="text-sm text-gray-400 leading-relaxed mb-4">{m.desc}</p>
                 <div className="flex flex-wrap gap-2">
@@ -374,7 +374,7 @@ export default function OpenChannelPage() {
               <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Why The Open Channel</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Built to earn your<br />
               <span className="text-[#6bc28b]">trust first.</span>
             </h2>
@@ -393,8 +393,8 @@ export default function OpenChannelPage() {
                 transition={{ duration: 0.5, delay: i * 0.07 }}
                 className="bg-[#111d14] border border-white/[0.06] rounded-xl p-7"
               >
-                <div className="font-display text-4xl font-bold text-[#6bc28b]/40 mb-3 leading-none">{item.num}</div>
-                <h4 className="font-display text-base font-bold text-white mb-2">{item.title}</h4>
+                <div className="text-4xl font-bold text-[#6bc28b]/40 mb-3 leading-none">{item.num}</div>
+                <h4 className="text-base font-bold text-white mb-2">{item.title}</h4>
                 <p className="text-sm text-gray-400 leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
@@ -410,7 +410,7 @@ export default function OpenChannelPage() {
               <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">The Logyra Journey</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               From curious<br />
               <span className="text-[#6bc28b]">to convinced.</span>
             </h2>
@@ -420,7 +420,7 @@ export default function OpenChannelPage() {
           </div>
 
           <div className="bg-[#17221a] border border-white/[0.06] rounded-2xl p-8 md:p-10">
-            <h3 className="font-display text-xl md:text-2xl font-bold text-white mb-2">
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
               How participants move from <span className="text-[#6bc28b]">open → paid</span>
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed mb-8 max-w-2xl">
@@ -433,7 +433,7 @@ export default function OpenChannelPage() {
                   key={step.num}
                   className={`relative p-5 text-center ${i < funnelSteps.length - 1 ? 'md:border-r border-white/[0.07]' : ''} ${i < funnelSteps.length - 2 ? 'border-b lg:border-b-0 border-white/[0.07]' : ''}`}
                 >
-                  <div className="font-display text-3xl font-bold text-[#6bc28b] mb-2">{step.num}</div>
+                  <div className="text-3xl font-bold text-[#6bc28b] mb-2">{step.num}</div>
                   <h4 className="text-sm font-semibold text-white mb-2">{step.title}</h4>
                   <p className="text-xs text-gray-400 leading-relaxed">{step.desc}</p>
                   {i < funnelSteps.length - 1 && (
@@ -449,7 +449,7 @@ export default function OpenChannelPage() {
       {/* ── CTA Band ── */}
       <section className="bg-gradient-to-br from-[#17221a] via-[#1c2e1c] to-[#162016] border-y border-[#6bc28b]/25 py-16 md:py-20 text-center">
         <div className="max-w-[800px] mx-auto px-4 sm:px-6">
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-white mb-4 leading-[1.05]">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-[1.05]">
             Start here.<br />
             <span className="text-[#6bc28b]">For free.</span>
           </h2>
