@@ -80,6 +80,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="hidden lg:flex items-center justify-center h-[460px] xl:h-[520px]"
           >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/img1.webp"
               alt="Market intelligence chart visualization"
@@ -95,6 +96,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="lg:hidden w-full flex items-center justify-center"
           >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/img1.webp"
               alt="Market intelligence chart visualization"

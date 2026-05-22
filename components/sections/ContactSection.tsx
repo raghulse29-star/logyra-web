@@ -1,24 +1,33 @@
 'use client';
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useTransition } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { submitContactForm, type ContactFormState } from '@/app/actions/contact';
+
+const EMPTY_FORM = { firstName: '', lastName: '', email: '', phone: '', subject: '', message: '' };
 
 export default function ContactSection() {
-  const [form, setForm] = useState({ firstName: '', lastName: '', email: '', phone: '', subject: '', message: '' });
+  const [form, setForm] = useState(EMPTY_FORM);
+  const [state, setState] = useState<ContactFormState>({ status: 'idle' });
+  const [isPending, startTransition] = useTransition();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+    if (state.status !== 'idle') setState({ status: 'idle' });
   };
 
-  const handleSubmit = (e: React.MouseEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle submission
-    console.log(form);
+    startTransition(async () => {
+      const result = await submitContactForm(form);
+      setState(result);
+      if (result.status === 'success') setForm(EMPTY_FORM);
+    });
   };
 
   // text-base = 16px — prevents iOS Safari from auto-zooming on input focus
   const inputClass =
-    'w-full px-4 py-3 rounded-[8px] text-base text-white bg-[#30313A] border border-transparent focus:outline-none focus:border-[#4ADE80] transition-all placeholder:text-[#9CA3AF] font-sans';
+    'w-full px-4 py-3 rounded-[8px] text-base text-white bg-[#30313A] border border-transparent focus:outline-none focus:border-[#4ADE80] transition-all placeholder:text-[#9CA3AF] font-sans disabled:opacity-60';
 
   return (
     <section id="contact" className="py-14 md:py-20 lg:py-32 bg-[#050505]">
@@ -42,8 +51,8 @@ export default function ContactSection() {
             </p>
 
             {/* Form */}
-            <form className="flex flex-col gap-6">
-              
+            <form className="flex flex-col gap-6" onSubmit={handleSubmit} noValidate>
+
               {/* Name Row */}
               <div>
                 <label className="text-[#9CA3AF] text-sm mb-2 block">Full Name</label>
@@ -53,16 +62,22 @@ export default function ContactSection() {
                     name="firstName"
                     value={form.firstName}
                     onChange={handleChange}
+                    disabled={isPending}
                     placeholder="First name"
                     className={inputClass}
+                    required
+                    maxLength={80}
                   />
                   <input
                     type="text"
                     name="lastName"
                     value={form.lastName}
                     onChange={handleChange}
+                    disabled={isPending}
                     placeholder="Last name"
                     className={inputClass}
+                    required
+                    maxLength={80}
                   />
                 </div>
               </div>
@@ -76,8 +91,10 @@ export default function ContactSection() {
                     name="email"
                     value={form.email}
                     onChange={handleChange}
+                    disabled={isPending}
                     placeholder="Enter your email"
                     className={inputClass}
+                    required
                   />
                 </div>
                 <div>
@@ -87,6 +104,7 @@ export default function ContactSection() {
                     name="phone"
                     value={form.phone}
                     onChange={handleChange}
+                    disabled={isPending}
                     placeholder="Enter 10 digit number"
                     className={inputClass}
                   />
@@ -101,6 +119,8 @@ export default function ContactSection() {
                     name="subject"
                     value={form.subject}
                     onChange={handleChange}
+                    disabled={isPending}
+                    required
                     className={`${inputClass} appearance-none cursor-pointer`}
                   >
                     <option value="" disabled hidden>Write subject</option>
@@ -123,26 +143,76 @@ export default function ContactSection() {
                   name="message"
                   value={form.message}
                   onChange={handleChange}
+                  disabled={isPending}
                   placeholder="Write here..."
                   rows={5}
+                  required
+                  minLength={10}
+                  maxLength={2000}
                   className={`${inputClass} resize-none pt-4`}
                 />
               </div>
 
+              {/* Status messages */}
+              <AnimatePresence mode="wait">
+                {state.status === 'success' && (
+                  <motion.div
+                    key="success"
+                    initial={{ opacity: 0, y: -8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    className="flex items-center gap-3 text-[#4ADE80] bg-[#4ADE80]/10 border border-[#4ADE80]/30 rounded-[8px] px-4 py-3 text-sm"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    Message sent. We&apos;ll get back to you shortly.
+                  </motion.div>
+                )}
+                {state.status === 'error' && (
+                  <motion.div
+                    key="error"
+                    initial={{ opacity: 0, y: -8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    className="flex items-center gap-3 text-[#e05555] bg-[#e05555]/10 border border-[#e05555]/30 rounded-[8px] px-4 py-3 text-sm"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="8" x2="12" y2="12" />
+                      <line x1="12" y1="16" x2="12.01" y2="16" />
+                    </svg>
+                    {state.message}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
               {/* Submit Button */}
               <motion.button
-                onClick={handleSubmit}
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.99 }}
-                className="w-full bg-[#52B774] hover:bg-[#45a063] text-white font-medium py-4 rounded-[8px] mt-2 flex items-center justify-center gap-2 transition-colors"
+                type="submit"
+                disabled={isPending}
+                whileHover={isPending ? undefined : { scale: 1.01 }}
+                whileTap={isPending ? undefined : { scale: 0.99 }}
+                className="w-full bg-[#52B774] hover:bg-[#45a063] disabled:bg-[#3a7d52] disabled:cursor-not-allowed text-white font-medium py-4 rounded-[8px] mt-2 flex items-center justify-center gap-2 transition-colors"
               >
-                Send Message
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
+                {isPending ? (
+                  <>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="animate-spin">
+                      <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+                    </svg>
+                    Sending…
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                  </>
+                )}
               </motion.button>
-              
+
             </form>
           </motion.div>
 
@@ -155,6 +225,7 @@ export default function ContactSection() {
             className="w-full lg:w-[45%] flex items-center justify-center h-full pt-10 lg:pt-0"
           >
             <div className="w-full h-full min-h-[400px] lg:min-h-[600px] flex items-center justify-center relative">
+               {/* eslint-disable-next-line @next/next/no-img-element */}
                <img
                  src="/images/img11.webp"
                  alt="Trading Chart Graphic"

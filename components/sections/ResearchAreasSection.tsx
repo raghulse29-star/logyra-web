@@ -100,6 +100,7 @@ export default function ResearchAreasSection() {
                       </p>
                     </div>
                     <div className="w-full h-[180px] rounded-xl overflow-hidden bg-[#1A1C20] mt-auto">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={area.image}
                         alt={area.title}
@@ -111,6 +112,7 @@ export default function ResearchAreasSection() {
                   /* Layout: Image Top, Text Bottom */
                   <>
                     <div className="w-full h-[180px] mb-5 rounded-xl overflow-hidden bg-[#1A1C20]">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={area.image}
                         alt={area.title}

@@ -28,11 +28,12 @@ const platforms = [
     badge: 'INVITE ONLY · LIVE · STRUCTURED',
     title: 'Trade Floor — The Floor',
     desc: 'Live structured research environment. Real-time market commentary. Institutional thinking in practice. For serious participants by application only',
-    cta: 'APPLY FOR ACCESS',
-    ctaLink: '/#contact',
+    cta: 'COMING SOON',
+    ctaLink: '#',
     image: '/images/img10.webp',
     accentColor: '#FF5C00',
     glowColor: 'rgba(255, 92, 0, 0.4)',
+    disabled: true,
   },
 ];
 
@@ -70,7 +71,7 @@ export default function TeachSection() {
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-            We Don't Sell Courses. We Transfer Skills.
+            We Don&apos;t Sell Courses. We Transfer Skills.
           </h2>
 
           <p className="text-[#8B95A5] max-w-3xl mx-auto text-[15px] md:text-[17px] leading-relaxed">
@@ -91,18 +92,24 @@ export default function TeachSection() {
             <motion.div
               key={p.title}
               variants={cardVar}
-              whileHover={{
+              whileHover={p.disabled ? undefined : {
                 y: -12,
                 boxShadow: `0 32px 80px rgba(0,0,0,0.6), 0 0 40px ${p.glowColor}`,
               }}
-              whileTap={{ y: -6, scale: 0.98 }}
+              whileTap={p.disabled ? undefined : { y: -6, scale: 0.98 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="h-full group"
+              className={`h-full group ${p.disabled ? 'opacity-60' : ''}`}
             >
               <div
-                className="flex flex-col h-full rounded-[20px] overflow-hidden border border-white/5 group-hover:border-white/15 transition-colors duration-500"
+                className="flex flex-col h-full rounded-[20px] overflow-hidden border border-white/5 group-hover:border-white/15 transition-colors duration-500 relative"
                 style={{ background: '#131820' }}
               >
+                {p.disabled && (
+                  <span className="absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 bg-black/60 backdrop-blur-sm border border-white/15 text-white/90 text-[9px] font-bold tracking-[0.15em] uppercase px-2.5 py-1 rounded-full">
+                    <span className="w-1.5 h-1.5 rounded-full bg-orange-400" />
+                    Coming Soon
+                  </span>
+                )}
                 {/* Full-bleed image area */}
                 <div className="relative w-full h-[220px] sm:h-[260px] overflow-hidden">
                   <motion.img
@@ -149,20 +156,29 @@ export default function TeachSection() {
                   </p>
 
                   {/* CTA Button */}
-                  <Link href={p.ctaLink}>
-                    <motion.span
-                      whileHover={{
-                        scale: 1.03,
-                        y: -2,
-                        boxShadow: '0 0 28px rgba(211,255,51,0.3)',
-                      }}
-                      whileTap={{ scale: 0.97 }}
-                      transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                      className="block w-full bg-[#1E2B22] hover:bg-[#273D2C] text-[#D3FF33] font-bold text-[13px] py-4 px-6 rounded-xl transition-colors uppercase tracking-wide border border-[#D3FF33]/10 hover:border-[#D3FF33]/30 text-center cursor-pointer"
+                  {p.disabled ? (
+                    <span
+                      aria-disabled="true"
+                      className="block w-full bg-[#1A1F24] text-gray-500 font-bold text-[13px] py-4 px-6 rounded-xl uppercase tracking-wide border border-white/[0.06] text-center cursor-not-allowed select-none"
                     >
                       {p.cta}
-                    </motion.span>
-                  </Link>
+                    </span>
+                  ) : (
+                    <Link href={p.ctaLink}>
+                      <motion.span
+                        whileHover={{
+                          scale: 1.03,
+                          y: -2,
+                          boxShadow: '0 0 28px rgba(211,255,51,0.3)',
+                        }}
+                        whileTap={{ scale: 0.97 }}
+                        transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                        className="block w-full bg-[#1E2B22] hover:bg-[#273D2C] text-[#D3FF33] font-bold text-[13px] py-4 px-6 rounded-xl transition-colors uppercase tracking-wide border border-[#D3FF33]/10 hover:border-[#D3FF33]/30 text-center cursor-pointer"
+                      >
+                        {p.cta}
+                      </motion.span>
+                    </Link>
+                  )}
                 </div>
               </div>
             </motion.div>

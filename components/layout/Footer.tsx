@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const InstagramIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -26,15 +27,16 @@ const XTwitterIcon = () => (
 );
 
 const footerLinks = {
-  QuickLinks: [
-    { label: 'Research', href: '#' },
-    { label: 'Learn', href: '#' },
-    { label: 'Community', href: '#' },
-    { label: 'Blog', href: '#' },
+  ResearchDesk: [
+    { label: 'Research Desk', href: '/research-desk' },
+    { label: 'Open Channel', href: '/research-desk/open-channel' },
+    { label: 'Inner Circle', href: '/research-desk/inner-circle' },
+    { label: 'Index Options', href: '/research-desk/inner-circle/index-options' },
   ],
   Company: [
-    { label: 'Pricing', href: '/inner-circle#plans' },
-    { label: 'About', href: '/#about' },
+    { label: 'About', href: '/about' },
+    { label: 'Pricing', href: '/research-desk/inner-circle/index-options#plans' },
+    { label: 'Legal', href: '/legal' },
     { label: 'Contact', href: '/#contact' },
   ],
 };
@@ -71,7 +73,13 @@ export default function Footer() {
           {/* Brand */}
           <motion.div variants={wrapVar} className="lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
-              <span className="text-3xl font-bold text-white tracking-wide">LOGYRA</span>
+              <Image
+                src="/images/Logo.png"
+                alt="Logyra Research"
+                width={203}
+                height={80}
+                className="h-14 sm:h-16 w-auto"
+              />
             </Link>
             <p className="text-[#A3B1A4] text-[15px] max-w-[200px] leading-relaxed mb-5">
               Market Intelligence. Research-First.
@@ -82,14 +90,14 @@ export default function Footer() {
             </div>
           </motion.div>
 
-          {/* Quick Links */}
+          {/* Research Desk */}
           <motion.div variants={wrapVar} className="lg:ml-12">
             <h4 className="text-white text-[11px] font-bold tracking-[0.15em] uppercase mb-5 flex items-center gap-2">
               <span className="w-4 h-px bg-[#6bc28b]" />
-              QUICK LINKS
+              RESEARCH DESK
             </h4>
             <ul className="flex flex-col gap-3">
-              {footerLinks.QuickLinks.map((link) => (
+              {footerLinks.ResearchDesk.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
@@ -135,8 +143,10 @@ export default function Footer() {
             </p>
 
             {/* Telegram link — CSS hover only, no motion wrapper */}
-            <Link
-              href="#"
+            <a
+              href="https://t.me/logyra_insights"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-[#00D47E] hover:text-[#00F592] text-[12px] font-bold tracking-wider uppercase mb-7 transition-colors"
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -147,7 +157,7 @@ export default function Footer() {
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />
               </svg>
-            </Link>
+            </a>
 
             {/* Social Icons — CSS transitions, no motion per-icon */}
             <div className="flex items-center gap-3">
@@ -185,8 +195,8 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-6">
             {[
-              { label: 'PRIVACY POLICY', href: '/inner-circle#legal' },
-              { label: 'TERMS & CONDITIONS', href: '/inner-circle#legal' },
+              { label: 'PRIVACY POLICY', href: '/legal#privacy' },
+              { label: 'TERMS & CONDITIONS', href: '/legal#terms' },
             ].map((item) => (
               <Link key={item.label} href={item.href} className="hover:text-white transition-colors duration-150">
                 {item.label}

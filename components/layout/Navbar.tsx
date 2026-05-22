@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 // 1. Updated Data Structure to support infinite nesting
@@ -12,37 +13,31 @@ type MenuItem = {
   activeOn?: string[];
   hasDropdown?: boolean;
   children?: MenuItem[];
+  accent?: string;
+  tag?: string;
 };
 
 const navLinks: MenuItem[] = [
   { label: 'Home', href: '/', activeOn: ['/'] },
   {
     label: 'Research Desk',
-    href: '/#research',
+    href: '/research-desk',
     hasDropdown: true,
-    activeOn: ['/inner-circle'],
+    activeOn: [
+      '/research-desk',
+      '/research-desk/open-channel',
+      '/research-desk/inner-circle',
+      '/research-desk/inner-circle/index-options',
+      '/inner-circle',
+    ],
     children: [
-      { label: 'Open Channel', href: '/#open-channel' },
-      {
-        label: 'Inner Circle',
-        href: '/inner-circle',
-        children: [
-          {
-            label: 'F&O Inner Circle',
-            href: '/inner-circle',
-            children: [
-              { label: 'Stock Options', href: '/inner-circle#plans' },
-              { label: 'Index Options', href: '/inner-circle#plans' },
-            ]
-          },
-          { label: 'Equity', href: '#equity' }
-        ]
-      }
+      { label: 'Open Channel', href: '/research-desk/open-channel', accent: '#7dd3fc', tag: 'FREE' },
+      { label: 'Inner Circle', href: '/research-desk/inner-circle', accent: '#B8FD4B', tag: 'PRIVATE' },
     ]
   },
-  { label: 'About us', href: '/#about' },
-  { label: 'Legal', href: '/inner-circle#legal' },
-  { label: 'Contact Us', href: '/#contact' },
+  { label: 'About us', href: '/about', activeOn: ['/about'] },
+  { label: 'Legal', href: '/legal', activeOn: ['/legal'] },
+  // { label: 'Contact Us', href: '/#contact' },
 ];
 
 // 2. Desktop Recursive SubMenu Components
@@ -56,10 +51,20 @@ function DesktopSubMenuItem({ item }: { item: MenuItem }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <Link href={item.href} className="flex items-center justify-between text-[14px] text-gray-200 group-hover:text-white whitespace-nowrap">
-        <span>{item.label}</span>
+      <Link href={item.href} className="flex items-center justify-between gap-3 text-[14px] whitespace-nowrap">
+        <span style={item.accent ? { color: item.accent } : undefined} className={item.accent ? 'font-semibold' : 'text-gray-200 group-hover:text-white'}>
+          {item.label}
+        </span>
+        {item.tag && (
+          <span
+            className="text-[9px] font-bold tracking-[0.12em] uppercase px-1.5 py-0.5 rounded-sm border"
+            style={{ color: item.accent, borderColor: `${item.accent}66`, backgroundColor: `${item.accent}1a` }}
+          >
+            {item.tag}
+          </span>
+        )}
         {hasChildren && (
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70 -rotate-90 ml-3">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70 -rotate-90 ml-1 text-gray-200">
             <polyline points="6 9 12 15 18 9" />
           </svg>
         )}
@@ -104,7 +109,7 @@ function NavLink({ link, index }: { link: MenuItem; index: number }) {
     >
       <Link
         href={link.href}
-        className={`relative text-[14px] xl:text-[15px] font-medium flex items-center gap-1.5 py-1 transition-colors duration-200 ${
+        className={`relative text-[16px] xl:text-[17px] font-medium flex items-center gap-1.5 py-1 transition-colors duration-200 ${
           isActive ? 'text-[#6bc28b]' : 'text-gray-200 hover:text-white'
         }`}
       >
@@ -185,9 +190,19 @@ function MobileMenuItem({ item, setMenuOpen }: { item: MenuItem; setMenuOpen: (v
         <Link
           href={item.href}
           onClick={() => { if (!hasChildren) setMenuOpen(false); }}
-          className="flex-1 py-3 px-3 hover:text-white transition-colors"
+          className="flex-1 flex items-center gap-2 py-3 px-3 hover:text-white transition-colors"
         >
-          {item.label}
+          <span style={item.accent ? { color: item.accent } : undefined} className={item.accent ? 'font-semibold' : ''}>
+            {item.label}
+          </span>
+          {item.tag && (
+            <span
+              className="text-[9px] font-bold tracking-[0.12em] uppercase px-1.5 py-0.5 rounded-sm border"
+              style={{ color: item.accent, borderColor: `${item.accent}66`, backgroundColor: `${item.accent}1a` }}
+            >
+              {item.tag}
+            </span>
+          )}
         </Link>
         {/* Chevron — only toggles submenu */}
         {hasChildren && (
@@ -221,20 +236,6 @@ function MobileMenuItem({ item, setMenuOpen }: { item: MenuItem; setMenuOpen: (v
   );
 }
 
-function IconButton({ children, label }: { children: React.ReactNode; label: string }) {
-  return (
-    <motion.button
-      whileHover={{ scale: 1.15, color: '#ffffff' }}
-      whileTap={{ scale: 0.9 }}
-      transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-      className="relative text-gray-200 transition-colors p-1.5 rounded-lg hover:bg-white/10"
-      aria-label={label}
-    >
-      {children}
-    </motion.button>
-  );
-}
-
 // --- Main Navbar Component ---
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -257,23 +258,24 @@ export default function Navbar() {
           : 'bg-[#3b5440]'
       }`}
     >
-      <nav className="max-w-[1600px] mx-auto px-4 sm:px-6 flex items-center justify-between h-16 sm:h-20">
+      <nav className="max-w-[1600px] mx-auto px-4 sm:px-6 flex items-center justify-between h-20 sm:h-24">
 
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 shrink-0">
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }} className="flex items-center gap-3">
-            <div className="shrink-0">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="24" height="24" rx="6" fill="#6bc28b" />
-                <circle cx="12" cy="12" r="5" fill="#1b2a22" />
-              </svg>
-            </div>
-            <span className="text-xl sm:text-2xl font-bold tracking-wide text-white">Logyra</span>
+        <Link href="/" className="flex items-center shrink-0">
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }} className="flex items-center">
+            <Image
+              src="/images/Logo.png"
+              alt="Logyra Research"
+              width={203}
+              height={80}
+              priority
+              className="h-14 sm:h-16 w-auto"
+            />
           </motion.div>
         </Link>
 
         {/* Desktop Nav */}
-        <ul className="hidden lg:flex items-center gap-6 xl:gap-8">
+        <ul className="hidden lg:flex items-center gap-7 xl:gap-10">
           {navLinks.map((link, i) => (
             <NavLink key={link.label} link={link} index={i} />
           ))}
@@ -293,7 +295,7 @@ export default function Navbar() {
           {/* CTA Button */}
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.55, duration: 0.45 }}>
             <motion.div whileHover={{ scale: 1.05, y: -1 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}>
-              <Link href="#contact" className="relative inline-block bg-[#6bc28b] text-white text-[12px] xl:text-[13px] font-bold tracking-wider px-5 xl:px-6 py-2.5 xl:py-3 rounded-lg overflow-hidden uppercase" style={{ boxShadow: '0 0 24px rgba(107,194,139,0.4)' }}>
+              <Link href="/#contact" className="relative inline-block bg-[#6bc28b] text-white text-[12px] xl:text-[13px] font-bold tracking-wider px-5 xl:px-6 py-2.5 xl:py-3 rounded-lg overflow-hidden uppercase" style={{ boxShadow: '0 0 24px rgba(107,194,139,0.4)' }}>
                 <motion.span className="absolute inset-0 -skew-x-12 bg-white/20" initial={{ x: '-110%' }} whileHover={{ x: '110%' }} transition={{ duration: 0.55, ease: 'easeInOut' }} />
                 <span className="relative z-10">CONNECT WITH US</span>
               </Link>
@@ -337,7 +339,7 @@ export default function Navbar() {
 
               <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45, duration: 0.35, ease: [0.22, 1, 0.36, 1] }} className="mt-2">
                 <Link href="/#contact" onClick={() => setMenuOpen(false)} className="relative flex items-center justify-center w-full bg-[#6bc28b] text-white font-bold tracking-wider min-h-[44px] rounded-xl text-center uppercase text-sm overflow-hidden" style={{ boxShadow: '0 0 24px rgba(107,194,139,0.35)' }}>
-                  CONNECT WITH US
+                  CONTACT US
                 </Link>
               </motion.div>
             </div>

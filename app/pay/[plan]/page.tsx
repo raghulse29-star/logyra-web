@@ -49,13 +49,13 @@ export default function PayPage() {
     <div className="min-h-screen bg-[#111315] font-sans flex flex-col">
       <Navbar />
 
-      <main className="flex-1 pt-16 sm:pt-20 flex flex-col">
+      <main className="flex-1 pt-20 sm:pt-24 flex flex-col">
 
         {/* Top bar with plan summary */}
         <div className="bg-[#18261b] border-b border-white/[0.07]">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-center gap-4">
-              <Link href="/inner-circle#plans" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="/research-desk/inner-circle/index-options#plans" className="text-gray-400 hover:text-white transition-colors">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="15 18 9 12 15 6" />
                 </svg>

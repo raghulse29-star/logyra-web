@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Logyra — Brand & Identity System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --green:        #4ade80;
+    --green-soft:   #6bc28b;
+    --lime:         #B8FD4B;
+    --lime-acid:    #D3FF33;
+    --bg:           #0a0f0a;
+    --bg-deep:      #111315;
+    --bg-section:   #18261b;
+    --bg-card:      #17221a;
+    --text:         #f0fdf0;
+    --text-soft:    #d1fae5;
+    --text-muted:   #A3B1A4;
+    --border:       rgba(74, 222, 128, 0.18);
+    --border-soft:  rgba(255,255,255,0.06);
+    --font-d:       'Syne', sans-serif;
+    --font-b:       'DM Sans', sans-serif;
+    --font-m:       'JetBrains Mono', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-b);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  /* ── Slide container ── */
+  .deck { display: flex; flex-direction: column; }
+
+  .slide {
+    min-height: 100vh;
+    width: 100%;
+    padding: 80px 6vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  /* Slide number */
+  .slide-num {
+    position: absolute;
+    top: 32px;
+    right: 6vw;
+    font-family: var(--font-m);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+  .slide-num span { color: var(--lime); font-weight: 500; }
+
+  /* Brand mark */
+  .brandmark {
+    position: absolute;
+    top: 32px;
+    left: 6vw;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-d);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    color: var(--text);
+  }
+  .brandmark .dot {
+    width: 22px; height: 22px;
+    background: var(--green-soft);
+    border-radius: 5px;
+    position: relative;
+  }
+  .brandmark .dot::after {
+    content: '';
+    position: absolute; inset: 6px;
+    background: #18261b;
+    border-radius: 50%;
+  }
+
+  /* Decorative glow */
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(140px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .slide > * { position: relative; z-index: 1; }
+
+  /* ── Badge ── */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(184, 253, 75, 0.08);
+    border: 1px solid rgba(184, 253, 75, 0.25);
+    color: var(--lime);
+    font-family: var(--font-m);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin-bottom: 32px;
+  }
+  .badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--lime);
+    box-shadow: 0 0 8px var(--lime);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.45; }
+  }
+
+  h1.display {
+    font-family: var(--font-d);
+    font-weight: 700;
+    font-size: clamp(40px, 7vw, 88px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+  h1.display .accent { color: var(--green-soft); }
+
+  h2.section-title {
+    font-family: var(--font-d);
+    font-weight: 700;
+    font-size: clamp(32px, 4.5vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+  h2.section-title .accent { color: var(--green-soft); }
+
+  p.lead {
+    font-size: clamp(16px, 1.4vw, 20px);
+    line-height: 1.7;
+    color: var(--text-muted);
+    max-width: 640px;
+    margin-bottom: 40px;
+  }
+
+  /* Section label */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .section-label .text {
+    color: var(--lime);
+    font-family: var(--font-m);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .section-label .line {
+    flex: 1;
+    height: 1px;
+    background: var(--border-soft);
+    max-width: 240px;
+  }
+
+  /* ── Cover slide ── */
+  .cover {
+    background: linear-gradient(180deg, #0a0f0a 0%, #18261b 100%);
+    align-items: flex-start;
+  }
+  .cover .glow-1 { top: -120px; left: 30%; width: 700px; height: 500px; background: rgba(74,222,128,0.12); }
+  .cover .glow-2 { bottom: -200px; right: -100px; width: 500px; height: 500px; background: rgba(184,253,75,0.06); }
+  .cover .meta {
+    margin-top: 60px;
+    display: flex;
+    gap: 32px;
+    font-family: var(--font-m);
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .cover .meta b { color: var(--text); font-weight: 500; }
+
+  .cover .quote {
+    margin-top: auto;
+    padding-top: 60px;
+    font-family: var(--font-d);
+    font-size: clamp(18px, 1.6vw, 22px);
+    color: var(--text-soft);
+    font-style: italic;
+    max-width: 700px;
+  }
+  .cover .quote .dash {
+    color: var(--lime);
+    margin-right: 8px;
+  }
+
+  /* ── Positioning slide ── */
+  .positioning {
+    background: var(--bg-section);
+  }
+  .positioning .glow-1 { top: 20%; left: 50%; transform: translateX(-50%); width: 800px; height: 400px; background: rgba(74,222,128,0.08); }
+  .positioning-statement {
+    font-family: var(--font-d);
+    font-weight: 600;
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1.2;
+    color: var(--text);
+    max-width: 1100px;
+    margin: 32px 0;
+    letter-spacing: -0.015em;
+  }
+  .positioning-statement .high {
+    color: var(--lime);
+    font-style: italic;
+  }
+
+  /* ── Voice cards ── */
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .voice-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    padding: 28px;
+    transition: all 0.3s ease;
+  }
+  .voice-card:hover {
+    border-color: var(--border);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(74,222,128,0.08);
+  }
+  .voice-card .num {
+    font-family: var(--font-m);
+    font-size: 10px;
+    color: var(--lime);
+    letter-spacing: 0.2em;
+    margin-bottom: 14px;
+    display: block;
+  }
+  .voice-card h3 {
+    font-family: var(--font-d);
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--text);
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+  .voice-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* ── Signature phrases ── */
+  .phrases {
+    background: var(--bg-deep);
+  }
+  .phrases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 18px;
+    margin-top: 40px;
+  }
+  .phrase {
+    background: linear-gradient(135deg, rgba(74,222,128,0.04) 0%, transparent 100%);
+    border: 1px solid var(--border-soft);
+    border-left: 3px solid var(--green-soft);
+    border-radius: 8px;
+    padding: 24px 28px;
+    font-family: var(--font-d);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.4;
+    color: var(--text);
+    transition: all 0.3s ease;
+  }
+  .phrase:hover {
+    border-left-color: var(--lime);
+    background: linear-gradient(135deg, rgba(184,253,75,0.06) 0%, transparent 100%);
+    transform: translateX(4px);
+  }
+  .phrase::before {
+    content: '"';
+    color: var(--lime);
+    font-size: 30px;
+    line-height: 0;
+    vertical-align: -10px;
+    margin-right: 4px;
+  }
+
+  /* ── Words columns ── */
+  .words-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 40px;
+  }
+  @media (max-width: 768px) { .words-grid { grid-template-columns: 1fr; } }
+  .words-col {
+    background: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    padding: 36px;
+  }
+  .words-col .head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .words-col .head .icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-d);
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .words-col.do .head .icon { background: rgba(184,253,75,0.15); color: var(--lime); }
+  .words-col.dont .head .icon { background: rgba(251,146,60,0.15); color: #fb923c; }
+  .words-col .head h3 {
+    font-family: var(--font-d);
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+  }
+  .words-col.do .head h3 { color: var(--lime); }
+  .words-col.dont .head h3 { color: #fb923c; }
+  .words-col ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .words-col li {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border-soft);
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-family: var(--font-m);
+    font-size: 13px;
+    color: var(--text-soft);
+    letter-spacing: 0.02em;
+  }
+  .words-col.dont li {
+    text-decoration: line-through;
+    text-decoration-color: rgba(251,146,60,0.5);
+    color: var(--text-muted);
+  }
+
+  /* ── Color palette ── */
+  .palette {
+    background: var(--bg-deep);
+  }
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 28px;
+  }
+  .swatch {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-soft);
+    transition: transform 0.3s ease;
+  }
+  .swatch:hover { transform: translateY(-4px); }
+  .swatch .color {
+    height: 110px;
+    width: 100%;
+  }
+  .swatch .meta {
+    background: var(--bg-card);
+    padding: 14px 16px;
+  }
+  .swatch .hex {
+    font-family: var(--font-m);
+    font-size: 13px;
+    color: var(--text);
+    margin-bottom: 4px;
+    letter-spacing: 0.04em;
+  }
+  .swatch .name {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+  .palette-group {
+    margin-bottom: 48px;
+  }
+  .palette-group:last-child { margin-bottom: 0; }
+  .palette-group h3 {
+    font-family: var(--font-d);
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .palette-group p {
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+
+  /* ── Typography ── */
+  .typography {
+    background: var(--bg-section);
+  }
+  .font-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    padding: 40px;
+    margin-bottom: 16px;
+  }
+  .font-card .meta {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .font-card .meta .role {
+    font-family: var(--font-m);
+    font-size: 11px;
+    color: var(--lime);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .font-card .meta .name {
+    font-family: var(--font-d);
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--text);
+  }
+  .font-card .meta .weights {
+    font-family: var(--font-m);
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-left: auto;
+  }
+  .font-card .specimen {
+    color: var(--text);
+    line-height: 1.1;
+  }
+  .font-card.syne .specimen {
+    font-family: var(--font-d);
+    font-weight: 700;
+    font-size: clamp(36px, 5vw, 60px);
+    letter-spacing: -0.02em;
+  }
+  .font-card.dm .specimen {
+    font-family: var(--font-b);
+    font-weight: 400;
+    font-size: clamp(20px, 2vw, 26px);
+    line-height: 1.5;
+    color: var(--text-soft);
+  }
+  .font-card.mono .specimen {
+    font-family: var(--font-m);
+    font-weight: 500;
+    font-size: clamp(16px, 1.4vw, 20px);
+    letter-spacing: 0.05em;
+    color: var(--lime);
+  }
+
+  /* ── Type scale ── */
+  .scale {
+    background: var(--bg-deep);
+  }
+  .scale-row {
+    display: grid;
+    grid-template-columns: 140px 100px 1fr;
+    gap: 24px;
+    align-items: baseline;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .scale-row:last-child { border-bottom: none; }
+  .scale-row .token {
+    font-family: var(--font-m);
+    font-size: 11px;
+    color: var(--lime);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .scale-row .size {
+    font-family: var(--font-m);
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .scale-row .sample {
+    font-family: var(--font-d);
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+  @media (max-width: 768px) {
+    .scale-row { grid-template-columns: 1fr; gap: 8px; }
+  }
+
+  /* ── Promise / closing ── */
+  .promise {
+    background: linear-gradient(180deg, #18261b 0%, #0a0f0a 100%);
+    align-items: center;
+    text-align: center;
+  }
+  .promise .glow-1 { top: 50%; left: 50%; transform: translate(-50%,-50%); width: 900px; height: 600px; background: rgba(74,222,128,0.1); }
+  .promise h1 {
+    font-family: var(--font-d);
+    font-weight: 700;
+    font-size: clamp(36px, 6vw, 76px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    max-width: 1100px;
+    margin: 0 auto 32px;
+    color: var(--text);
+  }
+  .promise h1 .lime { color: var(--lime); }
+  .promise .signoff {
+    margin-top: 56px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+    font-family: var(--font-m);
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .promise .signoff .pulse {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--lime);
+    box-shadow: 0 0 12px var(--lime);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  /* ── Letter spacing slide ── */
+  .spacing-row {
+    background: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: 10px;
+    padding: 28px 32px;
+    margin-top: 16px;
+  }
+  .spacing-row .lbl {
+    font-family: var(--font-m);
+    font-size: 11px;
+    color: var(--lime);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .spacing-row .demo {
+    color: var(--text);
+  }
+  .spacing-row .demo.uppercase {
+    font-family: var(--font-m);
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--lime);
+  }
+  .spacing-row .demo.display {
+    font-family: var(--font-d);
+    font-weight: 700;
+    font-size: clamp(28px, 3vw, 40px);
+    letter-spacing: -0.02em;
+  }
+  .spacing-row .demo.body {
+    font-family: var(--font-b);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-soft);
+  }
+
+  /* ── Nav controls ── */
+  .nav-controls {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    display: flex;
+    gap: 8px;
+    z-index: 100;
+  }
+  .nav-controls button {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: rgba(23,34,26,0.92);
+    border: 1px solid var(--border);
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(12px);
+    transition: all 0.2s ease;
+  }
+  .nav-controls button:hover {
+    background: var(--green-soft);
+    color: #0a0f0a;
+    transform: translateY(-2px);
+  }
+
+  /* Print/PDF export */
+  @media print {
+    .slide { page-break-after: always; min-height: 100vh; }
+    .nav-controls { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="deck">
+
+  <!-- ───────── 1 · COVER ───────── -->
+  <section class="slide cover">
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="brandmark">
+      <span class="dot"></span>
+      LOGYRA
+    </div>
+    <div class="slide-num"><span>01</span> / 11</div>
+
+    <div class="badge">Brand &amp; Identity System · 2026</div>
+
+    <h1 class="display">
+      Think Like<br />
+      <span class="accent">the Market Moves.</span>
+    </h1>
+    <p class="lead">
+      The complete reference for how Logyra speaks, looks, and stands apart —
+      institutional-grade market intelligence built on research, not noise.
+    </p>
+
+    <div class="meta">
+      <span>Prepared for · <b>Internal &amp; Partner Use</b></span>
+      <span>Version · <b>1.0</b></span>
+      <span>Status · <b>Live</b></span>
+    </div>
+
+    <p class="quote"><span class="dash">—</span> A brand is what people say when you're not in the room. This is what they should say about us.</p>
+  </section>
+
+
+  <!-- ───────── 2 · POSITIONING ───────── -->
+  <section class="slide positioning">
+    <div class="glow glow-1"></div>
+    <div class="brandmark"><span class="dot"></span>LOGYRA</div>
+    <div class="slide-num"><span>02</span> / 11</div>
+
+    <div class="section-label">
+      <span class="text">Positioning</span>
+      <span class="line"></span>
+    </div>
+    <h2 class="section-title">What we stand for.</h2>
+
+    <p class="positioning-statement">
+      Institutional-grade market intelligence —<br />
+      <span class="high">research-first, not signal-based.</span>
+    </p>
+
+    <p class="lead" style="max-width: 780px;">
+      We don't predict markets. We give serious participants the frameworks,
+      structure, and discipline to read them with clarity — and act with intent,
+      not emotion.
+    </p>
+  </section>
+
+
+  <!-- ───────── 3 · VOICE ───────── -->
+  <section class="slide">
+    <div class="brandmark"><span class="dot"></span>LOGYRA</div>
+    <div class="slide-num"><span>03</span> / 11</div>
+
+    <div class="section-label">
+      <span class="text">Voice &amp; Tone</span>
+      <span class="line"></span>
+    </div>
+    <h2 class="section-title">Five rules of <span class="accent">how we sound.</span></h2>
+    <p class="lead">Every piece of communication — from a Telegram brief to a landing page headline — should pass these five tests.</p>
+
+    <div class="voice-grid">
+      <div class="voice-card">
+        <span class="num">01</span>
+        <h3>Authoritative, not loud.</h3>
+        <p>Speak from expertise. The strongest voice in the room is usually the quietest. Never hype, never shout.</p>
+      </div>
+      <div class="voice-card">
+        <span class="num">02</span>
+        <h3>Educational over promotional.</h3>
+        <p>Never promise returns. Always frame as learning. We teach people to think, not what to think.</p>
+      </div>
+      <div class="voice-card">
+        <span class="num">03</span>
+        <h3>Anti-noise, always.</h3>
+        <p>The recurring theme: clarity, structure, discipline — opposed to tips, hype, predictions. Anti-noise is the brand.</p>
+      </div>
+      <div class="voice-card">
+        <span class="num">04</span>
+        <h3>Restrained luxury.</h3>
+        <p>Premium without being flashy. Confident without being arrogant. Like a Bloomberg terminal, not a billboard.</p>
+      </div>
+      <div class="voice-card">
+        <span class="num">05</span>
+        <h3>Honest about risk.</h3>
+        <p>Explicit about compliance, regulation, and the absence of guarantees. Skepticism is a feature, not a flaw.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ───────── 4 · SIGNATURE PHRASES ───────── -->
+  <section class="slide phrases">
+    <div class="brandmark"><span class="dot"></span>LOGYRA</div>
+    <div class="slide-num"><span>04</span> / 11</div>
+
+    <div class="section-label">
+      <span class="text">Signature Language</span>
+      <span class="line"></span>
+    </div>
+    <h2 class="section-title">The phrases that <span class="accent">define us.</span></h2>
+    <p class="lead">Use these verbatim. They are the verbal fingerprint of the brand — instantly recognizable, owned by Logyra.</p>
+
+    <div class="phrases-grid">
+      <div class="phrase">Think Like the Market Moves</div>
+      <div class="phrase">Read the Market. Not the Noise.</div>
+      <div class="phrase">Zero noise. Zero tips.</div>
+      <div class="phrase">Clarity, not emotion.</div>
+      <div class="phrase">Structured market research, delivered daily.</div>
+      <div class="phrase">Built for serious market participants.</div>
+      <div class="phrase">Educational and informational in nature.</div>
+    </div>
+  </section>
+
+
+  <!-- ───────── 5 · WORDS WE USE ───────── -->
+  <section class="slide">
+    <div class="brandmark"><span class="dot"></span>LOGYRA</div>
+    <div class="slide-num"><span>05</span> / 11</div>
+
+    <div class="section-label">
+      <span class="text">Vocabulary</span>
+      <span class="line"></span>
+    </div>
+    <h2 class="section-title">Words <span class="accent">we own.</span> Words we never say.</h2>
+    <p class="lead">Vocabulary builds positioning. The right words anchor us as institutional. The wrong words make us indistinguishable from every loud "tips" channel.</p>
+
+    <div class="words-grid">
+      <div class="words-col do">
+        <div class="head">
+          <div class="icon">✓</div>
+          <h3>Words we use</h3>
+        </div>
+        <ul>
+          <li>research</li>
+          <li>structure</li>
+          <li>framework</li>
+          <li>discipline</li>
+          <li>context</li>
+          <li>institutional</li>
+          <li>educational</li>
+          <li>brief</li>
+          <li>debrief</li>
+          <li>setup</li>
+          <li>regime</li>
+          <li>positioning</li>
+          <li>clarity</li>
+          <li>methodology</li>
+        </ul>
+      </div>
+      <div class="words-col dont">
+        <div class="head">
+          <div class="icon">✕</div>
+          <h3>Words we avoid</h3>
+        </div>
+        <ul>
+          <li>profit</li>
+          <li>win</li>
+          <li>guaranteed</li>
+          <li>sure shot</li>
+          <li>jackpot</li>
+          <li>tips</li>
+          <li>calls</li>
+          <li>signals</li>
+          <li>easy money</li>
+          <li>99% accurate</li>
+          <li>double your money</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ───────── 6 · COLOR — PRIMARY GREENS ───────── -->
+  <section class="slide palette">
+    <div class="brandmark"><span class="dot"></span>LOGYRA</div>
+    <div class="slide-num"><span>06</span> / 11</div>
+
+    <div class="section-label">
+      <span class="text">Color · Primary</span>
+      <span class="line"></span>
+    </div>
+    <h2 class="section-title">Signature <span class="accent">greens.</span></h2>
+
+    <div class="palette-group">
+      <h3>Brand identity</h3>
+      <p>The greens that carry the Logyra signature. Used for accents, CTAs, highlights, and active states.</p>
+      <div class="color-grid">
+        <div class="swatch"><div class="color" style="background:#4ade80"></div><div class="meta"><div class="hex">#4ade80</div><div class="name">Primary green</div></div></div>
+        <div class="swatch"><div class="color" style="background:#86efac"></div><div class="meta"><div class="hex">#86efac</div><div class="name">Light secondary</div></div></div>
+        <div class="swatch"><div class="color" style="background:#16a34a"></div><div class="meta"><div class="hex">#16a34a</div><div class="name">Deep accent</div></div></div>
+        <div class="swatch"><div class="color" style="background:#6bc28b"></div><div class="meta"><div class="hex">#6bc28b</div><div class="name">Navbar / CTA</div></div></div>
+        <div class="swatch"><div class="color" style="background:#B8FD4B"></div><div class="meta"><div class="hex">#B8FD4B</div><div class="name">Lime highlight</div></div></div>
+        <div class="swatch"><div class="color" style="background:#D3FF33"></div><div class="meta"><div class="hex">#D3FF33</div><div class="name">Acid lime</div></div></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ───────── 7 · COLOR — BACKGROUNDS ───────── -->
+  <section class="slide palette">
+    <div class="brandmark"><span class="dot"></span>LOGYRA</div>
+    <div class="slide-num"><span>07</span> / 11</div>
+
+    <div class="section-label">
+      <span class="text">Color · Surfaces</span>
+      <span class="line"></span>
+    </div>
+    <h2 class="section-title">Deep, dark, <span class="accent">never pure black.</span></h2>
+
+    <div class="palette-group">
+      <h3>Backgrounds &amp; surfaces</h3>
+      <p>Every dark surface carries a faint green undertone — Logyra never uses pure black. This is the silent signal of the brand.</p>
+      <div class="color-grid">
+        <div class="swatch"><div class="color" style="background:#0a0f0a"></div><div class="meta"><div class="hex">#0a0f0a</div><div class="name">Page base</div></div></div>
+        <div class="swatch"><div class="color" style="background:#111315"></div><div class="meta"><div class="hex">#111315</div><div class="name">Section dark</div></div></div>
+        <div class="swatch"><div class="color" style="background:#18261b"></div><div class="meta"><div class="hex">#18261b</div><div class="name">Section deep</div></div></div>
+        <div class="swatch"><div class="color" style="background:#17221a"></div><div class="meta"><div class="hex">#17221a</div><div class="name">Card surface</div></div></div>
+        <div class="swatch"><div class="color" style="background:#0d130d"></div><div class="meta"><div class="hex">#0d130d</div><div class="name">Section deepest</div></div></div>
+        <div class="swatch"><div class="color" style="background:#161e16"></div><div class="meta"><div class="hex">#161e16</div><div class="name">Elevated</div></div></div>
+        <div class="swatch"><div class="color" style="background:#2d4233"></div><div class="meta"><div class="hex">#2d4233</div><div class="name">Navbar scrolled</div></div></div>
+        <div class="swatch"><div class="color" style="background:#3b5440"></div><div class="meta"><div class="hex">#3b5440</div><div class="name">Navbar default</div></div></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ───────── 8 · COLOR — TEXT & ACCENTS ───────── -->
+  <section class="slide palette">
+    <div class="brandmark"><span class="dot"></span>LOGYRA</div>
+    <div class="slide-num"><span>08</span> / 11</div>
+
+    <div class="section-label">
+      <span class="text">Color · Text &amp; Accents</span>
+      <span class="line"></span>
+    </div>
+    <h2 class="section-title">Hierarchy and <span class="accent">restraint.</span></h2>
+
+    <div class="palette-group">
+      <h3>Text colors</h3>
+      <p>Light, soft, never glaring. Even headings carry a green tint to stay on brand.</p>
+      <div class="color-grid">
+        <div class="swatch"><div class="color" style="background:#f0fdf0"></div><div class="meta"><div class="hex">#f0fdf0</div><div class="name">Headings</div></div></div>
+        <div class="swatch"><div class="color" style="background:#d1fae5"></div><div class="meta"><div class="hex">#d1fae5</div><div class="name">Body</div></div></div>
+        <div class="swatch"><div class="color" style="background:#A3B1A4"></div><div class="meta"><div class="hex">#A3B1A4</div><div class="name">Muted</div></div></div>
+        <div class="swatch"><div class="color" style="background:#6b7280"></div><div class="meta"><div class="hex">#6b7280</div><div class="name">Subtle gray</div></div></div>
+      </div>
+    </div>
+
+    <div class="palette-group">
+      <h3>Accent colors · used sparingly</h3>
+      <p>Reserved for platform identity (Telegram, Discord) and rare emphasis. Never for primary brand expression.</p>
+      <div class="color-grid">
+        <div class="swatch"><div class="color" style="background:#84cc16"></div><div class="meta"><div class="hex">#84cc16</div><div class="name">Accent yellow-green</div></div></div>
+        <div class="swatch"><div class="color" style="background:#fb923c"></div><div class="meta"><div class="hex">#fb923c</div><div class="name">Trade Floor orange</div></div></div>
+        <div class="swatch"><div class="color" style="background:#229ED9"></div><div class="meta"><div class="hex">#229ED9</div><div class="name">Telegram blue</div></div></div>
+        <div class="swatch"><div class="color" style="background:#00D47E"></div><div class="meta"><div class="hex">#00D47E</div><div class="name">Telegram link</div></div></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ───────── 9 · TYPOGRAPHY — FONTS ───────── -->
+  <section class="slide typography">
+    <div class="brandmark"><span class="dot"></span>LOGYRA</div>
+    <div class="slide-num"><span>09</span> / 11</div>
+
+    <div class="section-label">
+      <span class="text">Typography</span>
+      <span class="line"></span>
+    </div>
+    <h2 class="section-title">Three typefaces. <span class="accent">One voice.</span></h2>
+
+    <div class="font-card syne">
+      <div class="meta">
+        <span class="role">Display</span>
+        <span class="name">Syne</span>
+        <span class="weights">400 · 500 · 600 · 700 · 800</span>
+      </div>
+      <div class="specimen">Think Like the Market Moves</div>
+    </div>
+
+    <div class="font-card dm">
+      <div class="meta">
+        <span class="role">Body</span>
+        <span class="name">DM Sans</span>
+        <span class="weights">300 · 400 · 500 · 600</span>
+      </div>
+      <div class="specimen">Institutional-grade research and pre-market briefs for serious market participants who want clarity, not noise.</div>
+    </div>
+
+    <div class="font-card mono">
+      <div class="meta">
+        <span class="role">Mono</span>
+        <span class="name">JetBrains Mono</span>
+        <span class="weights">400 · 500</span>
+      </div>
+      <div class="specimen">PRE-MARKET BRIEF · 07:32 AM · ₹3,399 · MOST CHOSEN</div>
+    </div>
+  </section>
+
+
+  <!-- ───────── 10 · TYPE SCALE ───────── -->
+  <section class="slide scale">
+    <div class="brandmark"><span class="dot"></span>LOGYRA</div>
+    <div class="slide-num"><span>10</span> / 11</div>
+
+    <div class="section-label">
+      <span class="text">Type Scale &amp; Spacing</span>
+      <span class="line"></span>
+    </div>
+    <h2 class="section-title">Hierarchy by <span class="accent">design.</span></h2>
+    <p class="lead">A defined scale ensures every page reads with the same rhythm — premium, structured, intentional.</p>
+
+    <div style="margin-top: 24px;">
+      <div class="scale-row">
+        <span class="token">display-2xl</span>
+        <span class="size">72px</span>
+        <span class="sample" style="font-size: 56px; font-weight: 700;">Hero headline</span>
+      </div>
+      <div class="scale-row">
+        <span class="token">display-xl</span>
+        <span class="size">60px</span>
+        <span class="sample" style="font-size: 44px; font-weight: 700;">Section heroes</span>
+      </div>
+      <div class="scale-row">
+        <span class="token">display-lg</span>
+        <span class="size">48px</span>
+        <span class="sample" style="font-size: 36px; font-weight: 700;">Section titles</span>
+      </div>
+      <div class="scale-row">
+        <span class="token">display-md</span>
+        <span class="size">36px</span>
+        <span class="sample" style="font-size: 28px; font-weight: 600;">Subsection titles</span>
+      </div>
+      <div class="scale-row">
+        <span class="token">display-sm</span>
+        <span class="size">30px</span>
+        <span class="sample" style="font-size: 22px; font-weight: 600;">Card titles</span>
+      </div>
+      <div class="scale-row">
+        <span class="token">body-lg</span>
+        <span class="size">18px</span>
+        <span class="sample" style="font-family: var(--font-b); font-size: 18px; color: var(--text-soft);">Lead paragraphs and emphasised body copy.</span>
+      </div>
+      <div class="scale-row">
+        <span class="token">body-md</span>
+        <span class="size">16px</span>
+        <span class="sample" style="font-family: var(--font-b); font-size: 16px; color: var(--text-soft);">Default body text used throughout.</span>
+      </div>
+      <div class="scale-row">
+        <span class="token">body-xs</span>
+        <span class="size">12px</span>
+        <span class="sample" style="font-family: var(--font-m); font-size: 12px; color: var(--lime); letter-spacing: 0.15em; text-transform: uppercase;">Badges · captions · meta</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ───────── 11 · CLOSING / PROMISE ───────── -->
+  <section class="slide promise">
+    <div class="glow glow-1"></div>
+    <div class="brandmark"><span class="dot"></span>LOGYRA</div>
+    <div class="slide-num"><span>11</span> / 11</div>
+
+    <div class="badge" style="margin: 0 auto 40px;">The Brand Promise</div>
+
+    <h1>
+      Clarity is the only edge.<br />
+      <span class="lime">Everything else is noise.</span>
+    </h1>
+
+    <p class="lead" style="max-width: 720px; text-align: center; margin: 0 auto;">
+      Logyra exists so serious participants can read markets the way institutions
+      do — with structure, discipline, and intent. This document is the constitution
+      of how we look, sound, and stand apart.
+    </p>
+
+    <div class="signoff">
+      <span class="pulse"></span>
+      Logyra Research · Active &amp; Live
+      <span class="pulse"></span>
+    </div>
+  </section>
+
+</div>
+
+<!-- Nav controls -->
+<div class="nav-controls">
+  <button onclick="window.scrollBy({top: -window.innerHeight, behavior: 'smooth'})" aria-label="Previous">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+  <button onclick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})" aria-label="Next">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  </button>
+</div>
+
+<script>
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
+      e.preventDefault();
+      window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+    }
+    if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+      e.preventDefault();
+      window.scrollBy({ top: -window.innerHeight, behavior: 'smooth' });
+    }
+  });
+</script>
+
+</body>
+</html>

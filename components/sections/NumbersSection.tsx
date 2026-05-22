@@ -88,7 +88,7 @@ export default function NumbersSection() {
             
             {/* Sub-headline */}
             <p className="text-[#D1D5DB] text-lg md:text-xl leading-[1.6] max-w-[90%]">
-             Across five years and three markets, Logyra's research frameworks have been tested, refined, and delivered to over twelve thousand participants. The only number we've never published is a performance guarantee — because we don't make one.
+             Across five years and three markets, Logyra&apos;s research frameworks have been tested, refined, and delivered to over twelve thousand participants. The only number we&apos;ve never published is a performance guarantee — because we don&apos;t make one.
             </p>
           </motion.div>
 
