@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import { useOpenChannel } from '@/components/providers/OpenChannelProvider';
 
 type Product = {
   num: string;
@@ -161,6 +162,7 @@ function ProductCard({ product, onNotify }: { product: Product; onNotify: (name:
 export default function InnerCircleHubPage() {
   const [notifyProduct, setNotifyProduct] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const { open: openChannel } = useOpenChannel();
 
   function close() {
     setNotifyProduct(null);
@@ -356,14 +358,13 @@ export default function InnerCircleHubPage() {
             >
               View Index Options Plans →
             </Link>
-            <a
-              href="https://t.me/logyra_insights"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-white/20 hover:border-[#6bc28b] hover:text-[#6bc28b] text-gray-200 text-sm font-semibold px-6 py-4 rounded-lg transition-colors"
+            <button
+              type="button"
+              onClick={openChannel}
+              className="inline-flex items-center gap-2 border border-white/20 hover:border-[#6bc28b] hover:text-[#6bc28b] text-gray-200 text-sm font-semibold px-6 py-4 rounded-lg transition-colors cursor-pointer"
             >
               Start Free on Telegram
-            </a>
+            </button>
           </div>
           <p className="text-xs text-gray-500 mt-5">Not SEBI registered. Educational research only. Markets involve risk.</p>
         </div>

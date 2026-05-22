@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import { useOpenChannel } from '@/components/providers/OpenChannelProvider';
 
 const beliefs = [
   {
@@ -97,6 +98,8 @@ const truthIsNot = [
 ];
 
 export default function AboutPage() {
+  const { open: openChannel } = useOpenChannel();
+
   return (
     <main className="font-sans bg-[#0a0f0a]">
       <Navbar />
@@ -416,14 +419,13 @@ export default function AboutPage() {
             Join the Open Channel at zero cost and track Logyra&apos;s research desk every day. Upgrade when you are ready.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <a
-              href="https://t.me/logyra_insights"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#6bc28b] hover:bg-[#B8FD4B] text-[#0d1a10] text-sm font-bold tracking-[0.06em] uppercase px-7 py-4 rounded-lg transition-colors"
+            <button
+              type="button"
+              onClick={openChannel}
+              className="inline-flex items-center gap-2 bg-[#6bc28b] hover:bg-[#B8FD4B] text-[#0d1a10] text-sm font-bold tracking-[0.06em] uppercase px-7 py-4 rounded-lg transition-colors cursor-pointer"
             >
               Join Free on Telegram
-            </a>
+            </button>
             <Link
               href="/research-desk/inner-circle"
               className="inline-flex items-center gap-2 border border-white/20 hover:border-[#6bc28b] hover:text-[#6bc28b] text-gray-200 text-sm font-semibold px-6 py-4 rounded-lg transition-colors"

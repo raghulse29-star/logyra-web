@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useOpenChannel } from '@/components/providers/OpenChannelProvider';
 
 const InstagramIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -48,6 +49,8 @@ const wrapVar = {
 };
 
 export default function Footer() {
+  const { open: openChannel } = useOpenChannel();
+
   return (
     <footer className="bg-[#2B352A] pt-14 sm:pt-20 pb-8 px-4 font-sans">
       <div className="container mx-auto max-w-[1200px]">
@@ -142,12 +145,11 @@ export default function Footer() {
               Join the Intelligence Channel
             </p>
 
-            {/* Telegram link — CSS hover only, no motion wrapper */}
-            <a
-              href="https://t.me/logyra_insights"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[#00D47E] hover:text-[#00F592] text-[12px] font-bold tracking-wider uppercase mb-7 transition-colors"
+            {/* Telegram channel — opens lead-capture popup */}
+            <button
+              type="button"
+              onClick={openChannel}
+              className="inline-flex items-center gap-2 text-[#00D47E] hover:text-[#00F592] text-[12px] font-bold tracking-wider uppercase mb-7 transition-colors cursor-pointer"
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="5 3 19 12 5 21 5 3" />
@@ -157,7 +159,7 @@ export default function Footer() {
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />
               </svg>
-            </a>
+            </button>
 
             {/* Social Icons — CSS transitions, no motion per-icon */}
             <div className="flex items-center gap-3">

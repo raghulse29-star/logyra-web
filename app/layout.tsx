@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
+import OpenChannelProvider from '@/components/providers/OpenChannelProvider';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://logyra.com'),
@@ -57,7 +58,9 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className="noise-overlay bg-[var(--color-bg)] antialiased" suppressHydrationWarning>
-        {children}
+        <OpenChannelProvider>
+          {children}
+        </OpenChannelProvider>
       </body>
     </html>
   );

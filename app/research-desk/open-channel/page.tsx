@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import { useOpenChannel } from '@/components/providers/OpenChannelProvider';
 
 const sampleMessages = [
   {
@@ -116,6 +117,8 @@ const funnelSteps = [
 ];
 
 export default function OpenChannelPage() {
+  const { open: openChannel } = useOpenChannel();
+
   return (
     <main className="font-sans bg-[#0a0f0a]">
       <Navbar />
@@ -169,17 +172,16 @@ export default function OpenChannelPage() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="flex flex-wrap gap-3 mb-5"
               >
-                <a
-                  href="https://t.me/logyra_insights"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-[#6bc28b] hover:bg-[#B8FD4B] text-[#0d1a10] text-[13px] font-bold tracking-[0.06em] uppercase px-6 py-3.5 rounded-lg transition-colors"
+                <button
+                  type="button"
+                  onClick={openChannel}
+                  className="inline-flex items-center gap-2 bg-[#6bc28b] hover:bg-[#B8FD4B] text-[#0d1a10] text-[13px] font-bold tracking-[0.06em] uppercase px-6 py-3.5 rounded-lg transition-colors cursor-pointer"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M21 5L2 12.5L9 13.5M21 5L18.5 19L9 13.5M21 5L9 13.5M9 13.5V19L12.2 16" />
                   </svg>
                   Join Free on Telegram
-                </a>
+                </button>
                 <a
                   href="#whats-inside"
                   className="inline-flex items-center gap-2 border border-white/20 hover:border-[#6bc28b] hover:text-[#6bc28b] text-gray-200 text-[13px] font-bold tracking-[0.06em] uppercase px-6 py-3.5 rounded-lg transition-colors"
@@ -456,17 +458,16 @@ export default function OpenChannelPage() {
           <p className="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">
             Join Logyra&apos;s Open Channel on Telegram — no cost, no catch, no noise. Just structured market intelligence, every trading day.
           </p>
-          <a
-            href="https://t.me/logyra_insights"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-[#6bc28b] hover:bg-[#B8FD4B] text-[#0d1a10] text-sm md:text-base font-bold tracking-[0.06em] uppercase px-8 py-4 rounded-lg transition-colors"
+          <button
+            type="button"
+            onClick={openChannel}
+            className="inline-flex items-center gap-3 bg-[#6bc28b] hover:bg-[#B8FD4B] text-[#0d1a10] text-sm md:text-base font-bold tracking-[0.06em] uppercase px-8 py-4 rounded-lg transition-colors cursor-pointer"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M21 5L2 12.5L9 13.5M21 5L18.5 19L9 13.5M21 5L9 13.5M9 13.5V19L12.2 16" />
             </svg>
             Join @logyra_insights on Telegram
-          </a>
+          </button>
           <p className="text-xs text-gray-500 mt-5">
             Already convinced you want the full Inner Circle?{' '}
             <Link href="/research-desk/inner-circle" className="text-[#B8FD4B] hover:text-[#6bc28b] font-semibold transition-colors">
