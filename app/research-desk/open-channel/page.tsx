@@ -120,31 +120,31 @@ export default function OpenChannelPage() {
   const { open: openChannel } = useOpenChannel();
 
   return (
-    <main className="font-sans bg-[#0a0f0a]">
+    <main className="font-sans bg-[var(--color-bg)]">
       <Navbar />
 
       {/* ── Breadcrumb ── */}
-      <div className="bg-[#0d130d] border-b border-white/[0.05] pt-24 sm:pt-28">
+      <div className="bg-[var(--color-bg-section)] border-b border-white/[0.05] pt-24 sm:pt-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-3 text-xs text-gray-500 flex items-center gap-2">
-          <Link href="/" className="hover:text-[#6bc28b] transition-colors">Home</Link>
+          <Link href="/" className="hover:text-[var(--color-primary)] transition-colors">Home</Link>
           <span className="text-gray-700">›</span>
-          <Link href="/research-desk" className="hover:text-[#6bc28b] transition-colors">Research Desk</Link>
+          <Link href="/research-desk" className="hover:text-[var(--color-primary)] transition-colors">Research Desk</Link>
           <span className="text-gray-700">›</span>
           <span className="text-gray-300">Open Channel</span>
         </div>
       </div>
 
       {/* ── Hero ── */}
-      <section className="relative bg-[#18261b] pt-14 pb-14 md:pt-20 md:pb-24 overflow-hidden">
+      <section className="relative bg-[var(--color-bg-card)] pt-14 pb-14 md:pt-20 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[480px] h-[480px] bg-[#6bc28b]/8 blur-[140px] rounded-full" />
+          <div className="absolute top-0 right-0 w-[480px] h-[480px] bg-[var(--color-primary)]/8 blur-[140px] rounded-full" />
         </div>
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-6">
-                <span className="inline-flex items-center gap-2 border border-[#2e3b30] bg-[#17221a] text-[#6bc28b] text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#6bc28b] animate-pulse" />
+                <span className="inline-flex items-center gap-2 border border-[var(--color-border)] bg-[var(--color-bg-card)] text-[var(--color-primary)] text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] animate-pulse" />
                   Free · Open · Always On
                 </span>
               </motion.div>
@@ -156,7 +156,7 @@ export default function OpenChannelPage() {
               >
                 The market,<br />
                 read every day.<br />
-                <span className="text-[#6bc28b]">Free. Always.</span>
+                <span className="text-[var(--color-primary)]">Free. Always.</span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -175,7 +175,7 @@ export default function OpenChannelPage() {
                 <button
                   type="button"
                   onClick={openChannel}
-                  className="inline-flex items-center gap-2 bg-[#6bc28b] hover:bg-[#B8FD4B] text-[#0d1a10] text-[13px] font-bold tracking-[0.06em] uppercase px-6 py-3.5 rounded-lg transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-accent)] text-[var(--color-fg-inverse)] text-[13px] font-bold tracking-[0.06em] uppercase px-6 py-3.5 rounded-lg transition-colors cursor-pointer"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M21 5L2 12.5L9 13.5M21 5L18.5 19L9 13.5M21 5L9 13.5M9 13.5V19L12.2 16" />
@@ -184,7 +184,7 @@ export default function OpenChannelPage() {
                 </button>
                 <a
                   href="#whats-inside"
-                  className="inline-flex items-center gap-2 border border-white/20 hover:border-[#6bc28b] hover:text-[#6bc28b] text-gray-200 text-[13px] font-bold tracking-[0.06em] uppercase px-6 py-3.5 rounded-lg transition-colors"
+                  className="inline-flex items-center gap-2 border border-white/20 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] text-gray-200 text-[13px] font-bold tracking-[0.06em] uppercase px-6 py-3.5 rounded-lg transition-colors"
                 >
                   See What&apos;s Inside
                 </a>
@@ -206,8 +206,8 @@ export default function OpenChannelPage() {
                     <div className="text-white text-sm font-semibold">Logyra Intelligence</div>
                     <div className="text-gray-500 text-xs">@logyra_insights</div>
                   </div>
-                  <div className="ml-auto flex items-center gap-1.5 text-[#6bc28b] text-[11px] font-semibold">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#6bc28b] animate-pulse" />
+                  <div className="ml-auto flex items-center gap-1.5 text-[var(--color-primary)] text-[11px] font-semibold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] animate-pulse" />
                     Live
                   </div>
                 </div>
@@ -227,16 +227,16 @@ export default function OpenChannelPage() {
       </section>
 
       {/* ── What's Inside ── */}
-      <section id="whats-inside" className="bg-[#111315] py-14 md:py-20 lg:py-28">
+      <section id="whats-inside" className="bg-[var(--color-bg-card)] py-14 md:py-20 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">What&apos;s Inside</span>
+              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">What&apos;s Inside</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Not updates.<br />
-              <span className="text-[#6bc28b]">Structured intelligence.</span>
+              <span className="text-[var(--color-primary)]">Structured intelligence.</span>
             </h2>
             <p className="text-gray-400 max-w-xl leading-relaxed">
               Every piece of content in the Open Channel has a purpose — to help you read the market better, track our desk&apos;s performance, and understand what precision research actually looks like.
@@ -251,14 +251,14 @@ export default function OpenChannelPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: i * 0.07 }}
-                className="p-7 bg-[#17221a] border border-white/[0.06] rounded-xl hover:border-[#6bc28b]/30 transition-all duration-300"
+                className="p-7 bg-[var(--color-bg-card)] border border-white/[0.06] rounded-xl hover:border-[var(--color-primary)]/30 transition-all duration-300"
               >
-                <div className="w-11 h-11 rounded-lg bg-[#111d14] border border-white/[0.08] flex items-center justify-center mb-5">
+                <div className="w-11 h-11 rounded-lg bg-[var(--color-bg-card)] border border-white/[0.08] flex items-center justify-center mb-5">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6bc28b" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     {item.icon}
                   </svg>
                 </div>
-                <div className="text-[10px] font-bold tracking-[0.12em] uppercase text-[#6bc28b] mb-2">{item.time}</div>
+                <div className="text-[10px] font-bold tracking-[0.12em] uppercase text-[var(--color-primary)] mb-2">{item.time}</div>
                 <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
                 <p className="text-sm text-gray-400 leading-relaxed">{item.desc}</p>
               </motion.div>
@@ -268,16 +268,16 @@ export default function OpenChannelPage() {
       </section>
 
       {/* ── Daily Timeline ── */}
-      <section className="bg-[#18261b] py-14 md:py-20 lg:py-28">
+      <section className="bg-[var(--color-bg-card)] py-14 md:py-20 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Daily Delivery Schedule</span>
+              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Daily Delivery Schedule</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Every session.<br />
-              <span className="text-[#6bc28b]">From open to close.</span>
+              <span className="text-[var(--color-primary)]">From open to close.</span>
             </h2>
             <p className="text-gray-400 max-w-xl leading-relaxed">
               The Open Channel runs on the same discipline as our desk. If the market is open, content is live. No exceptions, no off days.
@@ -295,9 +295,9 @@ export default function OpenChannelPage() {
                 className="grid grid-cols-[110px_1fr] gap-6 relative pb-8 last:pb-0"
               >
                 {i < timeline.length - 1 && (
-                  <span className="absolute left-[55px] top-12 bottom-0 w-px bg-gradient-to-b from-[#6bc28b]/40 to-transparent" />
+                  <span className="absolute left-[55px] top-12 bottom-0 w-px bg-gradient-to-b from-[var(--color-primary)]/40 to-transparent" />
                 )}
-                <div className="bg-[#111d14] border border-white/[0.07] rounded-lg h-11 flex items-center justify-center text-[11px] font-bold tracking-[0.04em] text-[#6bc28b] px-2 text-center leading-tight">
+                <div className="bg-[var(--color-bg-card)] border border-white/[0.07] rounded-lg h-11 flex items-center justify-center text-[11px] font-bold tracking-[0.04em] text-[var(--color-primary)] px-2 text-center leading-tight">
                   {item.time}
                 </div>
                 <div className="pt-1">
@@ -324,16 +324,16 @@ export default function OpenChannelPage() {
       </section>
 
       {/* ── Markets ── */}
-      <section className="bg-[#111315] py-14 md:py-20 lg:py-28">
+      <section className="bg-[var(--color-bg-card)] py-14 md:py-20 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Markets Covered</span>
+              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Markets Covered</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               All markets.<br />
-              <span className="text-[#6bc28b]">One channel.</span>
+              <span className="text-[var(--color-primary)]">One channel.</span>
             </h2>
             <p className="text-gray-400 max-w-xl leading-relaxed">
               The Open Channel covers all asset classes that Logyra tracks — Indian equities and derivatives, global Forex, metals, and crypto. Broad by design, so every type of participant finds relevant context.
@@ -348,7 +348,7 @@ export default function OpenChannelPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: i * 0.07 }}
-                className="bg-[#17221a] border border-white/[0.06] rounded-xl p-7"
+                className="bg-[var(--color-bg-card)] border border-white/[0.06] rounded-xl p-7"
               >
                 <div className="flex items-center gap-3 mb-3">
                   <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ background: m.dot }} />
@@ -369,16 +369,16 @@ export default function OpenChannelPage() {
       </section>
 
       {/* ── Why Join ── */}
-      <section className="bg-[#18261b] py-14 md:py-20 lg:py-28">
+      <section className="bg-[var(--color-bg-card)] py-14 md:py-20 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Why The Open Channel</span>
+              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Why The Open Channel</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Built to earn your<br />
-              <span className="text-[#6bc28b]">trust first.</span>
+              <span className="text-[var(--color-primary)]">trust first.</span>
             </h2>
             <p className="text-gray-400 max-w-xl leading-relaxed">
               Every platform asks you to pay before you see anything. We built the Open Channel so you can watch us work — for free — before you decide if the Inner Circle is right for you.
@@ -393,9 +393,9 @@ export default function OpenChannelPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: i * 0.07 }}
-                className="bg-[#111d14] border border-white/[0.06] rounded-xl p-7"
+                className="bg-[var(--color-bg-card)] border border-white/[0.06] rounded-xl p-7"
               >
-                <div className="text-4xl font-bold text-[#6bc28b]/40 mb-3 leading-none">{item.num}</div>
+                <div className="text-4xl font-bold text-[var(--color-primary)]/40 mb-3 leading-none">{item.num}</div>
                 <h4 className="text-base font-bold text-white mb-2">{item.title}</h4>
                 <p className="text-sm text-gray-400 leading-relaxed">{item.desc}</p>
               </motion.div>
@@ -405,25 +405,25 @@ export default function OpenChannelPage() {
       </section>
 
       {/* ── Funnel ── */}
-      <section className="bg-[#111315] py-14 md:py-20 lg:py-28">
+      <section className="bg-[var(--color-bg-card)] py-14 md:py-20 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">The Logyra Journey</span>
+              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">The Logyra Journey</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               From curious<br />
-              <span className="text-[#6bc28b]">to convinced.</span>
+              <span className="text-[var(--color-primary)]">to convinced.</span>
             </h2>
             <p className="text-gray-400 max-w-xl leading-relaxed">
               The Open Channel is designed as the natural first step. Most serious participants who join eventually upgrade — because they see the results, not because they were pushed.
             </p>
           </div>
 
-          <div className="bg-[#17221a] border border-white/[0.06] rounded-2xl p-8 md:p-10">
+          <div className="bg-[var(--color-bg-card)] border border-white/[0.06] rounded-2xl p-8 md:p-10">
             <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
-              How participants move from <span className="text-[#6bc28b]">open → paid</span>
+              How participants move from <span className="text-[var(--color-primary)]">open → paid</span>
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed mb-8 max-w-2xl">
               No marketing pressure. No sales calls. The research quality does the work. This is how the journey typically looks:
@@ -435,11 +435,11 @@ export default function OpenChannelPage() {
                   key={step.num}
                   className={`relative p-5 text-center ${i < funnelSteps.length - 1 ? 'md:border-r border-white/[0.07]' : ''} ${i < funnelSteps.length - 2 ? 'border-b lg:border-b-0 border-white/[0.07]' : ''}`}
                 >
-                  <div className="text-3xl font-bold text-[#6bc28b] mb-2">{step.num}</div>
+                  <div className="text-3xl font-bold text-[var(--color-primary)] mb-2">{step.num}</div>
                   <h4 className="text-sm font-semibold text-white mb-2">{step.title}</h4>
                   <p className="text-xs text-gray-400 leading-relaxed">{step.desc}</p>
                   {i < funnelSteps.length - 1 && (
-                    <span className="hidden md:inline-flex absolute right-[-10px] top-1/2 -translate-y-1/2 w-5 h-5 bg-[#111315] border border-white/[0.07] rounded-full items-center justify-center text-[#6bc28b] text-[10px] z-10">›</span>
+                    <span className="hidden md:inline-flex absolute right-[-10px] top-1/2 -translate-y-1/2 w-5 h-5 bg-[var(--color-bg-card)] border border-white/[0.07] rounded-full items-center justify-center text-[var(--color-primary)] text-[10px] z-10">›</span>
                   )}
                 </div>
               ))}
@@ -449,11 +449,11 @@ export default function OpenChannelPage() {
       </section>
 
       {/* ── CTA Band ── */}
-      <section className="bg-gradient-to-br from-[#17221a] via-[#1c2e1c] to-[#162016] border-y border-[#6bc28b]/25 py-16 md:py-20 text-center">
+      <section className="bg-gradient-to-br from-[var(--color-bg-card)] via-[var(--color-bg-elevated)] to-[var(--color-bg-card)] border-y border-[var(--color-primary)]/25 py-16 md:py-20 text-center">
         <div className="max-w-[800px] mx-auto px-4 sm:px-6">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-[1.05]">
             Start here.<br />
-            <span className="text-[#6bc28b]">For free.</span>
+            <span className="text-[var(--color-primary)]">For free.</span>
           </h2>
           <p className="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">
             Join Logyra&apos;s Open Channel on Telegram — no cost, no catch, no noise. Just structured market intelligence, every trading day.
@@ -461,7 +461,7 @@ export default function OpenChannelPage() {
           <button
             type="button"
             onClick={openChannel}
-            className="inline-flex items-center gap-3 bg-[#6bc28b] hover:bg-[#B8FD4B] text-[#0d1a10] text-sm md:text-base font-bold tracking-[0.06em] uppercase px-8 py-4 rounded-lg transition-colors cursor-pointer"
+            className="inline-flex items-center gap-3 bg-[var(--color-primary)] hover:bg-[var(--color-accent)] text-[var(--color-fg-inverse)] text-sm md:text-base font-bold tracking-[0.06em] uppercase px-8 py-4 rounded-lg transition-colors cursor-pointer"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M21 5L2 12.5L9 13.5M21 5L18.5 19L9 13.5M21 5L9 13.5M9 13.5V19L12.2 16" />
@@ -470,7 +470,7 @@ export default function OpenChannelPage() {
           </button>
           <p className="text-xs text-gray-500 mt-5">
             Already convinced you want the full Inner Circle?{' '}
-            <Link href="/research-desk/inner-circle" className="text-[#B8FD4B] hover:text-[#6bc28b] font-semibold transition-colors">
+            <Link href="/research-desk/inner-circle" className="text-[var(--color-accent)] hover:text-[var(--color-primary)] font-semibold transition-colors">
               See Inner Circle Products →
             </Link>
           </p>

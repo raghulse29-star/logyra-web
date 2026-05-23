@@ -45,33 +45,33 @@ const compareRows: { label: string; free: { kind: CellKind; text: string }; paid
 ];
 
 function Cell({ kind, text }: { kind: CellKind; text: string }) {
-  if (kind === 'text') return <span className="text-gray-300 text-sm">{text}</span>;
+  if (kind === 'text') return <span className="text-gray-300 text-xs md:text-sm">{text}</span>;
   const styles = {
-    yes:     { bg: 'bg-[#6bc28b]/15', stroke: '#6bc28b', icon: <polyline points="20 6 9 17 4 12" /> },
-    partial: { bg: 'bg-[#B8FD4B]/10', stroke: '#B8FD4B', icon: <path d="M5 12h14" /> },
-    no:      { bg: 'bg-[#e05555]/12', stroke: '#e05555', icon: <><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></> },
+    yes:     { bg: 'bg-[var(--color-primary)]/15', stroke: '#6bc28b', icon: <polyline points="20 6 9 17 4 12" /> },
+    partial: { bg: 'bg-[var(--color-accent)]/10', stroke: '#B8FD4B', icon: <path d="M5 12h14" /> },
+    no:      { bg: 'bg-[var(--color-error)]/12', stroke: '#e05555', icon: <><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></> },
   }[kind];
   return (
-    <span className="inline-flex items-center gap-2 text-gray-300 text-sm">
-      <span className={`inline-flex items-center justify-center w-6 h-6 rounded-full ${styles.bg} shrink-0`}>
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke={styles.stroke} strokeWidth="2.5">
+    <span className="inline-flex items-start gap-2 text-gray-300 text-xs md:text-sm">
+      <span className={`inline-flex items-center justify-center w-5 h-5 md:w-6 md:h-6 rounded-full ${styles.bg} shrink-0 mt-0.5`}>
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke={styles.stroke} strokeWidth="2.5">
           {styles.icon}
         </svg>
       </span>
-      {text}
+      <span>{text}</span>
     </span>
   );
 }
 
 export default function ResearchDeskPage() {
   return (
-    <main className="font-sans bg-[#0a0f0a]">
+    <main className="font-sans bg-[var(--color-bg)]">
       <Navbar />
 
       {/* ── Hero ── */}
-      <section className="relative bg-[#18261b] pt-24 pb-14 sm:pt-32 sm:pb-20 md:pt-36 md:pb-24 overflow-hidden">
+      <section className="relative bg-[var(--color-bg-card)] pt-24 pb-14 sm:pt-32 sm:pb-20 md:pt-36 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[480px] h-[480px] bg-[#6bc28b]/8 blur-[140px] rounded-full" />
+          <div className="absolute top-0 right-0 w-[480px] h-[480px] bg-[var(--color-primary)]/8 blur-[140px] rounded-full" />
         </div>
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
@@ -80,8 +80,8 @@ export default function ResearchDeskPage() {
             transition={{ duration: 0.5 }}
             className="mb-6"
           >
-            <span className="inline-flex items-center gap-2 border border-[#2e3b30] bg-[#17221a] text-[#B8FD4B] text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#B8FD4B] animate-pulse" />
+            <span className="inline-flex items-center gap-2 border border-[var(--color-border)] bg-[var(--color-bg-card)] text-[var(--color-accent)] text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] animate-pulse" />
               Research Desk
             </span>
           </motion.div>
@@ -94,7 +94,7 @@ export default function ResearchDeskPage() {
           >
             One platform.<br />
             Two levels of{' '}
-            <span className="text-[#6bc28b]">market intelligence.</span>
+            <span className="text-[var(--color-primary)]">market intelligence.</span>
           </motion.h1>
 
           <motion.p
@@ -130,7 +130,7 @@ export default function ResearchDeskPage() {
                   const top = el.getBoundingClientRect().top + window.scrollY - navbar - 16;
                   window.scrollTo({ top, behavior: 'smooth' });
                 }}
-                className="text-[12px] text-gray-300 border border-white/20 hover:border-[#6bc28b]/60 hover:text-[#6bc28b] px-3 py-1.5 rounded-sm transition-all duration-200 tracking-wide cursor-pointer"
+                className="text-[12px] text-gray-300 border border-white/20 hover:border-[var(--color-primary)]/60 hover:text-[var(--color-primary)] px-3 py-1.5 rounded-sm transition-all duration-200 tracking-wide cursor-pointer"
               >
                 {item.label}
               </Link>
@@ -140,13 +140,13 @@ export default function ResearchDeskPage() {
       </section>
 
       {/* ── Markets Ticker ── */}
-      <div id="markets" className="bg-[#111315] border-y border-white/[0.06] py-7 overflow-hidden relative scroll-mt-28">
-        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#111315] to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#111315] to-transparent z-10 pointer-events-none" />
+      <div id="markets" className="bg-[var(--color-bg-card)] border-y border-white/[0.06] py-7 overflow-hidden relative scroll-mt-28">
+        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[var(--color-bg-card)] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[var(--color-bg-card)] to-transparent z-10 pointer-events-none" />
         <div className="flex animate-ticker whitespace-nowrap">
           {[...tickerItems, ...tickerItems].map((m, i) => (
             <span key={i} className="inline-flex items-center gap-2 px-6 text-[13px] font-semibold text-gray-400 tracking-wide">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#6bc28b]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]" />
               {m}
             </span>
           ))}
@@ -154,16 +154,16 @@ export default function ResearchDeskPage() {
       </div>
 
       {/* ── Two Tiers ── */}
-      <section className="bg-[#111315] py-14 md:py-20 lg:py-28" id="tiers">
+      <section className="bg-[var(--color-bg-card)] py-14 md:py-20 lg:py-28" id="tiers">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-14">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Choose Your Access Level</span>
+              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Choose Your Access Level</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Start free.<br />
-              <span className="text-[#6bc28b]">Upgrade when ready.</span>
+              <span className="text-[var(--color-primary)]">Upgrade when ready.</span>
             </h2>
             <p className="text-gray-400 max-w-xl leading-relaxed">
               Both tiers deliver structured research. The difference is in depth, timing, and the level of direct engagement with our desk.
@@ -177,12 +177,12 @@ export default function ResearchDeskPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5 }}
-              className="relative flex flex-col p-8 sm:p-10 bg-[#17221a] border border-white/[0.06] rounded-2xl hover:border-[#6bc28b]/30 transition-all duration-300"
+              className="relative flex flex-col p-8 sm:p-10 bg-[var(--color-bg-card)] border border-white/[0.06] rounded-2xl hover:border-[var(--color-primary)]/30 transition-all duration-300"
             >
-              <span className="inline-flex items-center gap-2 self-start text-[10px] font-bold tracking-[0.15em] uppercase px-3 py-1 rounded-sm bg-[#6bc28b]/12 border border-[#6bc28b]/25 text-[#6bc28b] mb-6">
+              <span className="inline-flex items-center gap-2 self-start text-[10px] font-bold tracking-[0.15em] uppercase px-3 py-1 rounded-sm bg-[var(--color-primary)]/12 border border-[var(--color-primary)]/25 text-[var(--color-primary)] mb-6">
                 Free · Open · Always On
               </span>
-              <div className="w-12 h-12 rounded-xl bg-[#111d14] border border-white/[0.08] flex items-center justify-center mb-5">
+              <div className="w-12 h-12 rounded-xl bg-[var(--color-bg-card)] border border-white/[0.08] flex items-center justify-center mb-5">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6bc28b" strokeWidth="1.8">
                   <path d="M21 5L2 12.5L9 13.5M21 5L18.5 19L9 13.5M21 5L9 13.5M9 13.5V19L12.2 16" />
                 </svg>
@@ -195,14 +195,14 @@ export default function ResearchDeskPage() {
               <ul className="space-y-3 mb-8 flex-1">
                 {openChannelFeatures.map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm text-gray-300">
-                    <span className="text-[#6bc28b] shrink-0 mt-0.5">—</span>
+                    <span className="text-[var(--color-primary)] shrink-0 mt-0.5">—</span>
                     {f}
                   </li>
                 ))}
               </ul>
               <Link
                 href="/research-desk/open-channel"
-                className="flex items-center justify-center gap-2 w-full py-3.5 border border-white/20 hover:border-[#6bc28b] hover:text-[#6bc28b] text-gray-200 text-[12px] font-bold tracking-[0.15em] uppercase rounded-lg transition-colors"
+                className="flex items-center justify-center gap-2 w-full py-3.5 border border-white/20 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] text-gray-200 text-[12px] font-bold tracking-[0.15em] uppercase rounded-lg transition-colors"
               >
                 Explore Open Channel
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
@@ -215,13 +215,13 @@ export default function ResearchDeskPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="relative flex flex-col p-8 sm:p-10 bg-gradient-to-br from-[#17221a] to-[#1c2e1c] border border-[#6bc28b]/40 rounded-2xl hover:border-[#6bc28b] transition-all duration-300 overflow-hidden"
+              className="relative flex flex-col p-8 sm:p-10 bg-gradient-to-br from-[var(--color-bg-card)] to-[var(--color-bg-elevated)] border border-[var(--color-primary)]/40 rounded-2xl hover:border-[var(--color-primary)] transition-all duration-300 overflow-hidden"
             >
-              <span className="absolute top-0 left-0 right-0 h-[2px] bg-[#6bc28b]" />
-              <span className="inline-flex items-center gap-2 self-start text-[10px] font-bold tracking-[0.15em] uppercase px-3 py-1 rounded-sm bg-[#B8FD4B]/10 border border-[#B8FD4B]/25 text-[#B8FD4B] mb-6">
+              <span className="absolute top-0 left-0 right-0 h-[2px] bg-[var(--color-primary)]" />
+              <span className="inline-flex items-center gap-2 self-start text-[10px] font-bold tracking-[0.15em] uppercase px-3 py-1 rounded-sm bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/25 text-[var(--color-accent)] mb-6">
                 Paid · Private · Daily Research
               </span>
-              <div className="w-12 h-12 rounded-xl bg-[#111d14] border border-white/[0.08] flex items-center justify-center mb-5">
+              <div className="w-12 h-12 rounded-xl bg-[var(--color-bg-card)] border border-white/[0.08] flex items-center justify-center mb-5">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8FD4B" strokeWidth="1.8">
                   <rect x="3" y="11" width="18" height="11" rx="2" />
                   <path d="M7 11V7a5 5 0 0 1 10 0v4" />
@@ -235,14 +235,14 @@ export default function ResearchDeskPage() {
               <ul className="space-y-3 mb-8 flex-1">
                 {innerCircleFeatures.map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm text-gray-300">
-                    <span className="text-[#6bc28b] shrink-0 mt-0.5">—</span>
+                    <span className="text-[var(--color-primary)] shrink-0 mt-0.5">—</span>
                     {f}
                   </li>
                 ))}
               </ul>
               <Link
                 href="/research-desk/inner-circle"
-                className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#6bc28b] hover:bg-[#B8FD4B] text-[#0d1a10] text-[12px] font-bold tracking-[0.15em] uppercase rounded-lg transition-colors"
+                className="flex items-center justify-center gap-2 w-full py-3.5 bg-[var(--color-primary)] hover:bg-[var(--color-accent)] text-[var(--color-fg-inverse)] text-[12px] font-bold tracking-[0.15em] uppercase rounded-lg transition-colors"
               >
                 View Inner Circle Products
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
@@ -253,47 +253,47 @@ export default function ResearchDeskPage() {
       </section>
 
       {/* ── Comparison Table ── */}
-      <section className="bg-[#18261b] py-14 md:py-20 lg:py-28" id="compare">
+      <section className="bg-[var(--color-bg-card)] py-14 md:py-20 lg:py-28" id="compare">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Tier Comparison</span>
+              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Tier Comparison</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               What&apos;s the<br />
-              <span className="text-[#6bc28b]">actual difference?</span>
+              <span className="text-[var(--color-primary)]">actual difference?</span>
             </h2>
             <p className="text-gray-400 max-w-xl leading-relaxed">
               Both tiers share the same research framework. What changes is depth, timing, and how much of the desk&apos;s work you see.
             </p>
           </div>
 
-          <div className="border border-white/[0.08] rounded-xl overflow-hidden bg-[#111d14]">
-            {/* Header row */}
-            <div className="hidden md:grid grid-cols-[1.2fr_1fr_1fr] bg-[#17221a] text-[11px] font-bold tracking-[0.12em] uppercase">
-              <div className="px-6 py-5 text-gray-500" />
-              <div className="px-6 py-5 text-[#6bc28b]">Open Channel</div>
-              <div className="px-6 py-5 text-[#B8FD4B]">Inner Circle</div>
-            </div>
-            {compareRows.map((row, i) => (
-              <div
-                key={row.label}
-                className={`grid grid-cols-1 md:grid-cols-[1.2fr_1fr_1fr] ${i > 0 ? 'border-t border-white/[0.07]' : ''}`}
-              >
-                <div className="px-6 py-4 md:py-5 text-white text-sm font-medium bg-[#17221a]/40 md:bg-transparent">
-                  {row.label}
-                </div>
-                <div className="px-6 py-3 md:py-5 border-t md:border-t-0 md:border-l border-white/[0.05]">
-                  <div className="md:hidden text-[10px] font-bold tracking-[0.12em] uppercase text-[#6bc28b] mb-1.5">Open Channel</div>
-                  <Cell kind={row.free.kind} text={row.free.text} />
-                </div>
-                <div className="px-6 py-3 md:py-5 border-t md:border-t-0 md:border-l border-white/[0.05]">
-                  <div className="md:hidden text-[10px] font-bold tracking-[0.12em] uppercase text-[#B8FD4B] mb-1.5">Inner Circle</div>
-                  <Cell kind={row.paid.kind} text={row.paid.text} />
-                </div>
+          <div className="border border-white/[0.08] rounded-xl overflow-hidden bg-[var(--color-bg-card)] overflow-x-auto">
+            <div className="min-w-[560px]">
+              {/* Header row */}
+              <div className="grid grid-cols-[1.1fr_1fr_1fr] bg-[var(--color-bg-card)] text-[10px] md:text-[11px] font-bold tracking-[0.12em] uppercase">
+                <div className="px-3 py-3 md:px-6 md:py-5 text-gray-500" />
+                <div className="px-3 py-3 md:px-6 md:py-5 text-[var(--color-primary)] border-l border-white/[0.05]">Open Channel</div>
+                <div className="px-3 py-3 md:px-6 md:py-5 text-[var(--color-accent)] border-l border-white/[0.05]">Inner Circle</div>
               </div>
-            ))}
+              {compareRows.map((row) => (
+                <div
+                  key={row.label}
+                  className="grid grid-cols-[1.1fr_1fr_1fr] border-t border-white/[0.07]"
+                >
+                  <div className="px-3 py-3 md:px-6 md:py-5 text-white text-xs md:text-sm font-medium">
+                    {row.label}
+                  </div>
+                  <div className="px-3 py-3 md:px-6 md:py-5 border-l border-white/[0.05]">
+                    <Cell kind={row.free.kind} text={row.free.text} />
+                  </div>
+                  <div className="px-3 py-3 md:px-6 md:py-5 border-l border-white/[0.05]">
+                    <Cell kind={row.paid.kind} text={row.paid.text} />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
           <p className="text-xs text-gray-500 mt-4 italic">
             * Open Channel content is intentionally delayed and partial. It exists to demonstrate the quality and consistency of our research — not replace it.
@@ -302,16 +302,16 @@ export default function ResearchDeskPage() {
       </section>
 
       {/* ── Who Is It For ── */}
-      <section className="bg-[#111315] py-14 md:py-20 lg:py-28">
+      <section className="bg-[var(--color-bg-card)] py-14 md:py-20 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Self-Qualify</span>
+              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Self-Qualify</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Which tier<br />
-              <span className="text-[#6bc28b]">is right for you?</span>
+              <span className="text-[var(--color-primary)]">is right for you?</span>
             </h2>
             <p className="text-gray-400 max-w-xl leading-relaxed">
               Both require the same commitment — to read the market correctly, not to follow instructions. Choose based on where you are.
@@ -353,7 +353,7 @@ export default function ResearchDeskPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-[#17221a] border border-white/[0.06] rounded-2xl p-8"
+                className="bg-[var(--color-bg-card)] border border-white/[0.06] rounded-2xl p-8"
               >
                 <h3 className="text-xl font-bold text-white mb-3">{persona.title}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed mb-6">{persona.desc}</p>
@@ -367,7 +367,7 @@ export default function ResearchDeskPage() {
                 </ul>
                 <Link
                   href={persona.cta.href}
-                  className="inline-flex items-center gap-2 mt-7 text-[#6bc28b] hover:text-[#B8FD4B] text-[12px] font-bold tracking-[0.12em] uppercase transition-colors"
+                  className="inline-flex items-center gap-2 mt-7 text-[var(--color-primary)] hover:text-[var(--color-accent)] text-[12px] font-bold tracking-[0.12em] uppercase transition-colors"
                 >
                   {persona.cta.label}
                 </Link>

@@ -198,22 +198,22 @@ export default function IndexOptionsProductPage() {
       <Navbar />
 
       {/* ── Breadcrumb ── */}
-      <div className="bg-[#0d130d] border-b border-white/[0.05] pt-24 sm:pt-28">
+      <div className="bg-[var(--color-bg-section)] border-b border-white/[0.05] pt-24 sm:pt-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-3 text-xs text-gray-500 flex items-center gap-2 flex-wrap">
-          <Link href="/" className="hover:text-[#6bc28b] transition-colors">Home</Link>
+          <Link href="/" className="hover:text-[var(--color-primary)] transition-colors">Home</Link>
           <span className="text-gray-700">›</span>
-          <Link href="/research-desk" className="hover:text-[#6bc28b] transition-colors">Research Desk</Link>
+          <Link href="/research-desk" className="hover:text-[var(--color-primary)] transition-colors">Research Desk</Link>
           <span className="text-gray-700">›</span>
-          <Link href="/research-desk/inner-circle" className="hover:text-[#6bc28b] transition-colors">Inner Circle</Link>
+          <Link href="/research-desk/inner-circle" className="hover:text-[var(--color-primary)] transition-colors">Inner Circle</Link>
           <span className="text-gray-700">›</span>
           <span className="text-gray-300">Index Options</span>
         </div>
       </div>
 
       {/* ── Hero ── */}
-      <section className="relative bg-[#18261b] pt-12 pb-12 sm:pt-16 sm:pb-16 md:pt-24 md:pb-24 overflow-hidden">
+      <section className="relative bg-[var(--color-bg-card)] pt-12 pb-12 sm:pt-16 sm:pb-16 md:pt-24 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[280px] sm:w-[480px] md:w-[700px] h-[200px] sm:h-[260px] md:h-[320px] bg-[#4ade80]/6 blur-[140px] rounded-full" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[280px] sm:w-[480px] md:w-[700px] h-[200px] sm:h-[260px] md:h-[320px] bg-[var(--color-primary)]/6 blur-[140px] rounded-full" />
         </div>
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-10 lg:gap-16 items-start">
@@ -224,8 +224,8 @@ export default function IndexOptionsProductPage() {
                 transition={{ duration: 0.5 }}
                 className="mb-6"
               >
-                <span className="inline-flex items-center gap-2 border border-[#2e3b30] bg-[#17221a] text-[#B8FD4B] text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#B8FD4B] animate-pulse" />
+                <span className="inline-flex items-center gap-2 border border-[var(--color-border)] bg-[var(--color-bg-card)] text-[var(--color-accent)] text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] animate-pulse" />
                   Futures &amp; Options · Inner Circle · Live Now
                 </span>
               </motion.div>
@@ -237,7 +237,7 @@ export default function IndexOptionsProductPage() {
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5 max-w-3xl"
               >
                 Structured market research,{' '}
-                <span className="text-[#6bc28b]">delivered daily.</span>
+                <span className="text-[var(--color-primary)]">delivered daily.</span>
               </motion.h1>
 
               <motion.p
@@ -254,9 +254,9 @@ export default function IndexOptionsProductPage() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="relative w-full max-w-[330px] aspect-video rounded-lg overflow-hidden bg-[#0d130d] border border-white/[0.08] group cursor-pointer"
+                className="relative w-full max-w-[330px] aspect-video rounded-lg overflow-hidden bg-[var(--color-bg-section)] border border-white/[0.08] group cursor-pointer"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#17221a] via-[#0d130d] to-[#0a0f0a]" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-bg-card)] via-[var(--color-bg-section)] to-[var(--color-bg)]" />
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(107,194,139,0.12),transparent_60%)]" />
 
                 <div className="absolute top-0 left-0 right-0 h-9 bg-gradient-to-b from-black/40 to-transparent flex items-center px-3 z-10">
@@ -275,7 +275,7 @@ export default function IndexOptionsProductPage() {
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 px-3.5 py-2.5 bg-gradient-to-t from-black/70 via-black/40 to-transparent z-10">
-                  <div className="text-[9px] font-bold tracking-[0.12em] uppercase text-[#B8FD4B] mb-0.5">Walkthrough</div>
+                  <div className="text-[9px] font-bold tracking-[0.12em] uppercase text-[var(--color-accent)] mb-0.5">Walkthrough</div>
                   <div className="text-[12px] font-semibold text-white leading-snug">
                     How Logyra reads the F&amp;O market — in 2 minutes
                   </div>
@@ -288,9 +288,9 @@ export default function IndexOptionsProductPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative bg-[#17221a] border border-[#6bc28b]/30 rounded-2xl p-6 sm:p-8 lg:sticky lg:top-36 overflow-hidden w-full max-w-[460px] mx-auto lg:mx-0"
+              className="relative bg-[var(--color-bg-card)] border border-[var(--color-primary)]/30 rounded-2xl p-6 sm:p-8 lg:sticky lg:top-36 overflow-hidden w-full max-w-[460px] mx-auto lg:mx-0"
             >
-              <span className="absolute top-0 left-0 right-0 h-[2px] bg-[#6bc28b]" />
+              <span className="absolute top-0 left-0 right-0 h-[2px] bg-[var(--color-primary)]" />
 
               {/* Tier toggle */}
               <div className="flex border border-white/[0.08] rounded-lg overflow-hidden mb-7">
@@ -300,7 +300,7 @@ export default function IndexOptionsProductPage() {
                     onClick={() => setActiveTier(tier.key)}
                     className={`flex-1 py-2.5 text-[11px] font-bold tracking-wide transition-colors ${
                       activeTier === tier.key
-                        ? 'bg-[#6bc28b] text-[#0d1a10]'
+                        ? 'bg-[var(--color-primary)] text-[var(--color-fg-inverse)]'
                         : 'text-gray-400 hover:text-gray-200'
                     } ${tier.key !== 'half-yearly' ? 'border-r border-white/[0.08]' : ''}`}
                   >
@@ -316,7 +316,7 @@ export default function IndexOptionsProductPage() {
                 </div>
                 <div className="text-xs text-gray-500 mt-1">Incl. GST · {currentTier.duration}</div>
                 {currentTier.saving && (
-                  <div className="inline-block mt-3 text-[10px] font-bold tracking-[0.08em] uppercase px-2.5 py-1 border border-[#B8FD4B]/30 text-[#B8FD4B] bg-[#B8FD4B]/8 rounded-sm">
+                  <div className="inline-block mt-3 text-[10px] font-bold tracking-[0.08em] uppercase px-2.5 py-1 border border-[var(--color-accent)]/30 text-[var(--color-accent)] bg-[var(--color-accent)]/8 rounded-sm">
                     {currentTier.saving} VS MONTHLY
                   </div>
                 )}
@@ -326,7 +326,7 @@ export default function IndexOptionsProductPage() {
               <ul className="border-t border-white/[0.07] pt-5 mb-6 space-y-2.5">
                 {priceCardFeatures.map((feature) => (
                   <li key={feature} className="flex items-start gap-2 text-[13px] text-gray-300">
-                    <span className="text-[#6bc28b] shrink-0 mt-0.5">
+                    <span className="text-[var(--color-primary)] shrink-0 mt-0.5">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
@@ -338,7 +338,7 @@ export default function IndexOptionsProductPage() {
 
               <Link
                 href={currentTier.payLink}
-                className="block w-full py-3.5 bg-[#6bc28b] hover:bg-[#B8FD4B] text-[#0d1a10] text-center text-[12px] font-bold tracking-[0.12em] uppercase rounded-lg transition-colors mb-3"
+                className="block w-full py-3.5 bg-[var(--color-primary)] hover:bg-[var(--color-accent)] text-[var(--color-fg-inverse)] text-center text-[12px] font-bold tracking-[0.12em] uppercase rounded-lg transition-colors mb-3"
               >
                 Subscribe → {currentTier.price}
               </Link>
@@ -356,7 +356,7 @@ export default function IndexOptionsProductPage() {
       </section>
 
       {/* ── Sticky Section Nav ── */}
-      <div className="sticky top-20 sm:top-24 z-40 bg-[#111d14]/98 backdrop-blur-xl border-b border-white/10">
+      <div className="sticky top-20 sm:top-24 z-40 bg-[var(--color-bg-card)]/98 backdrop-blur-xl border-b border-white/10">
         <div className="max-w-[1200px] mx-auto px-2 sm:px-6">
           <div
             className="flex items-center overflow-x-auto [&::-webkit-scrollbar]:hidden"
@@ -367,14 +367,14 @@ export default function IndexOptionsProductPage() {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`relative flex-shrink-0 text-[10px] sm:text-[11px] font-semibold tracking-[0.08em] sm:tracking-[0.1em] uppercase px-3 sm:px-5 py-4 transition-colors duration-200 ${
-                  activeSection === item.id ? 'text-[#6bc28b]' : 'text-gray-400 hover:text-gray-200'
+                  activeSection === item.id ? 'text-[var(--color-primary)]' : 'text-gray-400 hover:text-gray-200'
                 }`}
               >
                 {item.label}
                 {activeSection === item.id && (
                   <motion.span
                     layoutId="section-indicator"
-                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#6bc28b] rounded-full"
+                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-[var(--color-primary)] rounded-full"
                   />
                 )}
               </button>
@@ -384,16 +384,16 @@ export default function IndexOptionsProductPage() {
       </div>
 
       {/* ── Derivatives Coverage ── */}
-      <section id="derivatives" className="bg-[#111315] py-14 md:py-20 lg:py-28">
+      <section id="derivatives" className="bg-[var(--color-bg-card)] py-14 md:py-20 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-14">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Derivatives Coverage</span>
+              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Derivatives Coverage</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               F&amp;O markets, decoded<br />
-              <span className="text-[#6bc28b]">without the noise.</span>
+              <span className="text-[var(--color-primary)]">without the noise.</span>
             </h2>
             <p className="text-gray-400 max-w-xl leading-relaxed">
               Every research brief is grounded in derivatives data — not opinion. We cover the full F&amp;O landscape across index and stock options.
@@ -408,10 +408,10 @@ export default function IndexOptionsProductPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: i * 0.07 }}
-                className="group p-6 bg-[#17221a] border border-white/[0.06] rounded-xl hover:border-[#6bc28b]/30 transition-all duration-300"
+                className="group p-6 bg-[var(--color-bg-card)] border border-white/[0.06] rounded-xl hover:border-[var(--color-primary)]/30 transition-all duration-300"
               >
-                <div className="w-8 h-8 rounded-lg bg-[#B8FD4B]/10 flex items-center justify-center mb-4">
-                  <span className="text-[#B8FD4B] text-[11px] font-bold font-mono">0{i + 1}</span>
+                <div className="w-8 h-8 rounded-lg bg-[var(--color-accent)]/10 flex items-center justify-center mb-4">
+                  <span className="text-[var(--color-accent)] text-[11px] font-bold font-mono">0{i + 1}</span>
                 </div>
                 <h3 className="text-white font-semibold text-base mb-2">{feature.title}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">{feature.desc}</p>
@@ -422,16 +422,16 @@ export default function IndexOptionsProductPage() {
       </section>
 
       {/* ── Daily Research Briefs ── */}
-      <section id="research-briefs" className="bg-[#18261b] py-14 md:py-20 lg:py-28">
+      <section id="research-briefs" className="bg-[var(--color-bg-card)] py-14 md:py-20 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-14">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Daily Research Briefs</span>
+              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Daily Research Briefs</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Every session, covered<br />
-              <span className="text-[#6bc28b]">from open to close.</span>
+              <span className="text-[var(--color-primary)]">from open to close.</span>
             </h2>
             <p className="text-gray-400 max-w-xl leading-relaxed">
               Three structured briefs every trading day, plus a weekly review note — all grounded in data, not predictions.
@@ -446,10 +446,10 @@ export default function IndexOptionsProductPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="flex gap-5 p-6 bg-[#111d14] border border-white/[0.07] rounded-xl"
+                className="flex gap-5 p-6 bg-[var(--color-bg-card)] border border-white/[0.07] rounded-xl"
               >
-                <div className="shrink-0 w-16 h-16 rounded-xl bg-[#B8FD4B]/10 flex items-center justify-center">
-                  <span className="text-[#B8FD4B] text-[11px] font-bold font-mono text-center leading-tight px-1">{brief.time}</span>
+                <div className="shrink-0 w-16 h-16 rounded-xl bg-[var(--color-accent)]/10 flex items-center justify-center">
+                  <span className="text-[var(--color-accent)] text-[11px] font-bold font-mono text-center leading-tight px-1">{brief.time}</span>
                 </div>
                 <div>
                   <h3 className="text-white font-semibold text-base mb-1.5">{brief.label}</h3>
@@ -462,17 +462,17 @@ export default function IndexOptionsProductPage() {
       </section>
 
       {/* ── Private Telegram Access ── */}
-      <section id="telegram" className="bg-[#111315] py-14 md:py-20 lg:py-28">
+      <section id="telegram" className="bg-[var(--color-bg-card)] py-14 md:py-20 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
             <div>
               <div className="flex items-center gap-4 mb-5">
-                <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Private Telegram Access</span>
+                <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Private Telegram Access</span>
                 <div className="flex-1 h-px bg-white/10" />
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Research delivered<br />
-                <span className="text-[#6bc28b]">where you already are.</span>
+                <span className="text-[var(--color-primary)]">where you already are.</span>
               </h2>
               <p className="text-gray-400 mb-8 leading-relaxed">
                 Your subscription unlocks access to our private Telegram channel — where research briefs are posted in real-time, every trading day.
@@ -487,7 +487,7 @@ export default function IndexOptionsProductPage() {
                     transition={{ duration: 0.4, delay: i * 0.07 }}
                     className="flex items-start gap-3 text-gray-300 text-sm"
                   >
-                    <span className="mt-0.5 w-4 h-4 rounded-full bg-[#B8FD4B]/15 flex items-center justify-center shrink-0">
+                    <span className="mt-0.5 w-4 h-4 rounded-full bg-[var(--color-accent)]/15 flex items-center justify-center shrink-0">
                       <svg width="8" height="8" viewBox="0 0 12 12" fill="none">
                         <polyline points="2,6 5,9 10,3" stroke="#B8FD4B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
@@ -508,7 +508,7 @@ export default function IndexOptionsProductPage() {
             >
               <div className="bg-[#17222a] rounded-2xl border border-white/10 p-6 shadow-2xl">
                 <div className="flex items-center gap-3 mb-5 pb-4 border-b border-white/10">
-                  <div className="w-10 h-10 rounded-full bg-[#229ED9] flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-[var(--color-info)] flex items-center justify-center shrink-0">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
                       <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z" />
                     </svg>
@@ -531,23 +531,23 @@ export default function IndexOptionsProductPage() {
                   ))}
                 </div>
               </div>
-              <div className="absolute inset-0 rounded-2xl bg-[#229ED9]/5 blur-xl -z-10 scale-110" />
+              <div className="absolute inset-0 rounded-2xl bg-[var(--color-info)]/5 blur-xl -z-10 scale-110" />
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* ── Clarity Check (IS / IS NOT) ── */}
-      <section className="bg-[#18261b] py-14 md:py-20 lg:py-28">
+      <section className="bg-[var(--color-bg-card)] py-14 md:py-20 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Clarity Check</span>
+              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Clarity Check</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               What this is.<br />
-              <span className="text-[#6bc28b]">What this is not.</span>
+              <span className="text-[var(--color-primary)]">What this is not.</span>
             </h2>
             <p className="text-gray-400 max-w-xl leading-relaxed">
               Understand this before you subscribe. The Inner Circle is built for a specific type of participant.
@@ -561,16 +561,16 @@ export default function IndexOptionsProductPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5 }}
-              className="bg-[#17221a] border border-[#6bc28b]/25 rounded-2xl p-7 sm:p-8"
+              className="bg-[var(--color-bg-card)] border border-[var(--color-primary)]/25 rounded-2xl p-7 sm:p-8"
             >
-              <div className="flex items-center gap-2 mb-6 text-[#6bc28b] text-[10px] font-bold tracking-[0.12em] uppercase">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#6bc28b]" />
+              <div className="flex items-center gap-2 mb-6 text-[var(--color-primary)] text-[10px] font-bold tracking-[0.12em] uppercase">
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]" />
                 What Logyra Inner Circle IS
               </div>
               <ul className="space-y-3">
                 {clarityIs.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-gray-300 leading-relaxed">
-                    <span className="text-[#6bc28b] shrink-0 mt-0.5">
+                    <span className="text-[var(--color-primary)] shrink-0 mt-0.5">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
@@ -587,16 +587,16 @@ export default function IndexOptionsProductPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-[#1a0e0e] border border-[#e05555]/25 rounded-2xl p-7 sm:p-8"
+              className="bg-[var(--color-error)] border border-[var(--color-error)]/25 rounded-2xl p-7 sm:p-8"
             >
-              <div className="flex items-center gap-2 mb-6 text-[#e05555] text-[10px] font-bold tracking-[0.12em] uppercase">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#e05555]" />
+              <div className="flex items-center gap-2 mb-6 text-[var(--color-error)] text-[10px] font-bold tracking-[0.12em] uppercase">
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-error)]" />
                 What Logyra Inner Circle IS NOT
               </div>
               <ul className="space-y-3">
                 {clarityIsNot.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-gray-300 leading-relaxed">
-                    <span className="text-[#e05555] shrink-0 mt-0.5">
+                    <span className="text-[var(--color-error)] shrink-0 mt-0.5">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                         <line x1="18" y1="6" x2="6" y2="18" />
                         <line x1="6" y1="6" x2="18" y2="18" />
@@ -612,16 +612,16 @@ export default function IndexOptionsProductPage() {
       </section>
 
       {/* ── Subscription Plans ── */}
-      <section id="plans" className="bg-[#111315] py-14 md:py-20 lg:py-28">
+      <section id="plans" className="bg-[var(--color-bg-card)] py-14 md:py-20 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-14">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Subscription Plans</span>
+              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Subscription Plans</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Choose your access,<br />
-              <span className="text-[#6bc28b]">start learning today.</span>
+              <span className="text-[var(--color-primary)]">start learning today.</span>
             </h2>
           </div>
 
@@ -635,14 +635,14 @@ export default function IndexOptionsProductPage() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className={`relative flex flex-col p-5 sm:p-7 md:p-8 ${
                   plan.featured
-                    ? 'bg-[#0f1f13] ring-1 ring-[#6bc28b]/40 z-10'
-                    : 'bg-[#17221a]'
+                    ? 'bg-[var(--color-bg-card)] ring-1 ring-[var(--color-primary)]/40 z-10'
+                    : 'bg-[var(--color-bg-card)]'
                 } ${i < plans.length - 1 ? 'md:border-r border-b md:border-b-0 border-white/[0.08]' : ''}`}
               >
                 {plan.badge && (
                   <div className="absolute top-0 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center gap-1.5 bg-[#B8FD4B] text-[#0d1a10] text-[9px] font-bold tracking-[0.15em] uppercase px-4 py-1.5">
-                      <span className="w-1 h-1 rounded-full bg-[#0d1a10] animate-pulse" />
+                    <span className="inline-flex items-center gap-1.5 bg-[var(--color-accent)] text-[var(--color-fg-inverse)] text-[9px] font-bold tracking-[0.15em] uppercase px-4 py-1.5">
+                      <span className="w-1 h-1 rounded-full bg-[var(--color-fg-inverse)] animate-pulse" />
                       {plan.badge}
                     </span>
                   </div>
@@ -660,7 +660,7 @@ export default function IndexOptionsProductPage() {
                 </div>
 
                 {plan.savings ? (
-                  <div className="self-start text-[9px] font-bold tracking-[0.12em] uppercase px-3 py-1.5 mb-6 border border-[#B8FD4B]/30 text-[#B8FD4B] bg-[#B8FD4B]/5 rounded-sm">
+                  <div className="self-start text-[9px] font-bold tracking-[0.12em] uppercase px-3 py-1.5 mb-6 border border-[var(--color-accent)]/30 text-[var(--color-accent)] bg-[var(--color-accent)]/5 rounded-sm">
                     Save {plan.savings}
                   </div>
                 ) : (
@@ -673,7 +673,7 @@ export default function IndexOptionsProductPage() {
                       key={feature}
                       className="flex items-start gap-2 text-sm py-3 border-b border-white/[0.07] text-gray-300"
                     >
-                      <span className="mt-0.5 shrink-0 text-[#6bc28b]">—</span>
+                      <span className="mt-0.5 shrink-0 text-[var(--color-primary)]">—</span>
                       {feature}
                     </li>
                   ))}
@@ -683,8 +683,8 @@ export default function IndexOptionsProductPage() {
                   href={plan.payLink}
                   className={`block w-full py-3.5 text-center text-[11px] font-bold tracking-[0.15em] uppercase rounded-lg transition-all duration-200 ${
                     plan.featured
-                      ? 'bg-[#6bc28b] text-[#0d1a10] hover:bg-[#B8FD4B]'
-                      : 'border border-white/20 text-gray-300 hover:border-[#6bc28b] hover:text-[#6bc28b]'
+                      ? 'bg-[var(--color-primary)] text-[var(--color-fg-inverse)] hover:bg-[var(--color-accent)]'
+                      : 'border border-white/20 text-gray-300 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]'
                   }`}
                 >
                   Subscribe →
@@ -696,16 +696,16 @@ export default function IndexOptionsProductPage() {
       </section>
 
       {/* ── Legal ── */}
-      <section id="legal" className="bg-[#18261b] py-14 md:py-20 lg:py-28">
+      <section id="legal" className="bg-[var(--color-bg-card)] py-14 md:py-20 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-14">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Policies &amp; Terms</span>
+              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Policies &amp; Terms</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Transparent by design,<br />
-              <span className="text-[#6bc28b]">clear on every term.</span>
+              <span className="text-[var(--color-primary)]">clear on every term.</span>
             </h2>
           </div>
 
@@ -717,10 +717,10 @@ export default function IndexOptionsProductPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: (i % 2) * 0.1 }}
-                className={`p-6 sm:p-8 bg-[#17221a] ${i % 2 === 0 ? 'md:border-r border-white/[0.07]' : ''} ${i < policies.length - 1 ? 'border-b border-white/[0.07]' : ''} ${i >= 2 ? 'md:border-b-0' : ''}`}
+                className={`p-6 sm:p-8 bg-[var(--color-bg-card)] ${i % 2 === 0 ? 'md:border-r border-white/[0.07]' : ''} ${i < policies.length - 1 ? 'border-b border-white/[0.07]' : ''} ${i >= 2 ? 'md:border-b-0' : ''}`}
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#B8FD4B] shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] shrink-0" />
                   <h3 className="text-white text-[11px] font-bold tracking-[0.12em] uppercase">
                     {policy.title}
                   </h3>

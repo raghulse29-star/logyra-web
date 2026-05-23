@@ -18,7 +18,7 @@ const reasons = [
       </svg>
     ),
     title: 'Institutional-Grade Research',
-    desc: 'Every analysis framework is built against process repeatability, not opinion. We study liquidity, order flow, and market structure the way desks do. Not the way courses do.',
+    desc: ' We study liquidity, order flow, and market structure the way desks do. ',
   },
   {
     icon: (
@@ -27,7 +27,7 @@ const reasons = [
       </svg>
     ),
     title: 'Multi-Asset Coverage',
-    desc: 'Indian equities, F&O, forex, and digital assets, covered under a single research architecture. No switching between fragmented sources. One structured view, across all markets.',
+    desc: 'Indian equities, F&O, forex, and digital assets, covered under a single research architecture. ',
   },
   {
     icon: (
@@ -36,7 +36,7 @@ const reasons = [
       </svg>
     ),
     title: 'Execution Discipline, Not Signal Dependency',
-    desc: 'We do not issue calls. We build the thinking that underpins decisions. Participants who consume Logyra intelligence are expected to apply frameworks, not follow instructions.',
+    desc: ' We build the thinking that underpins decisions. ',
   },
   {
     icon: (
@@ -46,7 +46,7 @@ const reasons = [
       </svg>
     ),
     title: 'Zero-Hype Intelligence Culture',
-    desc: 'No performance claims. No promised outcomes. No excitement-based marketing. The only commitment we make is rigorous daily research, delivered in a format that serious participants can actually use.',
+    desc: 'daily research, delivered in a format that serious participants can actually use.',
   },
 ];
 
@@ -71,7 +71,7 @@ export default function WhyLogyraSection() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="why-logyra" className="relative py-14 md:py-20 lg:py-32 bg-[#121517] font-sans">
+    <section id="why-logyra" className="relative py-14 md:py-20 lg:py-32 bg-[var(--color-bg-section)] font-sans">
       
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -83,7 +83,7 @@ export default function WhyLogyraSection() {
           className="text-center mb-16"
         >
           {/* Badge */}
-          <div className="inline-block border border-[#2e3b30] bg-[#17221a] text-[#B8FD4B] text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-sm">
+          <div className="inline-block border border-[var(--color-border)] bg-[var(--color-bg-card)] text-[var(--color-accent)] text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-sm">
             The market has a structure. We read it.
           </div>
           
@@ -91,7 +91,7 @@ export default function WhyLogyraSection() {
             Why Logyra Research?
           </h2>
           
-          <p className="text-[#a4b0a7] text-[17px] max-w-3xl mx-auto">
+          <p className="text-[var(--color-fg-muted)] text-[17px] max-w-3xl mx-auto">
             Professional market intelligence and trading education backed by rigorous research
           </p>
         </motion.div>
@@ -113,23 +113,23 @@ export default function WhyLogyraSection() {
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="h-full"
             >
-              <div className="bg-[#303e31] hover:bg-[#354436] active:bg-[#354436] transition-colors duration-300 rounded-[24px] p-6 h-full flex flex-col text-left group relative overflow-hidden hover:shadow-[0_0_40px_rgba(184,253,75,0.12),0_20px_60px_rgba(0,0,0,0.4)] active:shadow-[0_0_40px_rgba(184,253,75,0.12),0_20px_60px_rgba(0,0,0,0.4)]">
+              <div className="bg-[var(--color-bg-card)] hover:bg-[var(--color-bg-elevated)] active:bg-[var(--color-bg-elevated)] transition-colors duration-300 rounded-[24px] p-6 h-full flex flex-col text-left group relative overflow-hidden hover:shadow-[0_0_40px_rgba(184,253,75,0.12),0_20px_60px_rgba(0,0,0,0.4)] active:shadow-[0_0_40px_rgba(184,253,75,0.12),0_20px_60px_rgba(0,0,0,0.4)]">
 
                 {/* Shimmer sweep on hover/tap */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500 pointer-events-none rounded-[24px]"
                   style={{ background: 'linear-gradient(105deg, transparent 40%, rgba(184,253,75,0.05) 50%, transparent 60%)' }} />
 
                 {/* Icon Container */}
-                <div className="w-12 h-12 rounded-full bg-[#202921] flex items-center justify-center flex-shrink-0 mb-4 shadow-inner transition-transform duration-300 ease-out group-hover:scale-110 group-hover:rotate-6 group-active:scale-110 group-active:rotate-6 group-hover:shadow-[0_0_16px_rgba(184,253,75,0.25)] group-active:shadow-[0_0_16px_rgba(184,253,75,0.25)]">
+                <div className="w-12 h-12 rounded-full bg-[var(--color-bg-elevated)] flex items-center justify-center flex-shrink-0 mb-4 shadow-inner transition-transform duration-300 ease-out group-hover:scale-110 group-hover:rotate-6 group-active:scale-110 group-active:rotate-6 group-hover:shadow-[0_0_16px_rgba(184,253,75,0.25)] group-active:shadow-[0_0_16px_rgba(184,253,75,0.25)]">
                   {item.icon}
                 </div>
 
                 {/* Text Content */}
                 <div>
-                  <h3 className="text-[20px] font-bold text-[#f2f4f2] mb-3 leading-snug transition-colors duration-300 group-hover:text-[#B8FD4B] group-active:text-[#B8FD4B]">
+                  <h3 className="text-[20px] font-bold text-[var(--color-fg)] mb-3 leading-snug transition-colors duration-300 group-hover:text-[var(--color-accent)] group-active:text-[var(--color-accent)]">
                     {item.title}
                   </h3>
-                  <p className="text-[15px] text-[#e0e4e1] leading-relaxed font-normal">
+                  <p className="text-[15px] text-[var(--color-fg)] leading-relaxed font-normal">
                     {item.desc}
                   </p>
                 </div>

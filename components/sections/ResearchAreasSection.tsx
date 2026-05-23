@@ -53,7 +53,7 @@ const cardVar = {
 
 export default function ResearchAreasSection() {
   return (
-    <section id="research-areas" className="py-14 md:py-20 lg:py-28 bg-[#111215]">
+    <section id="research-areas" className="py-14 md:py-20 lg:py-28 bg-[var(--color-bg-card)]">
       <div className="container mx-auto px-4 sm:px-6 max-w-[1200px]">
         {/* Header */}
         <motion.div
@@ -86,20 +86,20 @@ export default function ResearchAreasSection() {
               whileHover={{ y: -8, boxShadow: '0 20px 60px rgba(0,0,0,0.35)', borderColor: '#4D5563' }}
               whileTap={{ y: -4, scale: 0.98, boxShadow: '0 12px 40px rgba(0,0,0,0.3)', borderColor: '#4D5563' }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="h-full rounded-2xl p-6 bg-transparent border border-[#2B2F36] flex flex-col group cursor-default"
+              className="h-full rounded-2xl p-6 bg-transparent border border-[var(--color-border)] flex flex-col group cursor-default"
             >
                 {area.invertLayout ? (
                   /* Layout: Text Top, Image Bottom */
                   <>
                     <div className="mb-5">
-                      <h3 className="text-[1.15rem] font-bold text-white mb-2 tracking-wide transition-colors duration-300 group-hover:text-[#9CA3AF]">
+                      <h3 className="text-[1.15rem] font-bold text-white mb-2 tracking-wide transition-colors duration-300 group-hover:text-[var(--color-fg-muted)]">
                         {area.title}
                       </h3>
                       <p className="text-gray-400 text-[0.85rem] leading-relaxed">
                         {area.desc}
                       </p>
                     </div>
-                    <div className="w-full h-[180px] rounded-xl overflow-hidden bg-[#1A1C20] mt-auto">
+                    <div className="w-full h-[180px] rounded-xl overflow-hidden bg-[var(--color-bg-button)] mt-auto">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={area.image}
@@ -111,7 +111,7 @@ export default function ResearchAreasSection() {
                 ) : (
                   /* Layout: Image Top, Text Bottom */
                   <>
-                    <div className="w-full h-[180px] mb-5 rounded-xl overflow-hidden bg-[#1A1C20]">
+                    <div className="w-full h-[180px] mb-5 rounded-xl overflow-hidden bg-[var(--color-bg-button)]">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={area.image}
@@ -120,7 +120,7 @@ export default function ResearchAreasSection() {
                       />
                     </div>
                     <div>
-                      <h3 className="text-[1.15rem] font-bold text-white mb-2 tracking-wide transition-colors duration-300 group-hover:text-[#9CA3AF]">
+                      <h3 className="text-[1.15rem] font-bold text-white mb-2 tracking-wide transition-colors duration-300 group-hover:text-[var(--color-fg-muted)]">
                         {area.title}
                       </h3>
                       <p className="text-gray-400 text-[0.85rem] leading-relaxed">

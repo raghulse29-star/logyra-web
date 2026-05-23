@@ -6,7 +6,7 @@ import Link from 'next/link';
 const platforms = [
   {
     badge: 'FREE · OPEN · ALWAYS ON',
-    title: 'Logyra Intelligence — Telegram',
+    title: 'Logyra Research — Telegram',
     desc: 'Daily market bias. Multi-asset research notes. HTF context and liquidity zone analysis. Zero noise.',
     cta: 'JOIN FREE ON TELEGRAM',
     ctaLink: '#',
@@ -18,16 +18,16 @@ const platforms = [
     badge: 'PAID · PRIVATE · DAILY RESEARCH',
     title: 'F&O Insights Inner Circle',
     desc: 'Full daily research package. Pre-market briefs, intraday educational setups, EOD wraps, and weekly structure reviews — delivered to your private Telegram every market day.',
-    cta: 'SUBSCRIBE - FROM - ₹3,399/MONTH',
+    cta: 'JOIN Private ON TELEGRAM',
     ctaLink: '/inner-circle#plans',
     image: '/images/img9.webp',
     accentColor: '#5865F2',
     glowColor: 'rgba(88, 101, 242, 0.4)',
   },
   {
-    badge: 'INVITE ONLY · LIVE · STRUCTURED',
-    title: 'Trade Floor — The Floor',
-    desc: 'Live structured research environment. Real-time market commentary. Institutional thinking in practice. For serious participants by application only',
+    badge: 'INVITE ONLY · LIVE ',
+    title: 'The Floor',
+    desc: 'Live  research environment. Real-time market commentary. Institutional  in practice by application only',
     cta: 'COMING SOON',
     ctaLink: '#',
     image: '/images/img10.webp',
@@ -49,7 +49,7 @@ const cardVar = {
 
 export default function TeachSection() {
   return (
-    <section id="teach" className="relative py-14 md:py-20 lg:py-32 bg-[#0B0F17]">
+    <section id="teach" className="relative py-14 md:py-20 lg:py-32 bg-[var(--color-bg-card)]">
       <div className="container mx-auto px-4 max-w-[1200px]">
 
         {/* Header */}
@@ -65,17 +65,17 @@ export default function TeachSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-block bg-[#D3FF33] text-black text-[10px] sm:text-xs font-bold px-3 py-1 mb-6 uppercase tracking-[0.2em] rounded-sm"
+            className="inline-block bg-[var(--color-accent)] text-black text-[10px] sm:text-xs font-bold px-3 py-1 mb-6 uppercase tracking-[0.2em] rounded-sm"
           >
             LOGYRA INSIGHTS
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-            We Don&apos;t Sell Courses. We Transfer Skills.
+             We Transfer Skills.
           </h2>
 
-          <p className="text-[#8B95A5] max-w-3xl mx-auto text-[15px] md:text-[17px] leading-relaxed">
-            Section subheading	Our frameworks are built against institutional standards of process and repeatability. You learn to think — not copy.
+          <p className="text-[var(--color-fg-muted)] max-w-3xl mx-auto text-[15px] md:text-[17px] leading-relaxed">
+           	Our frameworks are built against institutional standards of process and repeatability.
             <br className="hidden md:block" /> 
           </p>
         </motion.div>
@@ -120,7 +120,7 @@ export default function TeachSection() {
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                   />
                   {/* Gradient overlay — fades image into card body */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#131820] via-[#131820]/20 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg-card)] via-[var(--color-bg-card)]/20 to-transparent pointer-events-none" />
                   {/* Accent color tint on hover */}
                   <motion.div
                     className="absolute inset-0 pointer-events-none"
@@ -147,11 +147,11 @@ export default function TeachSection() {
                     </span>
                   </div>
 
-                  <h3 className="text-xl sm:text-[1.3rem] font-bold text-white mb-3 transition-colors duration-300 group-hover:text-[#D3FF33]">
+                  <h3 className="text-xl sm:text-[1.3rem] font-bold text-white mb-3 transition-colors duration-300 group-hover:text-[var(--color-accent)]">
                     {p.title}
                   </h3>
 
-                  <p className="text-[#8B95A5] text-sm leading-[1.65] mb-8 flex-1">
+                  <p className="text-[var(--color-fg-muted)] text-sm leading-[1.65] mb-8 flex-1">
                     {p.desc}
                   </p>
 
@@ -159,7 +159,7 @@ export default function TeachSection() {
                   {p.disabled ? (
                     <span
                       aria-disabled="true"
-                      className="block w-full bg-[#1A1F24] text-gray-500 font-bold text-[13px] py-4 px-6 rounded-xl uppercase tracking-wide border border-white/[0.06] text-center cursor-not-allowed select-none"
+                      className="block w-full bg-[var(--color-bg-button)] text-gray-500 font-bold text-[13px] py-4 px-6 rounded-xl uppercase tracking-wide border border-white/[0.06] text-center cursor-not-allowed select-none"
                     >
                       {p.cta}
                     </span>
@@ -173,7 +173,7 @@ export default function TeachSection() {
                         }}
                         whileTap={{ scale: 0.97 }}
                         transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                        className="block w-full bg-[#1E2B22] hover:bg-[#273D2C] text-[#D3FF33] font-bold text-[13px] py-4 px-6 rounded-xl transition-colors uppercase tracking-wide border border-[#D3FF33]/10 hover:border-[#D3FF33]/30 text-center cursor-pointer"
+                        className="block w-full bg-[var(--color-bg-elevated)] hover:bg-[var(--color-bg-elevated)] text-[var(--color-accent)] font-bold text-[13px] py-4 px-6 rounded-xl transition-colors uppercase tracking-wide border border-[var(--color-accent)]/10 hover:border-[var(--color-accent)]/30 text-center cursor-pointer"
                       >
                         {p.cta}
                       </motion.span>

@@ -26,7 +26,7 @@ const TwitterIcon = () => (
 );
 
 const TrendingUpIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6bc28b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
     <polyline points="17 6 23 6 23 12"></polyline>
   </svg>
@@ -78,7 +78,7 @@ const cardVar = {
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-14 md:py-20 lg:py-32 bg-[#050505]">
+    <section className="py-14 md:py-20 lg:py-32 bg-[var(--color-bg)]">
       <div className="container mx-auto px-4 sm:px-6 max-w-[1200px]">
         
         {/* Header Section */}
@@ -90,9 +90,9 @@ export default function TestimonialsSection() {
           className="text-center mb-16 flex flex-col items-center"
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 border border-[#1E293B] bg-[#0F172A]/50 px-3 py-1.5 rounded mb-6">
+          <div className="inline-flex items-center gap-2 border border-[var(--color-border)] bg-[var(--color-bg-card)]/50 px-3 py-1.5 rounded mb-6">
             <TrendingUpIcon />
-            <span className="text-[#4ADE80] text-xs font-bold tracking-widest uppercase">
+            <span className="text-[var(--color-primary)] text-xs font-bold tracking-widest uppercase">
               TESTIMONIAL
             </span>
           </div>
@@ -114,14 +114,14 @@ export default function TestimonialsSection() {
           {testimonials.map((t, index) => (
             <motion.div key={index} variants={cardVar} className="h-full">
               <motion.div
-                className="bg-[#18191B] rounded-2xl p-7 h-full flex flex-col group cursor-default"
+                className="bg-[var(--color-bg-card)] rounded-2xl p-7 h-full flex flex-col group cursor-default"
                 whileHover={{ y: -8, backgroundColor: '#1E2022', boxShadow: '0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06)' }}
                 whileTap={{ y: -4, scale: 0.98, backgroundColor: '#1E2022', boxShadow: '0 12px 40px rgba(0,0,0,0.4)' }}
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               >
                 {/* Card Header: Name & Platform Icon */}
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-white text-[15px] font-medium transition-colors duration-300 group-hover:text-[#4ADE80] group-active:text-[#4ADE80]">{t.name}</h3>
+                  <h3 className="text-white text-[15px] font-medium transition-colors duration-300 group-hover:text-[var(--color-primary)] group-active:text-[var(--color-primary)]">{t.name}</h3>
                   <div className="transition-transform duration-300 group-hover:scale-110 group-active:scale-110">
                     {t.platform === 'Facebook' && <FacebookIcon />}
                     {t.platform === 'Google' && <GoogleIcon />}
@@ -135,10 +135,10 @@ export default function TestimonialsSection() {
                 </div>
 
                 {/* Divider */}
-                <hr className="border-[#2A2B30] mb-6 transition-colors duration-300 group-hover:border-[#3A3B40]" />
+                <hr className="border-[var(--color-border)] mb-6 transition-colors duration-300 group-hover:border-[var(--color-border)]" />
 
                 {/* Text */}
-                <p className="text-[#9CA3AF] text-[15px] leading-[1.7] flex-1">
+                <p className="text-[var(--color-fg-muted)] text-[15px] leading-[1.7] flex-1">
                   {t.text}
                 </p>
 

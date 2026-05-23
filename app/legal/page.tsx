@@ -23,7 +23,7 @@ function PolicyBlock({ heading, children }: { heading: string; children: React.R
   return (
     <div className="mb-9">
       <h3 className="text-base font-bold text-white mb-3.5 flex items-center gap-2.5">
-        <span className="w-5 h-[2px] bg-[#6bc28b] rounded-sm shrink-0" />
+        <span className="w-5 h-[2px] bg-[var(--color-primary)] rounded-sm shrink-0" />
         {heading}
       </h3>
       <div className="text-sm text-gray-400 leading-[1.75] space-y-3">{children}</div>
@@ -36,7 +36,7 @@ function PolicyList({ items }: { items: React.ReactNode[] }) {
     <ul className="space-y-2">
       {items.map((item, i) => (
         <li key={i} className="flex items-start gap-2.5 text-sm text-gray-400 leading-[1.6]">
-          <span className="text-[#6bc28b] shrink-0 mt-0.5">
+          <span className="text-[var(--color-primary)] shrink-0 mt-0.5">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <polyline points="20 6 9 17 4 12" />
             </svg>
@@ -50,7 +50,7 @@ function PolicyList({ items }: { items: React.ReactNode[] }) {
 
 function HighlightBox({ children }: { children: React.ReactNode }) {
   return (
-    <div className="my-5 bg-[#17221a] border border-white/[0.07] border-l-[3px] border-l-[#6bc28b] rounded-r-xl px-6 py-5">
+    <div className="my-5 bg-[var(--color-bg-card)] border border-white/[0.07] border-l-[3px] border-l-[var(--color-primary)] rounded-r-xl px-6 py-5">
       <p className="text-sm text-gray-300 leading-[1.7]">{children}</p>
     </div>
   );
@@ -58,7 +58,7 @@ function HighlightBox({ children }: { children: React.ReactNode }) {
 
 function WarningBox({ children }: { children: React.ReactNode }) {
   return (
-    <div className="my-5 bg-[#1a0e0e]/60 border border-[#e05555]/20 border-l-[3px] border-l-[#e05555] rounded-r-xl px-6 py-5">
+    <div className="my-5 bg-[var(--color-error)]/60 border border-[var(--color-error)]/20 border-l-[3px] border-l-[var(--color-error)] rounded-r-xl px-6 py-5">
       <p className="text-sm text-gray-300 leading-[1.7]">{children}</p>
     </div>
   );
@@ -79,7 +79,7 @@ function PolicySection({
 }) {
   return (
     <section id={id} className="pb-16 mb-16 border-b border-white/[0.07] last:border-b-0 last:mb-0 last:pb-0 scroll-mt-32">
-      <div className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#6bc28b] mb-3">{num}</div>
+      <div className="text-[11px] font-bold tracking-[0.12em] uppercase text-[var(--color-primary)] mb-3">{num}</div>
       <h2 className="text-2xl sm:text-3xl md:text-[34px] font-extrabold text-white leading-tight tracking-tight mb-2">
         {title}
       </h2>
@@ -117,11 +117,11 @@ export default function LegalPage() {
   }
 
   return (
-    <main className="font-sans bg-[#0a0f0a]">
+    <main className="font-sans bg-[var(--color-bg)]">
       <Navbar />
 
       {/* ── Hero ── */}
-      <section className="bg-[#111711] pt-24 pb-12 sm:pt-32 sm:pb-16 md:pt-36 md:pb-20 border-b border-white/[0.06]">
+      <section className="bg-[var(--color-bg-section)] pt-24 pb-12 sm:pt-32 sm:pb-16 md:pt-36 md:pb-20 border-b border-white/[0.06]">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -129,7 +129,7 @@ export default function LegalPage() {
             transition={{ duration: 0.5 }}
             className="mb-6"
           >
-            <span className="inline-flex items-center gap-2 border border-[#6bc28b]/30 bg-[#17221a] text-[#6bc28b] text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-sm">
+            <span className="inline-flex items-center gap-2 border border-[var(--color-primary)]/30 bg-[var(--color-bg-card)] text-[var(--color-primary)] text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-sm">
               Legal Documents
             </span>
           </motion.div>
@@ -141,7 +141,7 @@ export default function LegalPage() {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-extrabold text-white leading-[1.1] tracking-tight mb-5"
           >
             Transparent by design,<br />
-            <span className="text-[#6bc28b]">clear on every term.</span>
+            <span className="text-[var(--color-primary)]">clear on every term.</span>
           </motion.h1>
 
           <motion.p
@@ -157,7 +157,7 @@ export default function LegalPage() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="inline-flex items-center gap-2.5 bg-[#17221a] border border-white/[0.07] rounded-lg px-4 py-2.5 text-[13px] text-gray-500"
+            className="inline-flex items-center gap-2.5 bg-[var(--color-bg-card)] border border-white/[0.07] rounded-lg px-4 py-2.5 text-[13px] text-gray-500"
           >
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6bc28b" strokeWidth="1.8">
               <rect x="3" y="4" width="18" height="18" rx="2" />
@@ -183,8 +183,8 @@ export default function LegalPage() {
                     onClick={() => scrollTo(item.id)}
                     className={`block w-full text-left px-3 py-2 text-[13px] rounded-md lg:border-l-2 border-b-2 lg:border-b-0 whitespace-nowrap transition-all duration-200 ${
                       isActive
-                        ? 'text-[#6bc28b] bg-[#6bc28b]/[0.06] lg:border-l-[#6bc28b] border-b-[#6bc28b]'
-                        : 'text-gray-400 hover:text-[#6bc28b] lg:border-l-transparent border-b-transparent'
+                        ? 'text-[var(--color-primary)] bg-[var(--color-primary)]/[0.06] lg:border-l-[var(--color-primary)] border-b-[var(--color-primary)]'
+                        : 'text-gray-400 hover:text-[var(--color-primary)] lg:border-l-transparent border-b-transparent'
                     }`}
                   >
                     {item.label}
@@ -206,7 +206,7 @@ export default function LegalPage() {
             effective="Effective: February 2026  |  Applies to: All pages, products, and communications of Logyra Research Pvt Ltd"
           >
             <WarningBox>
-              <strong className="text-[#e05555]">IMPORTANT:</strong> Logyra Research Pvt Ltd is not registered with the Securities and Exchange Board of India (SEBI) as an investment advisor, research analyst, portfolio manager, or in any other regulated capacity. Nothing published on this platform constitutes regulated financial advice.
+              <strong className="text-[var(--color-error)]">IMPORTANT:</strong> Logyra Research Pvt Ltd is not registered with the Securities and Exchange Board of India (SEBI) as an investment advisor, research analyst, portfolio manager, or in any other regulated capacity. Nothing published on this platform constitutes regulated financial advice.
             </WarningBox>
 
             <PolicyBlock heading="Nature of Content">
@@ -331,10 +331,10 @@ export default function LegalPage() {
               <p>Logyra Research Pvt Ltd reserves the right to terminate a subscriber&apos;s access without refund in the event of a material breach of the Terms and Conditions, including but not limited to redistribution of content, sharing of access credentials, or use of research content for commercial purposes without consent.</p>
             </PolicyBlock>
 
-            <div className="bg-[#17221a] border border-white/[0.07] rounded-xl p-7 mt-6">
+            <div className="bg-[var(--color-bg-card)] border border-white/[0.07] rounded-xl p-7 mt-6">
               <h4 className="text-[15px] font-bold text-white mb-2.5">Access issues or queries</h4>
               <p className="text-sm text-gray-400 leading-[1.65]">
-                For technical access issues only, contact us via the <Link href="/#contact" className="text-[#6bc28b] hover:underline">contact form on logyra.in</Link> within 48 hours of your payment confirmation. Please include your registered email address and payment reference number.
+                For technical access issues only, contact us via the <Link href="/#contact" className="text-[var(--color-primary)] hover:underline">contact form on logyra.in</Link> within 48 hours of your payment confirmation. Please include your registered email address and payment reference number.
               </p>
             </div>
           </PolicySection>
@@ -504,19 +504,19 @@ export default function LegalPage() {
 
           {/* Contact */}
           <section id="contact-legal" className="scroll-mt-32">
-            <div className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#6bc28b] mb-3">Queries & Concerns</div>
+            <div className="text-[11px] font-bold tracking-[0.12em] uppercase text-[var(--color-primary)] mb-3">Queries & Concerns</div>
             <h2 className="text-xl sm:text-2xl md:text-[28px] font-extrabold text-white leading-tight tracking-tight mb-4">
               Legal queries or data requests
             </h2>
             <p className="text-sm text-gray-400 leading-[1.7] mb-6">
               For any queries related to these legal documents, data access requests, or concerns regarding platform use, contact Logyra Research Pvt Ltd directly.
             </p>
-            <div className="bg-[#17221a] border border-white/[0.07] rounded-xl p-7">
+            <div className="bg-[var(--color-bg-card)] border border-white/[0.07] rounded-xl p-7">
               <h4 className="text-[15px] font-bold text-white mb-3">Logyra Research Pvt Ltd</h4>
               <p className="text-sm text-gray-400 leading-[1.75]">
-                Website: <Link href="/" className="text-[#6bc28b] hover:underline">logyra.in</Link><br />
-                Contact: <Link href="/#contact" className="text-[#6bc28b] hover:underline">logyra.in/contact</Link><br />
-                Open Channel: <a href="https://t.me/logyra_insights" target="_blank" rel="noopener noreferrer" className="text-[#6bc28b] hover:underline">@logyra_insights on Telegram</a><br /><br />
+                Website: <Link href="/" className="text-[var(--color-primary)] hover:underline">logyra.in</Link><br />
+                Contact: <Link href="/#contact" className="text-[var(--color-primary)] hover:underline">logyra.in/contact</Link><br />
+                Open Channel: <a href="https://t.me/logyra_insights" target="_blank" rel="noopener noreferrer" className="text-[var(--color-primary)] hover:underline">@logyra_insights on Telegram</a><br /><br />
                 We aim to respond to all legal and data-related queries within 10 business days.
               </p>
             </div>

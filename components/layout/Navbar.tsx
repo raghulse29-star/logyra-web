@@ -78,7 +78,7 @@ function DesktopSubMenuItem({ item }: { item: MenuItem }) {
               animate={{ opacity: 1, x: 0, y: -4 }}
               exit={{ opacity: 0, x: -8, y: -4 }}
               transition={{ duration: 0.2 }}
-              className="absolute top-0 left-[calc(100%+4px)] min-w-[180px] bg-[#2d4233]/98 backdrop-blur-xl border border-white/10 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] py-2 flex flex-col z-50"
+              className="absolute top-0 left-[calc(100%+4px)] min-w-[180px] bg-[var(--color-navbar-scrolled)]/98 backdrop-blur-xl border border-white/10 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] py-2 flex flex-col z-50"
             >
               {item.children!.map(child => (
                 <DesktopSubMenuItem key={child.label} item={child} />
@@ -110,7 +110,7 @@ function NavLink({ link, index }: { link: MenuItem; index: number }) {
       <Link
         href={link.href}
         className={`relative text-[16px] xl:text-[17px] font-medium flex items-center gap-1.5 py-1 transition-colors duration-200 ${
-          isActive ? 'text-[#6bc28b]' : 'text-gray-200 hover:text-white'
+          isActive ? 'text-[var(--color-primary)]' : 'text-gray-200 hover:text-white'
         }`}
       >
         <AnimatePresence>
@@ -149,7 +149,7 @@ function NavLink({ link, index }: { link: MenuItem; index: number }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
               transition={{ duration: 0.2 }}
-              className="absolute top-[120%] left-0 min-w-[200px] bg-[#2d4233]/98 backdrop-blur-xl border border-white/10 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] py-2 flex flex-col z-50"
+              className="absolute top-[120%] left-0 min-w-[200px] bg-[var(--color-navbar-scrolled)]/98 backdrop-blur-xl border border-white/10 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] py-2 flex flex-col z-50"
             >
               {link.children!.map(child => (
                 <DesktopSubMenuItem key={child.label} item={child} />
@@ -160,7 +160,7 @@ function NavLink({ link, index }: { link: MenuItem; index: number }) {
       )}
 
       {isActive && (
-        <motion.span layoutId="active-underline" className="absolute -bottom-[22px] left-0 w-full h-[2px] rounded-full bg-[#6bc28b]" />
+        <motion.span layoutId="active-underline" className="absolute -bottom-[22px] left-0 w-full h-[2px] rounded-full bg-[var(--color-primary)]" />
       )}
       {!isActive && (
         <motion.span
@@ -184,7 +184,7 @@ function MobileMenuItem({ item, setMenuOpen }: { item: MenuItem; setMenuOpen: (v
   return (
     <div className="flex flex-col w-full">
       <div className={`flex items-center rounded-xl text-[15px] font-medium transition-all duration-200 ${
-        isActive ? 'text-[#6bc28b] bg-[#6bc28b]/10' : 'text-gray-200'
+        isActive ? 'text-[var(--color-primary)] bg-[var(--color-primary)]/10' : 'text-gray-200'
       }`}>
         {/* Label — always navigates */}
         <Link
@@ -254,8 +254,8 @@ export default function Navbar() {
       transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 font-sans ${
         scrolled
-          ? 'bg-[#2d4233]/95 backdrop-blur-xl border-b border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]'
-          : 'bg-[#3b5440]'
+          ? 'bg-[var(--color-navbar-scrolled)]/95 backdrop-blur-xl border-b border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]'
+          : 'bg-[var(--color-navbar)]'
       }`}
     >
       <nav className="max-w-[1600px] mx-auto px-4 sm:px-6 flex items-center justify-between h-20 sm:h-24">
@@ -295,7 +295,7 @@ export default function Navbar() {
           {/* CTA Button */}
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.55, duration: 0.45 }}>
             <motion.div whileHover={{ scale: 1.05, y: -1 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}>
-              <Link href="/#contact" className="relative inline-block bg-[#6bc28b] text-white text-[12px] xl:text-[13px] font-bold tracking-wider px-5 xl:px-6 py-2.5 xl:py-3 rounded-lg overflow-hidden uppercase" style={{ boxShadow: '0 0 24px rgba(107,194,139,0.4)' }}>
+              <Link href="/#contact" className="relative inline-block bg-[var(--color-primary)] text-white text-[12px] xl:text-[13px] font-bold tracking-wider px-5 xl:px-6 py-2.5 xl:py-3 rounded-lg overflow-hidden uppercase" style={{ boxShadow: '0 0 24px rgba(107,194,139,0.4)' }}>
                 <motion.span className="absolute inset-0 -skew-x-12 bg-white/20" initial={{ x: '-110%' }} whileHover={{ x: '110%' }} transition={{ duration: 0.55, ease: 'easeInOut' }} />
                 <span className="relative z-10">CONNECT WITH US</span>
               </Link>
@@ -319,7 +319,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:hidden overflow-hidden bg-[#2d3f33]/98 backdrop-blur-xl border-t border-white/10 max-h-[85vh] overflow-y-auto"
+            className="lg:hidden overflow-hidden bg-[var(--color-navbar-scrolled)]/98 backdrop-blur-xl border-t border-white/10 max-h-[85vh] overflow-y-auto"
           >
             <div className="px-5 py-6 flex flex-col gap-1">
               {navLinks.map((link, i) => (
@@ -338,7 +338,7 @@ export default function Navbar() {
               </motion.div>
 
               <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45, duration: 0.35, ease: [0.22, 1, 0.36, 1] }} className="mt-2">
-                <Link href="/#contact" onClick={() => setMenuOpen(false)} className="relative flex items-center justify-center w-full bg-[#6bc28b] text-white font-bold tracking-wider min-h-[44px] rounded-xl text-center uppercase text-sm overflow-hidden" style={{ boxShadow: '0 0 24px rgba(107,194,139,0.35)' }}>
+                <Link href="/#contact" onClick={() => setMenuOpen(false)} className="relative flex items-center justify-center w-full bg-[var(--color-primary)] text-white font-bold tracking-wider min-h-[44px] rounded-xl text-center uppercase text-sm overflow-hidden" style={{ boxShadow: '0 0 24px rgba(107,194,139,0.35)' }}>
                   CONTACT US
                 </Link>
               </motion.div>

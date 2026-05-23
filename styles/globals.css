@@ -4,51 +4,83 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =============================================================================
+   THEME — single source of truth.
+   To re-skin the entire site, edit the values inside :root below. That's it.
+   Every component reads these via var(--color-xxx). No hex values in components.
+   ============================================================================= */
+
 :root {
-  /* Colors */
-  --color-primary: #4ade80;
-  --color-primary-light: #86efac;
-  --color-primary-dark: #16a34a;
-  --color-accent: #84cc16;
-  --color-accent-orange: #fb923c;
+  /* ── BRAND / PRIMARY ─────────────────────────────────────────────────────── */
+  --color-primary:        #6bc28b;   /* CTAs, links, focus rings, primary action */
+  --color-primary-hover:  #4ade80;   /* CTA hover state */
+  --color-primary-muted:  #3a7d52;   /* disabled CTA */
+  --color-primary-tint:   #a3f585;   /* light tint, hover bg */
 
-  /* Backgrounds */
-  --color-bg: #0a0f0a;
-  --color-bg-card: #111811;
-  --color-bg-elevated: #161e16;
-  --color-bg-section: #0d130d;
+  /* ── ACCENT ──────────────────────────────────────────────────────────────── */
+  --color-accent:         #B8FD4B;   /* lime — badges, "MOST CHOSEN" pills, pull-quotes */
 
-  /* Text */
-  --color-text-heading: #f0fdf0;
-  --color-text-body: #d1fae5;
-  --color-text-muted: #6b7280;
-  --color-text-accent: #4ade80;
+  /* ── SURFACES (backgrounds) ──────────────────────────────────────────────── */
+  --color-bg:             #0a0f0a;   /* page background */
+  --color-bg-section:     #111711;   /* alternating section bg */
+  --color-bg-card:        #17221a;   /* cards, surfaces */
+  --color-bg-elevated:    #1c2c1c;   /* modals, popups, raised cards */
+  --color-bg-input:       #0d130d;   /* form input bg */
+  --color-bg-button:      #1A1F24;   /* disabled button bg */
 
-  /* Borders */
-  --color-border: rgba(74, 222, 128, 0.12);
-  --color-border-light: rgba(74, 222, 128, 0.06);
+  /* ── FOREGROUND (text) ───────────────────────────────────────────────────── */
+  --color-fg:             #FAFAFA;   /* headings, primary text */
+  --color-fg-muted:       #A1A1AA;   /* body text */
+  --color-fg-subtle:      #71717A;   /* labels, captions, footnotes */
+  --color-fg-inverse:     #0d1a10;   /* text on primary/accent backgrounds */
 
-  /* Radius */
+  /* ── NAVBAR ──────────────────────────────────────────────────────────────── */
+  --color-navbar:           #3b5440;   /* navbar bg (default, before scroll) */
+  --color-navbar-scrolled:  #2d4233;   /* navbar bg when scrolled */
+  --color-footer:           #2B352A;   /* footer bg */
+
+  /* ── BORDERS ─────────────────────────────────────────────────────────────── */
+  --color-border:         rgba(109, 219, 109, 0.15);  /* default border (greenish) */
+  --color-border-subtle:  rgba(109, 219, 109, 0.08);  /* low-emphasis */
+  --color-border-strong:  rgba(109, 219, 109, 0.28);  /* emphasized */
+
+  /* ── STATUS ──────────────────────────────────────────────────────────────── */
+  --color-success:        #4ADE80;   /* up indicator, success states */
+  --color-error:          #E05555;   /* error states */
+  --color-warning:        #FBBF24;   /* warning */
+  --color-info:           #229ED9;   /* info / Telegram brand */
+
+  /* ── LEGACY (kept for Tailwind config back-compat) ───────────────────────── */
+  --color-primary-light:  var(--color-primary-tint);
+  --color-primary-dark:   var(--color-primary-hover);
+  --color-accent-orange:  var(--color-primary);
+  --color-text-heading:   var(--color-fg);
+  --color-text-body:      var(--color-fg-muted);
+  --color-text-muted:     var(--color-fg-subtle);
+  --color-text-accent:    var(--color-primary);
+  --color-border-light:   var(--color-border-subtle);
+
+  /* ── RADIUS ──────────────────────────────────────────────────────────────── */
   --radius-brand: 0.5rem;
-  --radius-card: 1rem;
-  --radius-pill: 9999px;
+  --radius-card:  1rem;
+  --radius-pill:  9999px;
 
-  /* Shadows */
-  --shadow-brand: 0 0 40px rgba(74, 222, 128, 0.15);
-  --shadow-card: 0 4px 32px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 60px rgba(74, 222, 128, 0.2);
-  --shadow-glow-accent: 0 0 60px rgba(132, 204, 22, 0.2);
+  /* ── SHADOWS ─────────────────────────────────────────────────────────────── */
+  --shadow-brand:        0 0 40px rgba(107, 194, 139, 0.15);
+  --shadow-card:         0 4px 32px rgba(0, 0, 0, 0.4);
+  --shadow-glow:         0 0 60px rgba(107, 194, 139, 0.20);
+  --shadow-glow-accent:  0 0 60px rgba(184, 253, 75, 0.20);
 
-  /* Gradients */
-  --gradient-brand: linear-gradient(135deg, #4ade80 0%, #84cc16 100%);
-  --gradient-hero: radial-gradient(ellipse at 60% 0%, rgba(74, 222, 128, 0.12) 0%, transparent 60%);
-  --gradient-card: linear-gradient(135deg, rgba(74, 222, 128, 0.06) 0%, rgba(16, 25, 16, 0) 100%);
-  --gradient-cta: linear-gradient(135deg, rgba(74, 222, 128, 0.15) 0%, rgba(132, 204, 22, 0.08) 100%);
+  /* ── GRADIENTS ───────────────────────────────────────────────────────────── */
+  --gradient-brand: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  --gradient-hero:  radial-gradient(ellipse at 60% 0%, rgba(107, 194, 139, 0.12) 0%, transparent 60%);
+  --gradient-card:  linear-gradient(135deg, rgba(107, 194, 139, 0.06) 0%, rgba(23, 34, 26, 0) 100%);
+  --gradient-cta:   linear-gradient(135deg, rgba(107, 194, 139, 0.15) 0%, rgba(184, 253, 75, 0.08) 100%);
 
-  /* Typography */
+  /* ── TYPOGRAPHY ──────────────────────────────────────────────────────────── */
   --font-display: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-body:    'DM Sans', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
 }
 
 * {

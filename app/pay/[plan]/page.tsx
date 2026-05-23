@@ -46,13 +46,13 @@ export default function PayPage() {
   if (!config) return notFound();
 
   return (
-    <div className="min-h-screen bg-[#111315] font-sans flex flex-col">
+    <div className="min-h-screen bg-[var(--color-bg-card)] font-sans flex flex-col">
       <Navbar />
 
       <main className="flex-1 pt-20 sm:pt-24 flex flex-col">
 
         {/* Top bar with plan summary */}
-        <div className="bg-[#18261b] border-b border-white/[0.07]">
+        <div className="bg-[var(--color-bg-card)] border-b border-white/[0.07]">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-center gap-4">
               <Link href="/research-desk/inner-circle/index-options#plans" className="text-gray-400 hover:text-white transition-colors">
@@ -62,7 +62,7 @@ export default function PayPage() {
               </Link>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.15em] uppercase">F&O Inner Circle</span>
+                  <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.15em] uppercase">F&O Inner Circle</span>
                   <span className="text-gray-600 text-[10px]">·</span>
                   <span className="text-gray-400 text-[10px] tracking-wide">{config.label}</span>
                 </div>
@@ -84,14 +84,14 @@ export default function PayPage() {
         </div>
 
         {/* Payment iframe area */}
-        <div className="flex-1 relative pt-4 pb-8 px-4 sm:px-8 md:px-16 lg:px-32 bg-[#0d1610]">
+        <div className="flex-1 relative pt-4 pb-8 px-4 sm:px-8 md:px-16 lg:px-32 bg-[var(--color-bg-section)]">
           {/* Loading shimmer */}
           {!iframeLoaded && !iframeError && (
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#111315]">
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[var(--color-bg-card)]">
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                className="w-8 h-8 border-2 border-[#6bc28b]/30 border-t-[#6bc28b] rounded-full"
+                className="w-8 h-8 border-2 border-[var(--color-primary)]/30 border-t-[var(--color-primary)] rounded-full"
               />
               <p className="text-gray-500 text-sm">Loading payment form…</p>
             </div>
@@ -99,9 +99,9 @@ export default function PayPage() {
 
           {/* Iframe error fallback */}
           {iframeError && (
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-4 bg-[#111315]">
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-4 bg-[var(--color-bg-card)]">
               <div className="text-center max-w-sm">
-                <div className="w-12 h-12 rounded-full bg-[#B8FD4B]/10 flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 rounded-full bg-[var(--color-accent)]/10 flex items-center justify-center mx-auto mb-4">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8FD4B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
                     <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
@@ -111,11 +111,11 @@ export default function PayPage() {
                 <p className="text-gray-400 text-sm mb-6">
                   Click below to open the secure payment page for{' '}
                   <span className="text-white">{config.label}</span> at{' '}
-                  <span className="text-[#6bc28b]">{config.price}</span>.
+                  <span className="text-[var(--color-primary)]">{config.price}</span>.
                 </p>
                 <a
                   href={config.cashfreeUrl}
-                  className="inline-block bg-[#6bc28b] text-[#0d1a10] font-bold text-sm px-8 py-3.5 rounded-lg hover:bg-[#B8FD4B] transition-colors"
+                  className="inline-block bg-[var(--color-primary)] text-[var(--color-fg-inverse)] font-bold text-sm px-8 py-3.5 rounded-lg hover:bg-[var(--color-accent)] transition-colors"
                 >
                   Proceed to Payment →
                 </a>

@@ -52,7 +52,7 @@ export default function Footer() {
   const { open: openChannel } = useOpenChannel();
 
   return (
-    <footer className="bg-[#2B352A] pt-14 sm:pt-20 pb-8 px-4 font-sans">
+    <footer className="bg-[var(--color-footer)] pt-14 sm:pt-20 pb-8 px-4 font-sans">
       <div className="container mx-auto max-w-[1200px]">
 
         {/* Divider */}
@@ -84,19 +84,19 @@ export default function Footer() {
                 className="h-14 sm:h-16 w-auto"
               />
             </Link>
-            <p className="text-[#A3B1A4] text-[15px] max-w-[200px] leading-relaxed mb-5">
+            <p className="text-[var(--color-fg-muted)] text-[15px] max-w-[200px] leading-relaxed mb-5">
               Market Intelligence. Research-First.
             </p>
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#6bc28b]" />
-              <span className="text-[#6bc28b] text-[11px] font-bold tracking-widest uppercase">Active Research</span>
+              <span className="w-2 h-2 rounded-full bg-[var(--color-primary)]" />
+              <span className="text-[var(--color-primary)] text-[11px] font-bold tracking-widest uppercase">Active Research</span>
             </div>
           </motion.div>
 
           {/* Research Desk */}
           <motion.div variants={wrapVar} className="lg:ml-12">
             <h4 className="text-white text-[11px] font-bold tracking-[0.15em] uppercase mb-5 flex items-center gap-2">
-              <span className="w-4 h-px bg-[#6bc28b]" />
+              <span className="w-4 h-px bg-[var(--color-primary)]" />
               RESEARCH DESK
             </h4>
             <ul className="flex flex-col gap-3">
@@ -104,9 +104,9 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="group flex items-center gap-2 text-[#A3B1A4] hover:text-white text-[15px] transition-colors duration-200"
+                    className="group flex items-center gap-2 text-[var(--color-fg-muted)] hover:text-white text-[15px] transition-colors duration-200"
                   >
-                    <span className="block w-0 group-hover:w-3 h-px bg-[#6bc28b] transition-all duration-300" />
+                    <span className="block w-0 group-hover:w-3 h-px bg-[var(--color-primary)] transition-all duration-300" />
                     {link.label}
                   </Link>
                 </li>
@@ -117,7 +117,7 @@ export default function Footer() {
           {/* Company */}
           <motion.div variants={wrapVar}>
             <h4 className="text-white text-[11px] font-bold tracking-[0.15em] uppercase mb-5 flex items-center gap-2">
-              <span className="w-4 h-px bg-[#6bc28b]" />
+              <span className="w-4 h-px bg-[var(--color-primary)]" />
               COMPANY
             </h4>
             <ul className="flex flex-col gap-3">
@@ -125,9 +125,9 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="group flex items-center gap-2 text-[#A3B1A4] hover:text-white text-[15px] transition-colors duration-200"
+                    className="group flex items-center gap-2 text-[var(--color-fg-muted)] hover:text-white text-[15px] transition-colors duration-200"
                   >
-                    <span className="block w-0 group-hover:w-3 h-px bg-[#6bc28b] transition-all duration-300" />
+                    <span className="block w-0 group-hover:w-3 h-px bg-[var(--color-primary)] transition-all duration-300" />
                     {link.label}
                   </Link>
                 </li>
@@ -138,10 +138,10 @@ export default function Footer() {
           {/* Connect */}
           <motion.div variants={wrapVar}>
             <h4 className="text-white text-[11px] font-bold tracking-[0.15em] uppercase mb-5 flex items-center gap-2">
-              <span className="w-4 h-px bg-[#6bc28b]" />
+              <span className="w-4 h-px bg-[var(--color-primary)]" />
               CONNECT
             </h4>
-            <p className="text-[#A3B1A4] text-[15px] mb-5">
+            <p className="text-[var(--color-fg-muted)] text-[15px] mb-5">
               Join the Intelligence Channel
             </p>
 
@@ -149,7 +149,7 @@ export default function Footer() {
             <button
               type="button"
               onClick={openChannel}
-              className="inline-flex items-center gap-2 text-[#00D47E] hover:text-[#00F592] text-[12px] font-bold tracking-wider uppercase mb-7 transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 text-[var(--color-primary)] hover:text-[var(--color-primary-hover)] text-[12px] font-bold tracking-wider uppercase mb-7 transition-colors cursor-pointer"
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="5 3 19 12 5 21 5 3" />
@@ -172,7 +172,7 @@ export default function Footer() {
                   key={s.label}
                   href="#"
                   aria-label={s.label}
-                  className="w-11 h-11 bg-[#E8F5E9] hover:bg-white text-[#1E2922] flex items-center justify-center rounded-sm transition-colors duration-200 hover:-translate-y-0.5 active:scale-95"
+                  className="w-11 h-11 bg-[var(--color-accent)] hover:bg-white text-[var(--color-fg-inverse)] flex items-center justify-center rounded-sm transition-colors duration-200 hover:-translate-y-0.5 active:scale-95"
                   style={{ transition: 'background-color 0.2s, transform 0.15s' }}
                 >
                   {s.icon}
@@ -188,12 +188,12 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.5 }}
-          className="pt-6 border-t border-[#3D4A3D] flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] uppercase tracking-wider text-[#A3B1A4]"
+          className="pt-6 border-t border-[var(--color-border)] flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] uppercase tracking-wider text-[var(--color-fg-muted)]"
         >
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-1 text-center md:text-left">
             <span>COPYRIGHT © 2026 LOGYRA RESEARCH PVT LTD. ALL RIGHTS RESERVED.</span>
-            <span className="hidden md:inline text-[#00D47E]">|</span>
-            <span className="text-[#00D47E] font-medium">NOT SEBI REGISTERED | EDUCATIONAL CONTENT ONLY</span>
+            <span className="hidden md:inline text-[var(--color-primary)]">|</span>
+            <span className="text-[var(--color-primary)] font-medium">NOT SEBI REGISTERED | EDUCATIONAL CONTENT ONLY</span>
           </div>
           <div className="flex items-center gap-6">
             {[

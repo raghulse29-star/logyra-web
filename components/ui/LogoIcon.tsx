@@ -4,12 +4,12 @@ export default function LogoIcon({ size = 28 }: { size?: number }) {
       <rect width="28" height="28" rx="7" fill="url(#logoGrad)" />
       <path
         d="M7 20.5V9l5.5 5.5L17 8l4 12.5"
-        stroke="#0a0f0a"
+        stroke="#0A0A0A"
         strokeWidth="2.2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <circle cx="17" cy="8" r="2" fill="#0a0f0a" />
+      <circle cx="17" cy="8" r="2" fill="#0A0A0A" />
       <defs>
         <linearGradient id="logoGrad" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
           <stop stopColor="#4ade80" />

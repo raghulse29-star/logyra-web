@@ -101,14 +101,14 @@ export default function AboutPage() {
   const { open: openChannel } = useOpenChannel();
 
   return (
-    <main className="font-sans bg-[#0a0f0a]">
+    <main className="font-sans bg-[var(--color-bg)]">
       <Navbar />
 
       {/* ── Hero ── */}
-      <section className="relative bg-[#111711] pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-36 md:pb-24 overflow-hidden border-b border-white/[0.06]">
+      <section className="relative bg-[var(--color-bg-section)] pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-36 md:pb-24 overflow-hidden border-b border-white/[0.06]">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-[20%] left-[20%] w-[400px] h-[400px] bg-[#6bc28b]/5 blur-[140px] rounded-full" />
-          <div className="absolute top-0 right-[10%] w-[320px] h-[320px] bg-[#6bc28b]/4 blur-[120px] rounded-full" />
+          <div className="absolute top-[20%] left-[20%] w-[400px] h-[400px] bg-[var(--color-primary)]/5 blur-[140px] rounded-full" />
+          <div className="absolute top-0 right-[10%] w-[320px] h-[320px] bg-[var(--color-primary)]/4 blur-[120px] rounded-full" />
         </div>
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
@@ -117,8 +117,8 @@ export default function AboutPage() {
             transition={{ duration: 0.5 }}
             className="mb-9"
           >
-            <span className="inline-flex items-center gap-2 border border-[#6bc28b]/30 bg-[#17221a] text-[#6bc28b] text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#6bc28b] animate-pulse" />
+            <span className="inline-flex items-center gap-2 border border-[var(--color-primary)]/30 bg-[var(--color-bg-card)] text-[var(--color-primary)] text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] animate-pulse" />
               About Logyra Research
             </span>
           </motion.div>
@@ -131,7 +131,7 @@ export default function AboutPage() {
           >
             Built to read<br />
             the market.<br />
-            <span className="text-[#6bc28b]">Not to follow it.</span>
+            <span className="text-[var(--color-primary)]">Not to follow it.</span>
           </motion.h1>
 
           <motion.p
@@ -147,14 +147,14 @@ export default function AboutPage() {
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="w-14 h-[3px] bg-[#6bc28b] rounded-sm mb-12 origin-left"
+            className="w-14 h-[3px] bg-[var(--color-primary)] rounded-sm mb-12 origin-left"
           />
 
           <motion.blockquote
             initial={{ opacity: 0, x: -16 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="max-w-[720px] border-l-2 border-[#6bc28b] pl-7"
+            className="max-w-[720px] border-l-2 border-[var(--color-primary)] pl-7"
           >
             <p className="text-lg md:text-xl lg:text-2xl font-semibold leading-snug text-gray-300 tracking-tight">
               <span className="text-white font-bold">Most participants lose not because they lack information</span> — they lose because they have too much of the wrong kind. Unstructured data. Borrowed opinions. Reactive decisions. We were built to fix that. <span className="text-white font-bold">Not with more information. With better thinking.</span>
@@ -164,16 +164,16 @@ export default function AboutPage() {
       </section>
 
       {/* ── What We Believe ── */}
-      <section className="bg-[#0a0f0a] py-16 md:py-24 lg:py-28">
+      <section className="bg-[var(--color-bg)] py-16 md:py-24 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-14">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Our Conviction</span>
+              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Our Conviction</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1]">
               What we<br />
-              <span className="text-[#6bc28b]">actually believe.</span>
+              <span className="text-[var(--color-primary)]">actually believe.</span>
             </h2>
             <p className="text-gray-400 max-w-xl leading-relaxed">
               These are not values on a wall. They are operational principles that determine what we publish, how we write it, and who we build it for.
@@ -202,23 +202,23 @@ export default function AboutPage() {
       </section>
 
       {/* ── Numbers ── */}
-      <section className="bg-[#111711] py-16 md:py-24 lg:py-28 border-y border-white/[0.06]">
+      <section className="bg-[var(--color-bg-section)] py-16 md:py-24 lg:py-28 border-y border-white/[0.06]">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Track Record</span>
+              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Track Record</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1]">
               Numbers that<br />
-              <span className="text-[#6bc28b]">were built, not announced.</span>
+              <span className="text-[var(--color-primary)]">were built, not announced.</span>
             </h2>
             <p className="text-gray-400 max-w-xl leading-relaxed">
               The only metric Logyra has never published is a performance guarantee — because we do not make one.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 max-w-[900px] border border-white/[0.08] rounded-xl overflow-hidden bg-[#17221a]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 max-w-[900px] border border-white/[0.08] rounded-xl overflow-hidden bg-[var(--color-bg-card)]">
             {numbers.map((n, i) => (
               <motion.div
                 key={n.label}
@@ -226,12 +226,12 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.45, delay: i * 0.08 }}
-                className={`relative p-8 sm:p-10 group hover:bg-[#1c2c1c] transition-colors ${
+                className={`relative p-8 sm:p-10 group hover:bg-[var(--color-bg-elevated)] transition-colors ${
                   i < 3 ? 'border-b sm:border-b-0 lg:border-b-0 sm:border-r border-white/[0.07]' : ''
                 } ${i < 2 ? 'sm:border-b lg:border-b-0 border-white/[0.07]' : ''}`}
               >
-                <span className="absolute top-0 left-0 right-0 h-[2px] bg-[#6bc28b] opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="text-3xl sm:text-4xl md:text-[44px] font-bold text-[#6bc28b] tracking-tight leading-none mb-3">{n.val}</div>
+                <span className="absolute top-0 left-0 right-0 h-[2px] bg-[var(--color-primary)] opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="text-3xl sm:text-4xl md:text-[44px] font-bold text-[var(--color-primary)] tracking-tight leading-none mb-3">{n.val}</div>
                 <div className="text-[13px] text-gray-400 leading-[1.55]">{n.label}</div>
               </motion.div>
             ))}
@@ -240,16 +240,16 @@ export default function AboutPage() {
       </section>
 
       {/* ── What We Cover ── */}
-      <section className="bg-[#0a0f0a] py-16 md:py-24 lg:py-28">
+      <section className="bg-[var(--color-bg)] py-16 md:py-24 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-14">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Research Coverage</span>
+              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Research Coverage</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1]">
               One framework.<br />
-              <span className="text-[#6bc28b]">Every market.</span>
+              <span className="text-[var(--color-primary)]">Every market.</span>
             </h2>
             <p className="text-gray-400 max-w-xl leading-relaxed">
               The Logyra research architecture is applied uniformly across all asset classes. The framework does not change with the market — only the instrument does.
@@ -264,9 +264,9 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.45, delay: i * 0.08 }}
-                className="bg-[#17221a] border border-white/[0.07] hover:border-[#6bc28b]/30 hover:-translate-y-0.5 transition-all duration-300 rounded-xl p-7 sm:p-8"
+                className="bg-[var(--color-bg-card)] border border-white/[0.07] hover:border-[var(--color-primary)]/30 hover:-translate-y-0.5 transition-all duration-300 rounded-xl p-7 sm:p-8"
               >
-                <div className="w-11 h-11 rounded-lg bg-[#111711] border border-white/[0.08] flex items-center justify-center mb-5">
+                <div className="w-11 h-11 rounded-lg bg-[var(--color-bg-section)] border border-white/[0.08] flex items-center justify-center mb-5">
                   <div className="w-5 h-5">{c.icon}</div>
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2.5">{c.title}</h3>
@@ -278,16 +278,16 @@ export default function AboutPage() {
       </section>
 
       {/* ── Research Philosophy ── */}
-      <section className="bg-[#111711] py-16 md:py-24 lg:py-28 border-y border-white/[0.06]">
+      <section className="bg-[var(--color-bg-section)] py-16 md:py-24 lg:py-28 border-y border-white/[0.06]">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-14">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Research Philosophy</span>
+              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Research Philosophy</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1]">
               How we<br />
-              <span className="text-[#6bc28b]">read the market.</span>
+              <span className="text-[var(--color-primary)]">read the market.</span>
             </h2>
             <p className="text-gray-400 max-w-xl leading-relaxed">
               The Logyra framework is not a strategy. It is a structured way of understanding what the market is doing — and why — before forming any view on what it might do next.
@@ -302,7 +302,7 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
               className="text-xl sm:text-2xl md:text-3xl lg:text-[34px] font-extrabold leading-snug tracking-tight text-white mb-8"
             >
-              We study <span className="text-[#6bc28b]">liquidity, order flow,</span> and market structure.<br />
+              We study <span className="text-[var(--color-primary)]">liquidity, order flow,</span> and market structure.<br />
               Not sentiment. Not headlines. Not retail opinion.
             </motion.p>
             <p className="text-base text-gray-400 leading-[1.75] mb-6">
@@ -315,7 +315,7 @@ export default function AboutPage() {
 
           {/* Core Pillars */}
           <div className="mt-16">
-            <div className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase mb-6">Core Pillars</div>
+            <div className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase mb-6">Core Pillars</div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-[900px]">
               {pillars.map((p, i) => (
                 <motion.div
@@ -324,9 +324,9 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.45, delay: (i % 3) * 0.06 }}
-                  className="bg-[#17221a] border border-white/[0.07] rounded-xl p-7"
+                  className="bg-[var(--color-bg-card)] border border-white/[0.07] rounded-xl p-7"
                 >
-                  <div className="w-8 h-[3px] bg-[#6bc28b] rounded-sm mb-5" />
+                  <div className="w-8 h-[3px] bg-[var(--color-primary)] rounded-sm mb-5" />
                   <h4 className="text-base font-bold text-white mb-2">{p.title}</h4>
                   <p className="text-[13px] text-gray-400 leading-[1.65]">{p.desc}</p>
                 </motion.div>
@@ -337,16 +337,16 @@ export default function AboutPage() {
       </section>
 
       {/* ── IS / IS NOT ── */}
-      <section className="bg-[#0a0f0a] py-16 md:py-24 lg:py-28">
+      <section className="bg-[var(--color-bg)] py-16 md:py-24 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[#B8FD4B] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Absolute Clarity</span>
+              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Absolute Clarity</span>
               <div className="flex-1 h-px bg-white/10" />
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1]">
               What Logyra is.<br />
-              <span className="text-[#6bc28b]">What it will never be.</span>
+              <span className="text-[var(--color-primary)]">What it will never be.</span>
             </h2>
             <p className="text-gray-400 max-w-xl leading-relaxed">
               This is not a disclaimer. It is how we define ourselves.
@@ -359,16 +359,16 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5 }}
-              className="bg-[#17221a] border border-[#6bc28b]/25 rounded-2xl p-7 sm:p-9"
+              className="bg-[var(--color-bg-card)] border border-[var(--color-primary)]/25 rounded-2xl p-7 sm:p-9"
             >
-              <div className="flex items-center gap-2 mb-6 text-[#6bc28b] text-[10px] font-bold tracking-[0.12em] uppercase">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#6bc28b]" />
+              <div className="flex items-center gap-2 mb-6 text-[var(--color-primary)] text-[10px] font-bold tracking-[0.12em] uppercase">
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]" />
                 What Logyra Research IS
               </div>
               <ul className="space-y-3.5">
                 {truthIs.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-gray-300 leading-[1.55]">
-                    <span className="text-[#6bc28b] shrink-0 mt-0.5">
+                    <span className="text-[var(--color-primary)] shrink-0 mt-0.5">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
@@ -384,16 +384,16 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-[#1a0e0e] border border-[#e05555]/20 rounded-2xl p-7 sm:p-9"
+              className="bg-[var(--color-error)] border border-[var(--color-error)]/20 rounded-2xl p-7 sm:p-9"
             >
-              <div className="flex items-center gap-2 mb-6 text-[#e05555] text-[10px] font-bold tracking-[0.12em] uppercase">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#e05555]" />
+              <div className="flex items-center gap-2 mb-6 text-[var(--color-error)] text-[10px] font-bold tracking-[0.12em] uppercase">
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-error)]" />
                 What Logyra Research IS NOT
               </div>
               <ul className="space-y-3.5">
                 {truthIsNot.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-gray-300 leading-[1.55]">
-                    <span className="text-[#e05555] shrink-0 mt-0.5">
+                    <span className="text-[var(--color-error)] shrink-0 mt-0.5">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                         <line x1="18" y1="6" x2="6" y2="18" />
                         <line x1="6" y1="6" x2="18" y2="18" />
@@ -409,11 +409,11 @@ export default function AboutPage() {
       </section>
 
       {/* ── CTA Band ── */}
-      <section className="bg-gradient-to-br from-[#162416] via-[#1c2e1c] to-[#162016] border-y border-[#6bc28b]/25 py-16 md:py-24 text-center">
+      <section className="bg-gradient-to-br from-[var(--color-bg-card)] via-[var(--color-bg-elevated)] to-[var(--color-bg-card)] border-y border-[var(--color-primary)]/25 py-16 md:py-24 text-center">
         <div className="max-w-[820px] mx-auto px-4 sm:px-6">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1] tracking-tight">
             The research is live.<br />
-            <span className="text-[#6bc28b]">Access starts free.</span>
+            <span className="text-[var(--color-primary)]">Access starts free.</span>
           </h2>
           <p className="text-gray-300 text-base md:text-lg mb-9 leading-relaxed max-w-[520px] mx-auto">
             Join the Open Channel at zero cost and track Logyra&apos;s research desk every day. Upgrade when you are ready.
@@ -422,13 +422,13 @@ export default function AboutPage() {
             <button
               type="button"
               onClick={openChannel}
-              className="inline-flex items-center gap-2 bg-[#6bc28b] hover:bg-[#B8FD4B] text-[#0d1a10] text-sm font-bold tracking-[0.06em] uppercase px-7 py-4 rounded-lg transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-accent)] text-[var(--color-fg-inverse)] text-sm font-bold tracking-[0.06em] uppercase px-7 py-4 rounded-lg transition-colors cursor-pointer"
             >
               Join Free on Telegram
             </button>
             <Link
               href="/research-desk/inner-circle"
-              className="inline-flex items-center gap-2 border border-white/20 hover:border-[#6bc28b] hover:text-[#6bc28b] text-gray-200 text-sm font-semibold px-6 py-4 rounded-lg transition-colors"
+              className="inline-flex items-center gap-2 border border-white/20 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] text-gray-200 text-sm font-semibold px-6 py-4 rounded-lg transition-colors"
             >
               View Inner Circle →
             </Link>

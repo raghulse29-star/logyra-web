@@ -27,10 +27,10 @@ export default function ContactSection() {
 
   // text-base = 16px — prevents iOS Safari from auto-zooming on input focus
   const inputClass =
-    'w-full px-4 py-3 rounded-[8px] text-base text-white bg-[#30313A] border border-transparent focus:outline-none focus:border-[#4ADE80] transition-all placeholder:text-[#9CA3AF] font-sans disabled:opacity-60';
+    'w-full px-4 py-3 rounded-[8px] text-base text-white bg-[var(--color-bg-elevated)] border border-transparent focus:outline-none focus:border-[var(--color-primary)] transition-all placeholder:text-[var(--color-fg-muted)] font-sans disabled:opacity-60';
 
   return (
-    <section id="contact" className="py-14 md:py-20 lg:py-32 bg-[#050505]">
+    <section id="contact" className="py-14 md:py-20 lg:py-32 bg-[var(--color-bg)]">
       <div className="container mx-auto px-4 max-w-[1200px]">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
           
@@ -46,7 +46,7 @@ export default function ContactSection() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight leading-tight">
               Get in Touch
             </h2>
-            <p className="text-[#9CA3AF] text-[15px] md:text-[17px] mb-10 max-w-md leading-relaxed">
+            <p className="text-[var(--color-fg-muted)] text-[15px] md:text-[17px] mb-10 max-w-md leading-relaxed">
               Have a question or need assistance? Drop us a message and we&apos;ll get back to you promptly.
             </p>
 
@@ -55,7 +55,7 @@ export default function ContactSection() {
 
               {/* Name Row */}
               <div>
-                <label className="text-[#9CA3AF] text-sm mb-2 block">Full Name</label>
+                <label className="text-[var(--color-fg-muted)] text-sm mb-2 block">Full Name</label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
                     type="text"
@@ -85,7 +85,7 @@ export default function ContactSection() {
               {/* Email & Phone Row */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-[#9CA3AF] text-sm mb-2 block">Email</label>
+                  <label className="text-[var(--color-fg-muted)] text-sm mb-2 block">Email</label>
                   <input
                     type="email"
                     name="email"
@@ -98,7 +98,7 @@ export default function ContactSection() {
                   />
                 </div>
                 <div>
-                  <label className="text-[#9CA3AF] text-sm mb-2 block">Phone number</label>
+                  <label className="text-[var(--color-fg-muted)] text-sm mb-2 block">Phone number</label>
                   <input
                     type="tel"
                     name="phone"
@@ -113,7 +113,7 @@ export default function ContactSection() {
 
               {/* Subject */}
               <div>
-                <label className="text-[#9CA3AF] text-sm mb-2 block">Subject</label>
+                <label className="text-[var(--color-fg-muted)] text-sm mb-2 block">Subject</label>
                 <div className="relative">
                   <select
                     name="subject"
@@ -130,7 +130,7 @@ export default function ContactSection() {
                   </select>
                   <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 1.5L6 6.5L11 1.5" stroke="#9CA3AF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M1 1.5L6 6.5L11 1.5" stroke="#A1A1AA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
                 </div>
@@ -138,7 +138,7 @@ export default function ContactSection() {
 
               {/* Message */}
               <div>
-                <label className="text-[#9CA3AF] text-sm mb-2 block">Your Message</label>
+                <label className="text-[var(--color-fg-muted)] text-sm mb-2 block">Your Message</label>
                 <textarea
                   name="message"
                   value={form.message}
@@ -161,7 +161,7 @@ export default function ContactSection() {
                     initial={{ opacity: 0, y: -8 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
-                    className="flex items-center gap-3 text-[#4ADE80] bg-[#4ADE80]/10 border border-[#4ADE80]/30 rounded-[8px] px-4 py-3 text-sm"
+                    className="flex items-center gap-3 text-[var(--color-primary)] bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/30 rounded-[8px] px-4 py-3 text-sm"
                   >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <polyline points="20 6 9 17 4 12" />
@@ -175,7 +175,7 @@ export default function ContactSection() {
                     initial={{ opacity: 0, y: -8 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
-                    className="flex items-center gap-3 text-[#e05555] bg-[#e05555]/10 border border-[#e05555]/30 rounded-[8px] px-4 py-3 text-sm"
+                    className="flex items-center gap-3 text-[var(--color-error)] bg-[var(--color-error)]/10 border border-[var(--color-error)]/30 rounded-[8px] px-4 py-3 text-sm"
                   >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <circle cx="12" cy="12" r="10" />
@@ -193,7 +193,7 @@ export default function ContactSection() {
                 disabled={isPending}
                 whileHover={isPending ? undefined : { scale: 1.01 }}
                 whileTap={isPending ? undefined : { scale: 0.99 }}
-                className="w-full bg-[#52B774] hover:bg-[#45a063] disabled:bg-[#3a7d52] disabled:cursor-not-allowed text-white font-medium py-4 rounded-[8px] mt-2 flex items-center justify-center gap-2 transition-colors"
+                className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] disabled:bg-[var(--color-primary-muted)] disabled:cursor-not-allowed text-white font-medium py-4 rounded-[8px] mt-2 flex items-center justify-center gap-2 transition-colors"
               >
                 {isPending ? (
                   <>

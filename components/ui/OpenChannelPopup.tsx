@@ -93,12 +93,12 @@ export default function OpenChannelPopup({ isOpen, onClose }: Props) {
             exit={{ opacity: 0, scale: 0.95, y: 12 }}
             transition={{ type: 'spring', damping: 26, stiffness: 280 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-md bg-gradient-to-br from-[#17221a] via-[#0f1a12] to-[#0d130d] border border-[#6bc28b]/30 rounded-2xl shadow-[0_24px_80px_rgba(0,0,0,0.6)] overflow-hidden"
+            className="relative w-full max-w-md bg-gradient-to-br from-[var(--color-bg-card)] via-[var(--color-bg-section)] to-[var(--color-bg-section)] border border-[var(--color-primary)]/30 rounded-2xl shadow-[0_24px_80px_rgba(0,0,0,0.6)] overflow-hidden"
           >
             {/* Decorative glows */}
-            <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#229ED9]/25 blur-[110px] rounded-full pointer-events-none" />
-            <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[#6bc28b]/20 blur-[110px] rounded-full pointer-events-none" />
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#6bc28b] to-transparent" />
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-[var(--color-info)]/25 blur-[110px] rounded-full pointer-events-none" />
+            <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[var(--color-primary)]/20 blur-[110px] rounded-full pointer-events-none" />
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[var(--color-primary)] to-transparent" />
 
             {/* Close button */}
             <button
@@ -120,7 +120,7 @@ export default function OpenChannelPopup({ isOpen, onClose }: Props) {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: 'spring', damping: 14, stiffness: 200, delay: 0.05 }}
-                    className="w-16 h-16 mx-auto mb-5 rounded-full bg-[#6bc28b]/15 border border-[#6bc28b]/40 flex items-center justify-center"
+                    className="w-16 h-16 mx-auto mb-5 rounded-full bg-[var(--color-primary)]/15 border border-[var(--color-primary)]/40 flex items-center justify-center"
                   >
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6bc28b" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="20 6 9 17 4 12" />
@@ -136,7 +136,7 @@ export default function OpenChannelPopup({ isOpen, onClose }: Props) {
                     initial={{ scale: 0, rotate: -20 }}
                     animate={{ scale: 1, rotate: 0 }}
                     transition={{ type: 'spring', damping: 16, stiffness: 220, delay: 0.1 }}
-                    className="w-14 h-14 mx-auto mb-5 rounded-full bg-[#229ED9] flex items-center justify-center shadow-[0_0_36px_rgba(34,158,217,0.55)]"
+                    className="w-14 h-14 mx-auto mb-5 rounded-full bg-[var(--color-info)] flex items-center justify-center shadow-[0_0_36px_rgba(34,158,217,0.55)]"
                   >
                     <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
                       <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z" />
@@ -144,14 +144,14 @@ export default function OpenChannelPopup({ isOpen, onClose }: Props) {
                   </motion.div>
 
                   <h2 className="text-2xl sm:text-[28px] font-bold text-white text-center tracking-tight leading-tight mb-2">
-                    Join the <span className="text-[#6bc28b]">Open Channel</span>
+                    Join the <span className="text-[var(--color-primary)]">Open Channel</span>
                   </h2>
                   <p className="text-center text-gray-400 text-sm leading-relaxed mb-2">
                     Daily market reads · Pre-market briefs<br />
-                    Zero noise · Free forever
+                     · Free forever
                   </p>
-                  <div className="flex items-center justify-center gap-2 text-[10px] font-bold tracking-[0.15em] uppercase text-[#B8FD4B] mb-7">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#B8FD4B] animate-pulse" />
+                  <div className="flex items-center justify-center gap-2 text-[10px] font-bold tracking-[0.15em] uppercase text-[var(--color-accent)] mb-7">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] animate-pulse" />
                     12,000+ already joined
                   </div>
 
@@ -168,7 +168,7 @@ export default function OpenChannelPopup({ isOpen, onClose }: Props) {
                       }}
                       disabled={loading}
                       maxLength={80}
-                      className="w-full px-4 py-3.5 bg-[#0a100b] border border-white/[0.08] focus:border-[#6bc28b] rounded-lg text-[15px] text-white placeholder:text-gray-500 outline-none transition-colors disabled:opacity-60"
+                      className="w-full px-4 py-3.5 bg-[var(--color-bg)] border border-white/[0.08] focus:border-[var(--color-primary)] rounded-lg text-[15px] text-white placeholder:text-gray-500 outline-none transition-colors disabled:opacity-60"
                     />
                     <input
                       type="tel"
@@ -181,7 +181,7 @@ export default function OpenChannelPopup({ isOpen, onClose }: Props) {
                       }}
                       disabled={loading}
                       maxLength={20}
-                      className="w-full px-4 py-3.5 bg-[#0a100b] border border-white/[0.08] focus:border-[#6bc28b] rounded-lg text-[15px] text-white placeholder:text-gray-500 outline-none transition-colors disabled:opacity-60"
+                      className="w-full px-4 py-3.5 bg-[var(--color-bg)] border border-white/[0.08] focus:border-[var(--color-primary)] rounded-lg text-[15px] text-white placeholder:text-gray-500 outline-none transition-colors disabled:opacity-60"
                     />
 
                     <AnimatePresence>
@@ -190,7 +190,7 @@ export default function OpenChannelPopup({ isOpen, onClose }: Props) {
                           initial={{ opacity: 0, y: -6 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -6 }}
-                          className="text-[#e05555] text-xs text-center"
+                          className="text-[var(--color-error)] text-xs text-center"
                         >
                           {error}
                         </motion.p>
@@ -202,7 +202,7 @@ export default function OpenChannelPopup({ isOpen, onClose }: Props) {
                       disabled={loading}
                       whileHover={loading ? undefined : { scale: 1.01 }}
                       whileTap={loading ? undefined : { scale: 0.98 }}
-                      className="w-full mt-2 py-4 bg-[#6bc28b] hover:bg-[#B8FD4B] disabled:bg-[#3a7d52] disabled:cursor-not-allowed text-[#0d1a10] text-sm font-bold tracking-[0.08em] uppercase rounded-lg transition-colors flex items-center justify-center gap-2 shadow-[0_8px_24px_rgba(107,194,139,0.25)]"
+                      className="w-full mt-2 py-4 bg-[var(--color-primary)] hover:bg-[var(--color-accent)] disabled:bg-[var(--color-primary-muted)] disabled:cursor-not-allowed text-[var(--color-fg-inverse)] text-sm font-bold tracking-[0.08em] uppercase rounded-lg transition-colors flex items-center justify-center gap-2 shadow-[0_8px_24px_rgba(107,194,139,0.25)]"
                     >
                       {loading ? (
                         <>
