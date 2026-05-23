@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useOpenChannel } from '@/components/providers/OpenChannelProvider';
 
 const platforms = [
   {
@@ -48,6 +49,7 @@ const cardVar = {
 };
 
 export default function TeachSection() {
+  const { open: openChannel } = useOpenChannel();
   return (
     <section id="teach" className="relative py-14 md:py-20 lg:py-32 bg-[var(--color-bg-card)]">
       <div className="container mx-auto px-4 max-w-[1200px]">
@@ -163,6 +165,21 @@ export default function TeachSection() {
                     >
                       {p.cta}
                     </span>
+                  ) : p.ctaLink === '#' ? (
+                    <motion.button
+                      type="button"
+                      onClick={openChannel}
+                      whileHover={{
+                        scale: 1.03,
+                        y: -2,
+                        boxShadow: '0 0 28px rgba(211,255,51,0.3)',
+                      }}
+                      whileTap={{ scale: 0.97 }}
+                      transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                      className="block w-full bg-[var(--color-bg-elevated)] hover:bg-[var(--color-bg-elevated)] text-[var(--color-accent)] font-bold text-[13px] py-4 px-6 rounded-xl transition-colors uppercase tracking-wide border border-[var(--color-accent)]/10 hover:border-[var(--color-accent)]/30 text-center cursor-pointer"
+                    >
+                      {p.cta}
+                    </motion.button>
                   ) : (
                     <Link href={p.ctaLink}>
                       <motion.span

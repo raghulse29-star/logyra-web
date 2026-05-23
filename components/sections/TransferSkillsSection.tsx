@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useOpenChannel } from '@/components/providers/OpenChannelProvider';
 
 const TelegramIcon = () => (
   <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,6 +35,7 @@ const cardVar = {
 };
 
 export default function TransferSkillsSection() {
+  const { open: openChannel } = useOpenChannel();
   return (
     <section id="transfer-skills" className="relative py-14 md:py-20 lg:py-32 bg-[var(--color-bg-card)] overflow-hidden">
 
@@ -125,12 +127,13 @@ export default function TransferSkillsSection() {
                 Daily market bias. Multi-asset coverage. Research notes. Structured analysis. Zero noise.
               </p>
 
-              <motion.a
-                href="#"
+              <motion.button
+                type="button"
+                onClick={openChannel}
                 whileHover={{ x: 6 }}
                 whileTap={{ scale: 0.96 }}
                 transition={{ duration: 0.2 }}
-                className="inline-flex items-center gap-3 text-[var(--color-accent)] font-bold text-sm tracking-wide uppercase mt-auto group/link"
+                className="inline-flex items-center gap-3 text-[var(--color-accent)] font-bold text-sm tracking-wide uppercase mt-auto group/link cursor-pointer self-start"
               >
                 <motion.span
                   animate={{ x: [0, 4, 0] }}
@@ -139,7 +142,7 @@ export default function TransferSkillsSection() {
                   <ArrowRightIcon />
                 </motion.span>
                 JOIN FREE ON TELEGRAM
-              </motion.a>
+              </motion.button>
             </motion.div>
           </motion.div>
 

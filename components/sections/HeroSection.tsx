@@ -1,9 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { useOpenChannel } from '@/components/providers/OpenChannelProvider';
 
 export default function HeroSection() {
+  const { open: openChannel } = useOpenChannel();
   return (
     <section
       id="hero"
@@ -64,12 +65,13 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.34, ease: [0.22, 1, 0.36, 1] }}
             >
-              <Link
-                href="#platform"
-                className="inline-block bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] active:bg-[var(--color-primary-hover)] text-white text-[12px] sm:text-[13px] font-bold tracking-wider px-6 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_0_20px_rgba(94,191,130,0.25)] transition-colors uppercase"
+              <button
+                type="button"
+                onClick={openChannel}
+                className="inline-block bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] active:bg-[var(--color-primary-hover)] text-white text-[12px] sm:text-[13px] font-bold tracking-wider px-6 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_0_20px_rgba(94,191,130,0.25)] transition-colors uppercase cursor-pointer"
               >
                 Access the Platform
-              </Link>
+              </button>
             </motion.div>
           </div>
 

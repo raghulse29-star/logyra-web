@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useOpenChannel } from '@/components/providers/OpenChannelProvider';
 
 const TelegramIcon = () => (
   <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -10,6 +11,7 @@ const TelegramIcon = () => (
 );
 
 export default function CTASection() {
+  const { open: openChannel } = useOpenChannel();
   return (
     <section id="cta" className="relative py-14 md:py-20 lg:py-32 bg-[var(--color-bg-card)] flex items-center justify-center px-4">
       <div className="container mx-auto max-w-[900px] relative z-10">
@@ -54,15 +56,16 @@ export default function CTASection() {
             </p>
 
             {/* CTA Button */}
-            <motion.a
-              href="#"
+            <motion.button
+              type="button"
+              onClick={openChannel}
               whileHover={{ scale: 1.06, y: -4, boxShadow: '0 0 50px rgba(122,217,95,0.5), 0 14px 40px rgba(0,0,0,0.35)' }}
               whileTap={{ scale: 0.94, boxShadow: '0 0 30px rgba(122,217,95,0.35), 0 6px 20px rgba(0,0,0,0.3)' }}
               transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-              className="inline-block bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-primary-hover)] text-[var(--color-fg-inverse)] font-bold text-sm tracking-[0.1em] uppercase px-8 py-3.5 rounded-[4px] shadow-lg"
+              className="inline-block bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-primary-hover)] text-[var(--color-fg-inverse)] font-bold text-sm tracking-[0.1em] uppercase px-8 py-3.5 rounded-[4px] shadow-lg cursor-pointer"
             >
               JOIN FREE ON TELEGRAM
-            </motion.a>
+            </motion.button>
 
           </div>
         </motion.div>
