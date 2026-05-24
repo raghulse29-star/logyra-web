@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import { submitContactForm, type ContactFormState } from '@/app/actions/contact';
 
 const EMPTY_FORM = { firstName: '', lastName: '', email: '', phone: '', subject: '', message: '' };
@@ -225,12 +226,14 @@ export default function ContactSection() {
             className="w-full lg:w-[45%] flex items-center justify-center h-full pt-10 lg:pt-0"
           >
             <div className="w-full h-full min-h-[400px] lg:min-h-[600px] flex items-center justify-center relative">
-               {/* eslint-disable-next-line @next/next/no-img-element */}
-               <img
-                 src="/images/img11.webp"
-                 alt="Trading Chart Graphic"
-                 className="w-full h-auto object-contain max-w-[500px]"
-               />
+              <Image
+                src="/images/img11.webp"
+                alt="Logyra trading chart graphic"
+                width={500}
+                height={500}
+                sizes="(min-width: 1024px) 500px, 100vw"
+                className="w-full h-auto object-contain max-w-[500px]"
+              />
             </div>
           </motion.div>
 

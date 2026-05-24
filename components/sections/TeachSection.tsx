@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useOpenChannel } from '@/components/providers/OpenChannelProvider';
 
@@ -114,13 +115,19 @@ export default function TeachSection() {
                 )}
                 {/* Full-bleed image area */}
                 <div className="relative w-full h-[220px] sm:h-[260px] overflow-hidden">
-                  <motion.img
-                    src={p.image}
-                    alt={p.title}
-                    className="absolute inset-0 w-full h-full object-cover"
+                  <motion.div
+                    className="absolute inset-0"
                     whileHover={{ scale: 1.06 }}
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                  />
+                  >
+                    <Image
+                      src={p.image}
+                      alt={p.title}
+                      fill
+                      sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover"
+                    />
+                  </motion.div>
                   {/* Gradient overlay — fades image into card body */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg-card)] via-[var(--color-bg-card)]/20 to-transparent pointer-events-none" />
                   {/* Accent color tint on hover */}

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { useOpenChannel } from '@/components/providers/OpenChannelProvider';
 
 export default function HeroSection() {
@@ -26,9 +27,9 @@ export default function HeroSection() {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="mb-5 sm:mb-6"
             >
-              <h1 className="inline-block bg-[var(--color-primary-tint)] text-[var(--color-bg-card)] text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-sm">
-                 Primary	Read the market. Not the noise.
-              </h1>
+              <span className="inline-block bg-[var(--color-primary-tint)] text-[var(--color-bg-card)] text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-sm">
+                Read the market. Not the noise.
+              </span>
             </motion.div>
 
             {/* Heading */}
@@ -80,14 +81,15 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="hidden lg:flex items-center justify-center h-[460px] xl:h-[520px]"
+            className="hidden lg:flex items-center justify-center h-[460px] xl:h-[520px] relative"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/images/img1.webp"
-              alt="Market intelligence chart visualization"
-              className="w-full h-full object-contain"
-              loading="eager"
+              alt="Logyra market intelligence chart visualization"
+              fill
+              priority
+              sizes="(min-width: 1280px) 600px, (min-width: 1024px) 50vw, 0px"
+              className="object-contain"
             />
           </motion.div>
 
@@ -98,12 +100,14 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="lg:hidden w-full flex items-center justify-center"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/images/img1.webp"
-              alt="Market intelligence chart visualization"
+              alt="Logyra market intelligence chart visualization"
+              width={320}
+              height={320}
+              priority
+              sizes="(max-width: 1024px) 320px, 0px"
               className="w-full max-w-[320px] h-auto object-contain"
-              loading="eager"
             />
           </motion.div>
 
