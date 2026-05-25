@@ -106,7 +106,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
-        <link rel="icon" type="image/png" href="/images/Logo.png" />
+        <link rel="icon" type="image/png" href="/images/faviconnn.png" />
+        <link rel="apple-touch-icon" href="/images/faviconnn.png" />
+        <link rel="shortcut icon" href="/images/faviconnn.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
