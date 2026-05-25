@@ -28,13 +28,13 @@ export default function ContactSection() {
 
   // text-base = 16px — prevents iOS Safari from auto-zooming on input focus
   const inputClass =
-    'w-full px-4 py-3 rounded-[8px] text-base text-white bg-[var(--color-bg-elevated)] border border-transparent focus:outline-none focus:border-[var(--color-primary)] transition-all placeholder:text-[var(--color-fg-muted)] font-sans disabled:opacity-60';
+    'w-full px-4 py-3 rounded-[8px] text-base text-[var(--color-fg)] bg-white border border-[var(--color-border)] focus:outline-none focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/15 transition-all placeholder:text-[var(--color-fg-subtle)] font-sans disabled:opacity-60';
 
   return (
-    <section id="contact" className="py-14 md:py-20 lg:py-32 bg-[var(--color-bg)]">
+    <section id="contact" className="py-14 md:py-20 lg:py-32 bg-white">
       <div className="container mx-auto px-4 max-w-[1200px]">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
-          
+
           {/* Left Side: Text and Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -44,7 +44,7 @@ export default function ContactSection() {
             className="w-full lg:w-[55%]"
           >
             {/* Header */}
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-fg)] mb-4 tracking-tight leading-tight">
               Get in Touch
             </h2>
             <p className="text-[var(--color-fg-muted)] text-[15px] md:text-[17px] mb-10 max-w-md leading-relaxed">
@@ -56,7 +56,7 @@ export default function ContactSection() {
 
               {/* Name Row */}
               <div>
-                <label className="text-[var(--color-fg-muted)] text-sm mb-2 block">Full Name</label>
+                <label className="text-[var(--color-fg)] text-sm font-medium mb-2 block">Full Name</label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
                     type="text"
@@ -86,7 +86,7 @@ export default function ContactSection() {
               {/* Email & Phone Row */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-[var(--color-fg-muted)] text-sm mb-2 block">Email</label>
+                  <label className="text-[var(--color-fg)] text-sm font-medium mb-2 block">Email</label>
                   <input
                     type="email"
                     name="email"
@@ -99,7 +99,7 @@ export default function ContactSection() {
                   />
                 </div>
                 <div>
-                  <label className="text-[var(--color-fg-muted)] text-sm mb-2 block">Phone number</label>
+                  <label className="text-[var(--color-fg)] text-sm font-medium mb-2 block">Phone number</label>
                   <input
                     type="tel"
                     name="phone"
@@ -114,7 +114,7 @@ export default function ContactSection() {
 
               {/* Subject */}
               <div>
-                <label className="text-[var(--color-fg-muted)] text-sm mb-2 block">Subject</label>
+                <label className="text-[var(--color-fg)] text-sm font-medium mb-2 block">Subject</label>
                 <div className="relative">
                   <select
                     name="subject"
@@ -131,7 +131,7 @@ export default function ContactSection() {
                   </select>
                   <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 1.5L6 6.5L11 1.5" stroke="#A1A1AA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M1 1.5L6 6.5L11 1.5" stroke="#6B7280" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
                 </div>
@@ -139,7 +139,7 @@ export default function ContactSection() {
 
               {/* Message */}
               <div>
-                <label className="text-[var(--color-fg-muted)] text-sm mb-2 block">Your Message</label>
+                <label className="text-[var(--color-fg)] text-sm font-medium mb-2 block">Your Message</label>
                 <textarea
                   name="message"
                   value={form.message}

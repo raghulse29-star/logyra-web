@@ -37,10 +37,10 @@ const cardVar = {
 export default function TransferSkillsSection() {
   const { open: openChannel } = useOpenChannel();
   return (
-    <section id="transfer-skills" className="relative py-14 md:py-20 lg:py-32 bg-[var(--color-bg-card)] overflow-hidden">
+    <section id="transfer-skills" className="relative py-14 md:py-20 lg:py-32 bg-white overflow-hidden">
 
       {/* Subtle background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--color-accent)] opacity-[0.025] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--color-primary)] opacity-[0.05] rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-4 max-w-[1100px] relative z-10">
 
@@ -58,15 +58,15 @@ export default function TransferSkillsSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-block border border-[var(--color-border)] bg-[var(--color-bg-card)] text-[var(--color-accent)] text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-sm mb-6"
+            className="inline-block border border-[var(--color-border-strong)] bg-[var(--color-primary-tint)] text-[var(--color-primary)] text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-sm mb-6"
           >
             MILESTONE
           </motion.div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-fg)] mb-4 tracking-tight">
             We Transfer Skills.
           </h2>
-          <p className="text-gray-400 text-[15px] md:text-[17px] max-w-3xl mx-auto leading-relaxed">
+          <p className="text-[var(--color-fg-subtle)] text-[15px] md:text-[17px] max-w-3xl mx-auto leading-relaxed">
             Our frameworks are built against institutional standards of process and repeatability. You learn to think — not copy.
           </p>
         </motion.div>
@@ -83,10 +83,10 @@ export default function TransferSkillsSection() {
           {/* Card 1: Telegram */}
           <motion.div variants={cardVar}>
             <motion.div
-              whileHover={{ y: -10, boxShadow: '0 32px 80px rgba(0,0,0,0.5), 0 0 40px rgba(42,171,238,0.15)' }}
+              whileHover={{ y: -10, boxShadow: '0 28px 60px rgba(10,10,10,0.10), 0 0 32px rgba(42,171,238,0.18)' }}
               whileTap={{ y: -5, scale: 0.98 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-col h-full rounded-[24px] p-8 md:p-10 bg-[var(--color-bg-card)] border border-[var(--color-border)] hover:border-[var(--color-border)] transition-colors duration-300 group relative overflow-hidden"
+              className="flex flex-col h-full rounded-[24px] p-8 md:p-10 bg-[var(--color-beige-lighter)] border border-[var(--color-border)] hover:border-[var(--color-border-strong)] transition-colors duration-300 group relative overflow-hidden shadow-[0_4px_24px_rgba(10,10,10,0.05)]"
             >
               {/* Shimmer on hover */}
               <motion.div
@@ -106,19 +106,19 @@ export default function TransferSkillsSection() {
               </motion.div>
 
               <div className="border-b border-[var(--color-border)] pb-5 mb-6">
-                <h3 className="text-[1.6rem] font-bold text-white mb-3 group-hover:text-[var(--color-accent)] transition-colors duration-300">
-                  Logyra Intelligence — <span className="text-[var(--color-accent)]">Telegram</span>
+                <h3 className="text-[1.6rem] font-bold text-[var(--color-fg)] mb-3 group-hover:text-[var(--color-primary)] transition-colors duration-300">
+                  Logyra Intelligence — <span className="text-[var(--color-primary)]">Telegram</span>
                 </h3>
-                <div className="flex items-center gap-2 text-[var(--color-accent)] text-xs font-bold tracking-[0.15em] uppercase">
+                <div className="flex items-center gap-2 text-[var(--color-primary)] text-xs font-bold tracking-[0.15em] uppercase">
                   <motion.span
                     animate={{ opacity: [1, 0.4, 1] }}
                     transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                    className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] inline-block"
+                    className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] inline-block"
                   />
                   <span>FREE</span>
-                  <span className="text-[var(--color-accent)]/60 text-[10px]">&bull;</span>
+                  <span className="text-[var(--color-primary)]/60 text-[10px]">&bull;</span>
                   <span>OPEN</span>
-                  <span className="text-[var(--color-accent)]/60 text-[10px]">&bull;</span>
+                  <span className="text-[var(--color-primary)]/60 text-[10px]">&bull;</span>
                   <span>ALWAYS ON</span>
                 </div>
               </div>
@@ -133,7 +133,7 @@ export default function TransferSkillsSection() {
                 whileHover={{ x: 6 }}
                 whileTap={{ scale: 0.96 }}
                 transition={{ duration: 0.2 }}
-                className="inline-flex items-center gap-3 text-[var(--color-accent)] font-bold text-sm tracking-wide uppercase mt-auto group/link cursor-pointer self-start"
+                className="inline-flex items-center gap-3 text-[var(--color-primary)] font-bold text-sm tracking-wide uppercase mt-auto group/link cursor-pointer self-start"
               >
                 <motion.span
                   animate={{ x: [0, 4, 0] }}
@@ -149,10 +149,10 @@ export default function TransferSkillsSection() {
           {/* Card 2: Discord — Coming Soon */}
           <motion.div variants={cardVar}>
             <motion.div
-              whileHover={{ y: -10, boxShadow: '0 32px 80px rgba(0,0,0,0.5), 0 0 40px rgba(88,101,242,0.1)' }}
+              whileHover={{ y: -10, boxShadow: '0 28px 60px rgba(10,10,10,0.08), 0 0 32px rgba(88,101,242,0.12)' }}
               whileTap={{ y: -5, scale: 0.98 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="relative flex flex-col h-full rounded-[24px] p-8 md:p-10 bg-[var(--color-bg-button)] border border-[var(--color-border)] hover:border-[var(--color-border)] transition-colors duration-300 group overflow-hidden"
+              className="relative flex flex-col h-full rounded-[24px] p-8 md:p-10 bg-[var(--color-grey-section)] border border-[var(--color-border)] hover:border-[var(--color-border-strong)] transition-colors duration-300 group overflow-hidden shadow-[0_4px_24px_rgba(10,10,10,0.04)]"
             >
               {/* Coming soon badge */}
               <motion.div
@@ -160,7 +160,7 @@ export default function TransferSkillsSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.4 }}
-                className="absolute top-8 right-8 text-[var(--color-accent)] text-[10px] sm:text-xs font-bold tracking-[0.15em] uppercase"
+                className="absolute top-8 right-8 text-[var(--color-primary)] text-[10px] sm:text-xs font-bold tracking-[0.15em] uppercase"
               >
                 COMING SOON / INVITE ONLY
               </motion.div>

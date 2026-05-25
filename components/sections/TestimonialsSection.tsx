@@ -26,7 +26,7 @@ const TwitterIcon = () => (
 );
 
 const TrendingUpIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6bc28b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3F8B5F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
     <polyline points="17 6 23 6 23 12"></polyline>
   </svg>
@@ -78,9 +78,9 @@ const cardVar = {
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-14 md:py-20 lg:py-32 bg-[var(--color-bg)]">
+    <section className="py-14 md:py-20 lg:py-32 bg-white">
       <div className="container mx-auto px-4 sm:px-6 max-w-[1200px]">
-        
+
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -90,15 +90,15 @@ export default function TestimonialsSection() {
           className="text-center mb-16 flex flex-col items-center"
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 border border-[var(--color-border)] bg-[var(--color-bg-card)]/50 px-3 py-1.5 rounded mb-6">
+          <div className="inline-flex items-center gap-2 border border-[var(--color-border-strong)] bg-white px-3 py-1.5 rounded mb-6">
             <TrendingUpIcon />
             <span className="text-[var(--color-primary)] text-xs font-bold tracking-widest uppercase">
               TESTIMONIAL
             </span>
           </div>
-          
+
           {/* Title */}
-          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-fg)] tracking-tight">
             What Our Members Say
           </h2>
         </motion.div>
@@ -114,14 +114,14 @@ export default function TestimonialsSection() {
           {testimonials.map((t, index) => (
             <motion.div key={index} variants={cardVar} className="h-full">
               <motion.div
-                className="bg-[var(--color-bg-card)] rounded-2xl p-7 h-full flex flex-col group cursor-default"
-                whileHover={{ y: -8, backgroundColor: '#1E2022', boxShadow: '0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06)' }}
-                whileTap={{ y: -4, scale: 0.98, backgroundColor: '#1E2022', boxShadow: '0 12px 40px rgba(0,0,0,0.4)' }}
+                className="bg-white border border-[var(--color-border)] rounded-2xl p-7 h-full flex flex-col group cursor-default shadow-[0_4px_20px_rgba(10,10,10,0.04)]"
+                whileHover={{ y: -8, boxShadow: '0 20px 50px rgba(10,10,10,0.10), 0 0 0 1px rgba(63,139,95,0.25)' }}
+                whileTap={{ y: -4, scale: 0.98, boxShadow: '0 12px 32px rgba(10,10,10,0.08)' }}
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               >
                 {/* Card Header: Name & Platform Icon */}
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-white text-[15px] font-medium transition-colors duration-300 group-hover:text-[var(--color-primary)] group-active:text-[var(--color-primary)]">{t.name}</h3>
+                  <h3 className="text-[var(--color-fg)] text-[15px] font-medium transition-colors duration-300 group-hover:text-[var(--color-primary)] group-active:text-[var(--color-primary)]">{t.name}</h3>
                   <div className="transition-transform duration-300 group-hover:scale-110 group-active:scale-110">
                     {t.platform === 'Facebook' && <FacebookIcon />}
                     {t.platform === 'Google' && <GoogleIcon />}

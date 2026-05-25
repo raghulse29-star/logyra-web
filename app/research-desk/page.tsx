@@ -40,19 +40,19 @@ const compareRows: { label: string; free: { kind: CellKind; text: string }; paid
   { label: 'EOD Debrief',        free: { kind: 'partial', text: 'Performance summary only' },     paid: { kind: 'yes',     text: 'Full debrief + next-session context' } },
   { label: 'Weekly Review',      free: { kind: 'partial', text: 'Open summary' },                 paid: { kind: 'yes',     text: 'Sector data + F&O analytics' } },
   { label: 'Research Team Access', free: { kind: 'no',    text: 'Not available' },                paid: { kind: 'yes',     text: 'Direct access, priority response' } },
-  { label: 'Markets Covered',    free: { kind: 'text',    text: 'All markets (reference)' },      paid: { kind: 'text',    text: 'Your chosen market — full depth' } },
+  // { label: 'Markets Covered',    free: { kind: 'text',    text: 'All markets (reference)' },      paid: { kind: 'text',    text: 'Your chosen market — full depth' } },
   { label: 'Cost',               free: { kind: 'text',    text: '₹0 — Always free' },             paid: { kind: 'text',    text: 'From ₹3,399 / month (GST incl.)' } },
 ];
 
 function Cell({ kind, text }: { kind: CellKind; text: string }) {
-  if (kind === 'text') return <span className="text-gray-300 text-xs md:text-sm">{text}</span>;
+  if (kind === 'text') return <span className="text-[var(--color-fg-muted)] text-xs md:text-sm">{text}</span>;
   const styles = {
-    yes:     { bg: 'bg-[var(--color-primary)]/15', stroke: '#6bc28b', icon: <polyline points="20 6 9 17 4 12" /> },
-    partial: { bg: 'bg-[var(--color-accent)]/10', stroke: '#B8FD4B', icon: <path d="M5 12h14" /> },
+    yes:     { bg: 'bg-[var(--color-primary)]/15', stroke: '#3F8B5F', icon: <polyline points="20 6 9 17 4 12" /> },
+    partial: { bg: 'bg-[var(--color-accent)]/10', stroke: '#3F8B5F', icon: <path d="M5 12h14" /> },
     no:      { bg: 'bg-[var(--color-error)]/12', stroke: '#e05555', icon: <><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></> },
   }[kind];
   return (
-    <span className="inline-flex items-start gap-2 text-gray-300 text-xs md:text-sm">
+    <span className="inline-flex items-start gap-2 text-[var(--color-fg-muted)] text-xs md:text-sm">
       <span className={`inline-flex items-center justify-center w-5 h-5 md:w-6 md:h-6 rounded-full ${styles.bg} shrink-0 mt-0.5`}>
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke={styles.stroke} strokeWidth="2.5">
           {styles.icon}
@@ -71,7 +71,7 @@ export default function ResearchDeskPage() {
       {/* ── Hero ── */}
       <section className="relative bg-[var(--color-bg-card)] pt-24 pb-14 sm:pt-32 sm:pb-20 md:pt-36 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[480px] h-[480px] bg-[var(--color-primary)]/8 blur-[140px] rounded-full" />
+          <div className="absolute top-0 right-0 w-[480px] h-[480px] bg-[var(--color-primary)]/5 blur-[140px] rounded-full" />
         </div>
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
@@ -90,7 +90,7 @@ export default function ResearchDeskPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.08] mb-5 max-w-3xl"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--color-fg)] leading-[1.08] mb-5 max-w-3xl"
           >
             One platform.<br />
             Two levels of{' '}
@@ -101,7 +101,7 @@ export default function ResearchDeskPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-300 text-base md:text-lg max-w-2xl leading-relaxed mb-10"
+            className="text-[var(--color-fg-muted)] text-base md:text-lg max-w-2xl leading-relaxed mb-10"
           >
             Logyra&apos;s Research Desk delivers structured, institutional-grade market analysis across Indian and global markets — through a free open channel and a private paid tier for serious participants.
           </motion.p>
@@ -116,7 +116,7 @@ export default function ResearchDeskPage() {
               { label: 'Open Channel',    href: '/research-desk/open-channel',  external: false },
               { label: 'Inner Circle',    href: '/research-desk/inner-circle',  external: false },
               { label: 'Compare Tiers',   href: '#compare',                     external: false, anchor: true },
-              { label: 'Markets Covered', href: '#markets',                     external: false, anchor: true },
+              // { label: 'Markets Covered', href: '#markets',                     external: false, anchor: true },
             ].map((item) => (
               <Link
                 key={item.label}
@@ -130,7 +130,7 @@ export default function ResearchDeskPage() {
                   const top = el.getBoundingClientRect().top + window.scrollY - navbar - 16;
                   window.scrollTo({ top, behavior: 'smooth' });
                 }}
-                className="text-[12px] text-gray-300 border border-white/20 hover:border-[var(--color-primary)]/60 hover:text-[var(--color-primary)] px-3 py-1.5 rounded-sm transition-all duration-200 tracking-wide cursor-pointer"
+                className="text-[12px] text-[var(--color-fg-muted)] border border-[var(--color-border)] hover:border-[var(--color-primary)]/60 hover:text-[var(--color-primary)] px-3 py-1.5 rounded-sm transition-all duration-200 tracking-wide cursor-pointer"
               >
                 {item.label}
               </Link>
@@ -140,12 +140,12 @@ export default function ResearchDeskPage() {
       </section>
 
       {/* ── Markets Ticker ── */}
-      <div id="markets" className="bg-[var(--color-bg-card)] border-y border-white/[0.06] py-7 overflow-hidden relative scroll-mt-28">
-        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[var(--color-bg-card)] to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[var(--color-bg-card)] to-transparent z-10 pointer-events-none" />
+      <div id="markets" className="bg-[var(--color-beige-light)] border-y border-[var(--color-border)] py-7 overflow-hidden relative scroll-mt-28">
+        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[var(--color-beige-light)] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[var(--color-beige-light)] to-transparent z-10 pointer-events-none" />
         <div className="flex animate-ticker whitespace-nowrap">
           {[...tickerItems, ...tickerItems].map((m, i) => (
-            <span key={i} className="inline-flex items-center gap-2 px-6 text-[13px] font-semibold text-gray-400 tracking-wide">
+            <span key={i} className="inline-flex items-center gap-2 px-6 text-[13px] font-semibold text-[var(--color-fg-muted)] tracking-wide">
               <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]" />
               {m}
             </span>
@@ -154,18 +154,18 @@ export default function ResearchDeskPage() {
       </div>
 
       {/* ── Two Tiers ── */}
-      <section className="bg-[var(--color-bg-card)] py-14 md:py-20 lg:py-28" id="tiers">
+      <section className="bg-white py-14 md:py-20 lg:py-28" id="tiers">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-14">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Choose Your Access Level</span>
-              <div className="flex-1 h-px bg-white/10" />
+              <span className="text-[var(--color-primary)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Choose Your Access Level</span>
+              <div className="flex-1 h-px bg-[var(--color-border)]" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-fg)] mb-4">
               Start free.<br />
               <span className="text-[var(--color-primary)]">Upgrade when ready.</span>
             </h2>
-            <p className="text-gray-400 max-w-xl leading-relaxed">
+            <p className="text-[var(--color-fg-muted)] max-w-xl leading-relaxed">
               Both tiers deliver structured research. The difference is in depth, timing, and the level of direct engagement with our desk.
             </p>
           </div>
@@ -177,24 +177,25 @@ export default function ResearchDeskPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5 }}
-              className="relative flex flex-col p-8 sm:p-10 bg-[var(--color-bg-card)] border border-white/[0.06] rounded-2xl hover:border-[var(--color-primary)]/30 transition-all duration-300"
+              className="relative flex flex-col p-8 sm:p-10 bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl hover:border-[var(--color-primary)]/30 transition-all duration-300"
+              style={{ boxShadow: '0 4px 24px rgba(10,10,10,0.06)' }}
             >
               <span className="inline-flex items-center gap-2 self-start text-[10px] font-bold tracking-[0.15em] uppercase px-3 py-1 rounded-sm bg-[var(--color-primary)]/12 border border-[var(--color-primary)]/25 text-[var(--color-primary)] mb-6">
                 Free · Open · Always On
               </span>
-              <div className="w-12 h-12 rounded-xl bg-[var(--color-bg-card)] border border-white/[0.08] flex items-center justify-center mb-5">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6bc28b" strokeWidth="1.8">
+              <div className="w-12 h-12 rounded-xl bg-[var(--color-beige-lighter)] border border-[var(--color-border)] flex items-center justify-center mb-5">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F8B5F" strokeWidth="1.8">
                   <path d="M21 5L2 12.5L9 13.5M21 5L18.5 19L9 13.5M21 5L9 13.5M9 13.5V19L12.2 16" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Open Channel</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+              <h3 className="text-2xl font-bold text-[var(--color-fg)] mb-2">Open Channel</h3>
+              <p className="text-[var(--color-fg-muted)] text-sm leading-relaxed mb-6">
                 Logyra&apos;s public intelligence feed — daily market reads, educational setups, and performance visibility. Zero cost. Zero noise.
               </p>
-              <div className="h-px bg-white/[0.07] mb-6" />
+              <div className="h-px bg-[var(--color-border)] mb-6" />
               <ul className="space-y-3 mb-8 flex-1">
                 {openChannelFeatures.map((f) => (
-                  <li key={f} className="flex items-start gap-2.5 text-sm text-gray-300">
+                  <li key={f} className="flex items-start gap-2.5 text-sm text-[var(--color-fg-muted)]">
                     <span className="text-[var(--color-primary)] shrink-0 mt-0.5">—</span>
                     {f}
                   </li>
@@ -202,7 +203,7 @@ export default function ResearchDeskPage() {
               </ul>
               <Link
                 href="/research-desk/open-channel"
-                className="flex items-center justify-center gap-2 w-full py-3.5 border border-white/20 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] text-gray-200 text-[12px] font-bold tracking-[0.15em] uppercase rounded-lg transition-colors"
+                className="flex items-center justify-center gap-2 w-full py-3.5 border border-[var(--color-primary)] hover:bg-[var(--color-primary-tint)] text-[var(--color-primary)] text-[12px] font-bold tracking-[0.15em] uppercase rounded-lg transition-colors"
               >
                 Explore Open Channel
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
@@ -215,26 +216,27 @@ export default function ResearchDeskPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="relative flex flex-col p-8 sm:p-10 bg-gradient-to-br from-[var(--color-bg-card)] to-[var(--color-bg-elevated)] border border-[var(--color-primary)]/40 rounded-2xl hover:border-[var(--color-primary)] transition-all duration-300 overflow-hidden"
+              className="relative flex flex-col p-8 sm:p-10 bg-gradient-to-br from-[var(--color-bg-card)] to-[var(--color-beige-lighter)] border border-[var(--color-primary)]/40 rounded-2xl hover:border-[var(--color-primary)] transition-all duration-300 overflow-hidden"
+              style={{ boxShadow: '0 4px 24px rgba(63,139,95,0.10)' }}
             >
               <span className="absolute top-0 left-0 right-0 h-[2px] bg-[var(--color-primary)]" />
-              <span className="inline-flex items-center gap-2 self-start text-[10px] font-bold tracking-[0.15em] uppercase px-3 py-1 rounded-sm bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/25 text-[var(--color-accent)] mb-6">
+              <span className="inline-flex items-center gap-2 self-start text-[10px] font-bold tracking-[0.15em] uppercase px-3 py-1 rounded-sm bg-[var(--color-accent)]/15 border border-[var(--color-accent)]/35 text-[var(--color-primary)] mb-6">
                 Paid · Private · Daily Research
               </span>
-              <div className="w-12 h-12 rounded-xl bg-[var(--color-bg-card)] border border-white/[0.08] flex items-center justify-center mb-5">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8FD4B" strokeWidth="1.8">
+              <div className="w-12 h-12 rounded-xl bg-[var(--color-beige-lighter)] border border-[var(--color-border)] flex items-center justify-center mb-5">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F8B5F" strokeWidth="1.8">
                   <rect x="3" y="11" width="18" height="11" rx="2" />
                   <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Inner Circle</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+              <h3 className="text-2xl font-bold text-[var(--color-fg)] mb-2">Inner Circle</h3>
+              <p className="text-[var(--color-fg-muted)] text-sm leading-relaxed mb-6">
                 Private Telegram access. Full research depth. Real-time market structure coverage across your chosen market — every market day.
               </p>
-              <div className="h-px bg-white/[0.07] mb-6" />
+              <div className="h-px bg-[var(--color-border)] mb-6" />
               <ul className="space-y-3 mb-8 flex-1">
                 {innerCircleFeatures.map((f) => (
-                  <li key={f} className="flex items-start gap-2.5 text-sm text-gray-300">
+                  <li key={f} className="flex items-start gap-2.5 text-sm text-[var(--color-fg-muted)]">
                     <span className="text-[var(--color-primary)] shrink-0 mt-0.5">—</span>
                     {f}
                   </li>
@@ -242,7 +244,7 @@ export default function ResearchDeskPage() {
               </ul>
               <Link
                 href="/research-desk/inner-circle"
-                className="flex items-center justify-center gap-2 w-full py-3.5 bg-[var(--color-primary)] hover:bg-[var(--color-accent)] text-[var(--color-fg-inverse)] text-[12px] font-bold tracking-[0.15em] uppercase rounded-lg transition-colors"
+                className="flex items-center justify-center gap-2 w-full py-3.5 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white text-[12px] font-bold tracking-[0.15em] uppercase rounded-lg transition-colors"
               >
                 View Inner Circle Products
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
@@ -253,67 +255,67 @@ export default function ResearchDeskPage() {
       </section>
 
       {/* ── Comparison Table ── */}
-      <section className="bg-[var(--color-bg-card)] py-14 md:py-20 lg:py-28" id="compare">
+      <section className="bg-[var(--color-grey-section)] py-14 md:py-20 lg:py-28" id="compare">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Tier Comparison</span>
-              <div className="flex-1 h-px bg-white/10" />
+              <span className="text-[var(--color-primary)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Tier Comparison</span>
+              <div className="flex-1 h-px bg-[var(--color-border)]" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-fg)] mb-4">
               What&apos;s the<br />
               <span className="text-[var(--color-primary)]">actual difference?</span>
             </h2>
-            <p className="text-gray-400 max-w-xl leading-relaxed">
+            <p className="text-[var(--color-fg-muted)] max-w-xl leading-relaxed">
               Both tiers share the same research framework. What changes is depth, timing, and how much of the desk&apos;s work you see.
             </p>
           </div>
 
-          <div className="border border-white/[0.08] rounded-xl overflow-hidden bg-[var(--color-bg-card)] overflow-x-auto">
+          <div className="border border-[var(--color-border)] rounded-xl overflow-hidden bg-[var(--color-bg-card)] overflow-x-auto" style={{ boxShadow: '0 4px 24px rgba(10,10,10,0.06)' }}>
             <div className="min-w-[560px]">
               {/* Header row */}
-              <div className="grid grid-cols-[1.1fr_1fr_1fr] bg-[var(--color-bg-card)] text-[10px] md:text-[11px] font-bold tracking-[0.12em] uppercase">
-                <div className="px-3 py-3 md:px-6 md:py-5 text-gray-500" />
-                <div className="px-3 py-3 md:px-6 md:py-5 text-[var(--color-primary)] border-l border-white/[0.05]">Open Channel</div>
-                <div className="px-3 py-3 md:px-6 md:py-5 text-[var(--color-accent)] border-l border-white/[0.05]">Inner Circle</div>
+              <div className="grid grid-cols-[1.1fr_1fr_1fr] bg-[var(--color-beige-lighter)] text-[10px] md:text-[11px] font-bold tracking-[0.12em] uppercase">
+                <div className="px-3 py-3 md:px-6 md:py-5 text-[var(--color-fg-subtle)]" />
+                <div className="px-3 py-3 md:px-6 md:py-5 text-[var(--color-primary)] border-l border-[var(--color-border)]">Open Channel</div>
+                <div className="px-3 py-3 md:px-6 md:py-5 text-[var(--color-primary)] border-l border-[var(--color-border)]">Inner Circle</div>
               </div>
               {compareRows.map((row) => (
                 <div
                   key={row.label}
-                  className="grid grid-cols-[1.1fr_1fr_1fr] border-t border-white/[0.07]"
+                  className="grid grid-cols-[1.1fr_1fr_1fr] border-t border-[var(--color-border)]"
                 >
-                  <div className="px-3 py-3 md:px-6 md:py-5 text-white text-xs md:text-sm font-medium">
+                  <div className="px-3 py-3 md:px-6 md:py-5 text-[var(--color-fg)] text-xs md:text-sm font-medium">
                     {row.label}
                   </div>
-                  <div className="px-3 py-3 md:px-6 md:py-5 border-l border-white/[0.05]">
+                  <div className="px-3 py-3 md:px-6 md:py-5 border-l border-[var(--color-border)]">
                     <Cell kind={row.free.kind} text={row.free.text} />
                   </div>
-                  <div className="px-3 py-3 md:px-6 md:py-5 border-l border-white/[0.05]">
+                  <div className="px-3 py-3 md:px-6 md:py-5 border-l border-[var(--color-border)]">
                     <Cell kind={row.paid.kind} text={row.paid.text} />
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <p className="text-xs text-gray-500 mt-4 italic">
+          <p className="text-xs text-[var(--color-fg-subtle)] mt-4 italic">
             * Open Channel content is intentionally delayed and partial. It exists to demonstrate the quality and consistency of our research — not replace it.
           </p>
         </div>
       </section>
 
       {/* ── Who Is It For ── */}
-      <section className="bg-[var(--color-bg-card)] py-14 md:py-20 lg:py-28">
+      <section className="bg-white py-14 md:py-20 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Self-Qualify</span>
-              <div className="flex-1 h-px bg-white/10" />
+              <span className="text-[var(--color-primary)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Self-Qualify</span>
+              <div className="flex-1 h-px bg-[var(--color-border)]" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-fg)] mb-4">
               Which tier<br />
               <span className="text-[var(--color-primary)]">is right for you?</span>
             </h2>
-            <p className="text-gray-400 max-w-xl leading-relaxed">
+            <p className="text-[var(--color-fg-muted)] max-w-xl leading-relaxed">
               Both require the same commitment — to read the market correctly, not to follow instructions. Choose based on where you are.
             </p>
           </div>
@@ -323,7 +325,7 @@ export default function ResearchDeskPage() {
               {
                 title: 'Open Channel is for you if…',
                 desc: 'You want to understand how institutional research works, track our desk\'s performance, and build market awareness before committing to a paid channel.',
-                dot: '#6bc28b',
+                dot: '#3F8B5F',
                 points: [
                   'You\'re exploring structured market analysis for the first time',
                   'You want to track Logyra\'s performance before subscribing',
@@ -336,7 +338,7 @@ export default function ResearchDeskPage() {
               {
                 title: 'Inner Circle is for you if…',
                 desc: 'You are an active market participant who needs real-time structured research delivered to your private Telegram — and you operate with your own execution discipline.',
-                dot: '#B8FD4B',
+                dot: '#3F8B5F',
                 points: [
                   'You trade actively and need intraday structure and positioning context',
                   'You want to see every setup the desk identifies — not just the summary',
@@ -353,13 +355,14 @@ export default function ResearchDeskPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-[var(--color-bg-card)] border border-white/[0.06] rounded-2xl p-8"
+                className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-8"
+                style={{ boxShadow: '0 4px 24px rgba(10,10,10,0.06)' }}
               >
-                <h3 className="text-xl font-bold text-white mb-3">{persona.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-6">{persona.desc}</p>
+                <h3 className="text-xl font-bold text-[var(--color-fg)] mb-3">{persona.title}</h3>
+                <p className="text-[var(--color-fg-muted)] text-sm leading-relaxed mb-6">{persona.desc}</p>
                 <ul className="space-y-2.5">
                   {persona.points.map((p) => (
-                    <li key={p} className="flex items-start gap-3 text-sm text-gray-300">
+                    <li key={p} className="flex items-start gap-3 text-sm text-[var(--color-fg-muted)]">
                       <span className="w-1.5 h-1.5 rounded-full mt-2 shrink-0" style={{ background: persona.dot }} />
                       {p}
                     </li>
@@ -367,7 +370,7 @@ export default function ResearchDeskPage() {
                 </ul>
                 <Link
                   href={persona.cta.href}
-                  className="inline-flex items-center gap-2 mt-7 text-[var(--color-primary)] hover:text-[var(--color-accent)] text-[12px] font-bold tracking-[0.12em] uppercase transition-colors"
+                  className="inline-flex items-center gap-2 mt-7 text-[var(--color-primary)] hover:text-[var(--color-primary-hover)] text-[12px] font-bold tracking-[0.12em] uppercase transition-colors"
                 >
                   {persona.cta.label}
                 </Link>

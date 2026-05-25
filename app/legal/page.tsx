@@ -22,11 +22,11 @@ const sidebarItems: SidebarItem[] = [
 function PolicyBlock({ heading, children }: { heading: string; children: React.ReactNode }) {
   return (
     <div className="mb-9">
-      <h3 className="text-base font-bold text-white mb-3.5 flex items-center gap-2.5">
+      <h3 className="text-base font-bold text-[var(--color-fg)] mb-3.5 flex items-center gap-2.5">
         <span className="w-5 h-[2px] bg-[var(--color-primary)] rounded-sm shrink-0" />
         {heading}
       </h3>
-      <div className="text-sm text-gray-400 leading-[1.75] space-y-3">{children}</div>
+      <div className="text-sm text-[var(--color-fg-muted)] leading-[1.75] space-y-3">{children}</div>
     </div>
   );
 }
@@ -35,7 +35,7 @@ function PolicyList({ items }: { items: React.ReactNode[] }) {
   return (
     <ul className="space-y-2">
       {items.map((item, i) => (
-        <li key={i} className="flex items-start gap-2.5 text-sm text-gray-400 leading-[1.6]">
+        <li key={i} className="flex items-start gap-2.5 text-sm text-[var(--color-fg-muted)] leading-[1.6]">
           <span className="text-[var(--color-primary)] shrink-0 mt-0.5">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <polyline points="20 6 9 17 4 12" />
@@ -50,16 +50,16 @@ function PolicyList({ items }: { items: React.ReactNode[] }) {
 
 function HighlightBox({ children }: { children: React.ReactNode }) {
   return (
-    <div className="my-5 bg-[var(--color-bg-card)] border border-white/[0.07] border-l-[3px] border-l-[var(--color-primary)] rounded-r-xl px-6 py-5">
-      <p className="text-sm text-gray-300 leading-[1.7]">{children}</p>
+    <div className="my-5 bg-[var(--color-bg-card)] border border-[var(--color-border)] border-l-[3px] border-l-[var(--color-primary)] rounded-r-xl px-6 py-5" style={{ boxShadow: '0 4px 24px rgba(10,10,10,0.06)' }}>
+      <p className="text-sm text-[var(--color-fg-muted)] leading-[1.7]">{children}</p>
     </div>
   );
 }
 
 function WarningBox({ children }: { children: React.ReactNode }) {
   return (
-    <div className="my-5 bg-[var(--color-error)]/60 border border-[var(--color-error)]/20 border-l-[3px] border-l-[var(--color-error)] rounded-r-xl px-6 py-5">
-      <p className="text-sm text-gray-300 leading-[1.7]">{children}</p>
+    <div className="my-5 bg-[var(--color-error)]/10 border border-[var(--color-error)]/20 border-l-[3px] border-l-[var(--color-error)] rounded-r-xl px-6 py-5">
+      <p className="text-sm text-[var(--color-fg-muted)] leading-[1.7]">{children}</p>
     </div>
   );
 }
@@ -78,12 +78,12 @@ function PolicySection({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="pb-16 mb-16 border-b border-white/[0.07] last:border-b-0 last:mb-0 last:pb-0 scroll-mt-32">
+    <section id={id} className="pb-16 mb-16 border-b border-[var(--color-border)] last:border-b-0 last:mb-0 last:pb-0 scroll-mt-32">
       <div className="text-[11px] font-bold tracking-[0.12em] uppercase text-[var(--color-primary)] mb-3">{num}</div>
-      <h2 className="text-2xl sm:text-3xl md:text-[34px] font-extrabold text-white leading-tight tracking-tight mb-2">
+      <h2 className="text-2xl sm:text-3xl md:text-[34px] font-extrabold text-[var(--color-fg)] leading-tight tracking-tight mb-2">
         {title}
       </h2>
-      <div className="text-xs text-gray-500 pb-6 mb-8 border-b border-white/[0.07]">{effective}</div>
+      <div className="text-xs text-[var(--color-fg-subtle)] pb-6 mb-8 border-b border-[var(--color-border)]">{effective}</div>
       {children}
     </section>
   );
@@ -121,7 +121,7 @@ export default function LegalPage() {
       <Navbar />
 
       {/* ── Hero ── */}
-      <section className="bg-[var(--color-bg-section)] pt-24 pb-12 sm:pt-32 sm:pb-16 md:pt-36 md:pb-20 border-b border-white/[0.06]">
+      <section className="bg-[var(--color-bg-section)] pt-24 pb-12 sm:pt-32 sm:pb-16 md:pt-36 md:pb-20 border-b border-[var(--color-border)]">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -138,7 +138,7 @@ export default function LegalPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-extrabold text-white leading-[1.1] tracking-tight mb-5"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-extrabold text-[var(--color-fg)] leading-[1.1] tracking-tight mb-5"
           >
             Transparent by design,<br />
             <span className="text-[var(--color-primary)]">clear on every term.</span>
@@ -148,7 +148,7 @@ export default function LegalPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-400 max-w-[560px] leading-relaxed mb-8"
+            className="text-[var(--color-fg-muted)] max-w-[560px] leading-relaxed mb-8"
           >
             All legal documents governing the use of logyra.in, its products, and its services — in one place. Read before you subscribe. No fine print that contradicts what we say elsewhere.
           </motion.p>
@@ -157,13 +157,14 @@ export default function LegalPage() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="inline-flex items-center gap-2.5 bg-[var(--color-bg-card)] border border-white/[0.07] rounded-lg px-4 py-2.5 text-[13px] text-gray-500"
+            className="inline-flex items-center gap-2.5 bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-lg px-4 py-2.5 text-[13px] text-[var(--color-fg-subtle)]"
+            style={{ boxShadow: '0 4px 24px rgba(10,10,10,0.06)' }}
           >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6bc28b" strokeWidth="1.8">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3F8B5F" strokeWidth="1.8">
               <rect x="3" y="4" width="18" height="18" rx="2" />
               <path d="M16 2v4M8 2v4M3 10h18" />
             </svg>
-            <span>All documents effective: <strong className="text-gray-300 font-semibold">February 2026</strong> &nbsp;|&nbsp; Governing law: <strong className="text-gray-300 font-semibold">Republic of India</strong></span>
+            <span>All documents effective: <strong className="text-[var(--color-fg)] font-semibold">February 2026</strong> &nbsp;|&nbsp; Governing law: <strong className="text-[var(--color-fg)] font-semibold">Republic of India</strong></span>
           </motion.div>
         </div>
       </section>
@@ -172,8 +173,8 @@ export default function LegalPage() {
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-[240px_1fr]">
 
         {/* Sidebar */}
-        <aside className="lg:sticky lg:top-28 lg:self-start lg:pr-8 lg:pt-12 lg:pb-12 lg:border-r border-white/[0.07] py-8 border-b lg:border-b-0">
-          <div className="text-[11px] font-bold tracking-[0.1em] uppercase text-gray-500 mb-4">Contents</div>
+        <aside className="lg:sticky lg:top-28 lg:self-start lg:pr-8 lg:pt-12 lg:pb-12 lg:border-r border-[var(--color-border)] py-8 border-b lg:border-b-0">
+          <div className="text-[11px] font-bold tracking-[0.1em] uppercase text-[var(--color-fg-subtle)] mb-4">Contents</div>
           <ul className="flex flex-row lg:flex-col gap-2 lg:gap-1 overflow-x-auto lg:overflow-visible [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none' }}>
             {sidebarItems.map((item) => {
               const isActive = activeId === item.id;
@@ -183,8 +184,8 @@ export default function LegalPage() {
                     onClick={() => scrollTo(item.id)}
                     className={`block w-full text-left px-3 py-2 text-[13px] rounded-md lg:border-l-2 border-b-2 lg:border-b-0 whitespace-nowrap transition-all duration-200 ${
                       isActive
-                        ? 'text-[var(--color-primary)] bg-[var(--color-primary)]/[0.06] lg:border-l-[var(--color-primary)] border-b-[var(--color-primary)]'
-                        : 'text-gray-400 hover:text-[var(--color-primary)] lg:border-l-transparent border-b-transparent'
+                        ? 'text-[var(--color-primary)] bg-[var(--color-primary)]/[0.08] lg:border-l-[var(--color-primary)] border-b-[var(--color-primary)]'
+                        : 'text-[var(--color-fg-muted)] hover:text-[var(--color-primary)] lg:border-l-transparent border-b-transparent'
                     }`}
                   >
                     {item.label}
@@ -299,7 +300,7 @@ export default function LegalPage() {
             effective="Effective: February 2026  |  Applies to: All paid subscription products"
           >
             <HighlightBox>
-              <strong className="text-white">Summary:</strong> All subscriptions are non-refundable once channel access has been granted. This applies to all plans — monthly, quarterly, and half-yearly. Please read the full policy before subscribing.
+              <strong className="text-[var(--color-fg)]">Summary:</strong> All subscriptions are non-refundable once channel access has been granted. This applies to all plans — monthly, quarterly, and half-yearly. Please read the full policy before subscribing.
             </HighlightBox>
 
             <PolicyBlock heading="Non-Refundable Subscriptions">
@@ -331,9 +332,9 @@ export default function LegalPage() {
               <p>Logyra Research Pvt Ltd reserves the right to terminate a subscriber&apos;s access without refund in the event of a material breach of the Terms and Conditions, including but not limited to redistribution of content, sharing of access credentials, or use of research content for commercial purposes without consent.</p>
             </PolicyBlock>
 
-            <div className="bg-[var(--color-bg-card)] border border-white/[0.07] rounded-xl p-7 mt-6">
-              <h4 className="text-[15px] font-bold text-white mb-2.5">Access issues or queries</h4>
-              <p className="text-sm text-gray-400 leading-[1.65]">
+            <div className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-xl p-7 mt-6" style={{ boxShadow: '0 4px 24px rgba(10,10,10,0.06)' }}>
+              <h4 className="text-[15px] font-bold text-[var(--color-fg)] mb-2.5">Access issues or queries</h4>
+              <p className="text-sm text-[var(--color-fg-muted)] leading-[1.65]">
                 For technical access issues only, contact us via the <Link href="/#contact" className="text-[var(--color-primary)] hover:underline">contact form on logyra.in</Link> within 48 hours of your payment confirmation. Please include your registered email address and payment reference number.
               </p>
             </div>
@@ -349,10 +350,10 @@ export default function LegalPage() {
             <PolicyBlock heading="Data We Collect">
               <p>Logyra Research Pvt Ltd collects only the minimum personal data required to provide its services. The data collected depends on how you interact with the platform:</p>
               <PolicyList items={[
-                <><strong className="text-white">Subscription purchase:</strong> Full name, email address, mobile number. This is required to process payment, generate your Telegram channel access, and maintain your subscription record.</>,
-                <><strong className="text-white">Contact form submissions:</strong> Name, email address, phone number, and message content.</>,
-                <><strong className="text-white">Interest / notify me registrations:</strong> Name, email address, and optionally a WhatsApp number, when you register interest in upcoming products.</>,
-                <><strong className="text-white">Website usage data:</strong> Standard server-side access logs and anonymised analytics data (pages visited, session duration, browser type). No personally identifiable information is stored in analytics.</>,
+                <><strong className="text-[var(--color-fg)]">Subscription purchase:</strong> Full name, email address, mobile number. This is required to process payment, generate your Telegram channel access, and maintain your subscription record.</>,
+                <><strong className="text-[var(--color-fg)]">Contact form submissions:</strong> Name, email address, phone number, and message content.</>,
+                <><strong className="text-[var(--color-fg)]">Interest / notify me registrations:</strong> Name, email address, and optionally a WhatsApp number, when you register interest in upcoming products.</>,
+                <><strong className="text-[var(--color-fg)]">Website usage data:</strong> Standard server-side access logs and anonymised analytics data (pages visited, session duration, browser type). No personally identifiable information is stored in analytics.</>,
               ]} />
             </PolicyBlock>
 
@@ -374,10 +375,10 @@ export default function LegalPage() {
             <PolicyBlock heading="Third-Party Services">
               <p>Logyra Research uses the following third-party services that may process data as part of delivering its services:</p>
               <PolicyList items={[
-                <><strong className="text-white">Cashfree:</strong> Payment processing</>,
-                <><strong className="text-white">Telegram:</strong> Private research channel delivery</>,
-                <><strong className="text-white">Airtable:</strong> Subscription record management</>,
-                <><strong className="text-white">HubSpot:</strong> CRM and lead management</>,
+                <><strong className="text-[var(--color-fg)]">Cashfree:</strong> Payment processing</>,
+                <><strong className="text-[var(--color-fg)]">Telegram:</strong> Private research channel delivery</>,
+                <><strong className="text-[var(--color-fg)]">Airtable:</strong> Subscription record management</>,
+                <><strong className="text-[var(--color-fg)]">HubSpot:</strong> CRM and lead management</>,
               ]} />
               <p>Each of these services operates under its own privacy policy. Logyra Research is not responsible for the data practices of third-party providers.</p>
             </PolicyBlock>
@@ -416,9 +417,9 @@ export default function LegalPage() {
 
             <PolicyBlock heading="Cookies We Use">
               <PolicyList items={[
-                <><strong className="text-white">Essential cookies:</strong> Required for the website to function correctly — including session management, security tokens, and payment flow state. These cannot be disabled without impacting site functionality.</>,
-                <><strong className="text-white">Analytics cookies:</strong> Anonymised data on page visits, session duration, and navigation patterns. Used to understand how visitors use the site and improve its design and content. No personally identifiable information is collected.</>,
-                <><strong className="text-white">Preference cookies:</strong> Store limited user preferences such as language settings or dismissed notices, if applicable.</>,
+                <><strong className="text-[var(--color-fg)]">Essential cookies:</strong> Required for the website to function correctly — including session management, security tokens, and payment flow state. These cannot be disabled without impacting site functionality.</>,
+                <><strong className="text-[var(--color-fg)]">Analytics cookies:</strong> Anonymised data on page visits, session duration, and navigation patterns. Used to understand how visitors use the site and improve its design and content. No personally identifiable information is collected.</>,
+                <><strong className="text-[var(--color-fg)]">Preference cookies:</strong> Store limited user preferences such as language settings or dismissed notices, if applicable.</>,
               ]} />
               <p>Logyra Research does not use advertising cookies, tracking pixels, or any cookies designed to profile users for commercial targeting purposes.</p>
             </PolicyBlock>
@@ -505,15 +506,15 @@ export default function LegalPage() {
           {/* Contact */}
           <section id="contact-legal" className="scroll-mt-32">
             <div className="text-[11px] font-bold tracking-[0.12em] uppercase text-[var(--color-primary)] mb-3">Queries & Concerns</div>
-            <h2 className="text-xl sm:text-2xl md:text-[28px] font-extrabold text-white leading-tight tracking-tight mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-[28px] font-extrabold text-[var(--color-fg)] leading-tight tracking-tight mb-4">
               Legal queries or data requests
             </h2>
-            <p className="text-sm text-gray-400 leading-[1.7] mb-6">
+            <p className="text-sm text-[var(--color-fg-muted)] leading-[1.7] mb-6">
               For any queries related to these legal documents, data access requests, or concerns regarding platform use, contact Logyra Research Pvt Ltd directly.
             </p>
-            <div className="bg-[var(--color-bg-card)] border border-white/[0.07] rounded-xl p-7">
-              <h4 className="text-[15px] font-bold text-white mb-3">Logyra Research Pvt Ltd</h4>
-              <p className="text-sm text-gray-400 leading-[1.75]">
+            <div className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-xl p-7" style={{ boxShadow: '0 4px 24px rgba(10,10,10,0.06)' }}>
+              <h4 className="text-[15px] font-bold text-[var(--color-fg)] mb-3">Logyra Research Pvt Ltd</h4>
+              <p className="text-sm text-[var(--color-fg-muted)] leading-[1.75]">
                 Website: <Link href="/" className="text-[var(--color-primary)] hover:underline">logyra.in</Link><br />
                 Contact: <Link href="/#contact" className="text-[var(--color-primary)] hover:underline">logyra.in/contact</Link><br />
                 Open Channel: <a href="https://t.me/logyra_insights" target="_blank" rel="noopener noreferrer" className="text-[var(--color-primary)] hover:underline">@logyra_insights on Telegram</a><br /><br />

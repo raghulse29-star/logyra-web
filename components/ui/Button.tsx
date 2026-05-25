@@ -39,15 +39,15 @@ export default function Button({
   const classes = `${variants[variant]} ${sizes[size]} inline-flex items-center justify-center gap-2 font-semibold ${className}`;
 
   const hoverAnim = variant === 'primary'
-    ? { scale: 1.05, y: -3, boxShadow: '0 0 40px rgba(74,222,128,0.45), 0 10px 30px rgba(0,0,0,0.3)' }
+    ? { scale: 1.05, y: -3, boxShadow: '0 0 32px rgba(63,139,95,0.35), 0 10px 24px rgba(10,10,10,0.10)' }
     : variant === 'outline'
-    ? { scale: 1.04, y: -2, boxShadow: '0 0 24px rgba(74,222,128,0.2)' }
+    ? { scale: 1.04, y: -2, boxShadow: '0 0 20px rgba(63,139,95,0.20)' }
     : { scale: 1.03, y: -1 };
 
   const tapAnim = variant === 'primary'
-    ? { scale: 0.95, boxShadow: '0 0 24px rgba(74,222,128,0.3)' }
+    ? { scale: 0.95, boxShadow: '0 0 20px rgba(63,139,95,0.25)' }
     : variant === 'outline'
-    ? { scale: 0.96, boxShadow: '0 0 14px rgba(74,222,128,0.15)' }
+    ? { scale: 0.96, boxShadow: '0 0 12px rgba(63,139,95,0.15)' }
     : { scale: 0.96 };
 
   if (href) {

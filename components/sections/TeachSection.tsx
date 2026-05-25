@@ -52,7 +52,7 @@ const cardVar = {
 export default function TeachSection() {
   const { open: openChannel } = useOpenChannel();
   return (
-    <section id="teach" className="relative py-14 md:py-20 lg:py-32 bg-[var(--color-bg-card)]">
+    <section id="teach" className="relative py-14 md:py-20 lg:py-32 bg-[var(--color-grey-section)]">
       <div className="container mx-auto px-4 max-w-[1200px]">
 
         {/* Header */}
@@ -68,18 +68,18 @@ export default function TeachSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-block bg-[var(--color-accent)] text-black text-[10px] sm:text-xs font-bold px-3 py-1 mb-6 uppercase tracking-[0.2em] rounded-sm"
+            className="inline-block bg-[var(--color-primary)] text-white text-[10px] sm:text-xs font-bold px-3 py-1 mb-6 uppercase tracking-[0.2em] rounded-sm"
           >
             LOGYRA INSIGHTS
           </motion.div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-fg)] mb-6 tracking-tight">
              We Transfer Skills.
           </h2>
 
-          <p className="text-[var(--color-fg-muted)] max-w-3xl mx-auto text-[15px] md:text-[17px] leading-relaxed">
+          <p className="text-[var(--color-fg-subtle)] max-w-3xl mx-auto text-[15px] md:text-[17px] leading-relaxed">
            	Our frameworks are built against institutional standards of process and repeatability.
-            <br className="hidden md:block" /> 
+            <br className="hidden md:block" />
           </p>
         </motion.div>
 
@@ -97,18 +97,18 @@ export default function TeachSection() {
               variants={cardVar}
               whileHover={p.disabled ? undefined : {
                 y: -12,
-                boxShadow: `0 32px 80px rgba(0,0,0,0.6), 0 0 40px ${p.glowColor}`,
+                boxShadow: `0 28px 64px rgba(10,10,10,0.10), 0 0 32px ${p.glowColor}`,
               }}
               whileTap={p.disabled ? undefined : { y: -6, scale: 0.98 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className={`h-full group ${p.disabled ? 'opacity-60' : ''}`}
+              className={`h-full group ${p.disabled ? 'opacity-70' : ''}`}
             >
               <div
-                className="flex flex-col h-full rounded-[20px] overflow-hidden border border-white/5 group-hover:border-white/15 transition-colors duration-500 relative"
-                style={{ background: '#131820' }}
+                className="flex flex-col h-full rounded-[20px] overflow-hidden border border-[var(--color-border)] group-hover:border-[var(--color-border-strong)] transition-colors duration-500 relative shadow-[0_4px_24px_rgba(10,10,10,0.06)]"
+                style={{ background: '#FFFFFF' }}
               >
                 {p.disabled && (
-                  <span className="absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 bg-black/60 backdrop-blur-sm border border-white/15 text-white/90 text-[9px] font-bold tracking-[0.15em] uppercase px-2.5 py-1 rounded-full">
+                  <span className="absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 bg-white/85 backdrop-blur-sm border border-black/10 text-[var(--color-fg-muted)] text-[9px] font-bold tracking-[0.15em] uppercase px-2.5 py-1 rounded-full">
                     <span className="w-1.5 h-1.5 rounded-full bg-orange-400" />
                     Coming Soon
                   </span>
@@ -129,7 +129,7 @@ export default function TeachSection() {
                     />
                   </motion.div>
                   {/* Gradient overlay — fades image into card body */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg-card)] via-[var(--color-bg-card)]/20 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent pointer-events-none" />
                   {/* Accent color tint on hover */}
                   <motion.div
                     className="absolute inset-0 pointer-events-none"
@@ -156,7 +156,7 @@ export default function TeachSection() {
                     </span>
                   </div>
 
-                  <h3 className="text-xl sm:text-[1.3rem] font-bold text-white mb-3 transition-colors duration-300 group-hover:text-[var(--color-accent)]">
+                  <h3 className="text-xl sm:text-[1.3rem] font-bold text-[var(--color-fg)] mb-3 transition-colors duration-300 group-hover:text-[var(--color-primary)]">
                     {p.title}
                   </h3>
 
@@ -168,7 +168,7 @@ export default function TeachSection() {
                   {p.disabled ? (
                     <span
                       aria-disabled="true"
-                      className="block w-full bg-[var(--color-bg-button)] text-gray-500 font-bold text-[13px] py-4 px-6 rounded-xl uppercase tracking-wide border border-white/[0.06] text-center cursor-not-allowed select-none"
+                      className="block w-full bg-[var(--color-bg-input)] text-[var(--color-fg-subtle)] font-bold text-[13px] py-4 px-6 rounded-xl uppercase tracking-wide border border-black/[0.06] text-center cursor-not-allowed select-none"
                     >
                       {p.cta}
                     </span>
@@ -179,11 +179,11 @@ export default function TeachSection() {
                       whileHover={{
                         scale: 1.03,
                         y: -2,
-                        boxShadow: '0 0 28px rgba(211,255,51,0.3)',
+                        boxShadow: '0 8px 24px rgba(63,139,95,0.25)',
                       }}
                       whileTap={{ scale: 0.97 }}
                       transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                      className="block w-full bg-[var(--color-bg-elevated)] hover:bg-[var(--color-bg-elevated)] text-[var(--color-accent)] font-bold text-[13px] py-4 px-6 rounded-xl transition-colors uppercase tracking-wide border border-[var(--color-accent)]/10 hover:border-[var(--color-accent)]/30 text-center cursor-pointer"
+                      className="block w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white font-bold text-[13px] py-4 px-6 rounded-xl transition-colors uppercase tracking-wide border border-[var(--color-primary)] text-center cursor-pointer"
                     >
                       {p.cta}
                     </motion.button>
@@ -193,11 +193,11 @@ export default function TeachSection() {
                         whileHover={{
                           scale: 1.03,
                           y: -2,
-                          boxShadow: '0 0 28px rgba(211,255,51,0.3)',
+                          boxShadow: '0 8px 24px rgba(63,139,95,0.25)',
                         }}
                         whileTap={{ scale: 0.97 }}
                         transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                        className="block w-full bg-[var(--color-bg-elevated)] hover:bg-[var(--color-bg-elevated)] text-[var(--color-accent)] font-bold text-[13px] py-4 px-6 rounded-xl transition-colors uppercase tracking-wide border border-[var(--color-accent)]/10 hover:border-[var(--color-accent)]/30 text-center cursor-pointer"
+                        className="block w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white font-bold text-[13px] py-4 px-6 rounded-xl transition-colors uppercase tracking-wide border border-[var(--color-primary)] text-center cursor-pointer"
                       >
                         {p.cta}
                       </motion.span>

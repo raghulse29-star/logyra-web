@@ -17,8 +17,8 @@ export default function Card({ children, className = '', hover = true, glow = fa
         y: -8,
         scale: 1.02,
         boxShadow: glow
-          ? '0 0 60px rgba(74,222,128,0.3), 0 20px 60px rgba(0,0,0,0.4)'
-          : '0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(74,222,128,0.1)',
+          ? '0 0 48px rgba(63,139,95,0.25), 0 18px 48px rgba(10,10,10,0.10)'
+          : '0 18px 48px rgba(10,10,10,0.08), 0 0 0 1px rgba(63,139,95,0.20)',
       } : undefined}
       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
       className={`glass-card rounded-2xl ${glow ? 'shadow-[var(--shadow-glow)]' : ''} ${className}`}

@@ -104,26 +104,26 @@ function ProductCard({ product, onNotify }: { product: Product; onNotify: (name:
           <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]" />
           Live Now
         </span>
-        <div className="text-[11px] font-bold tracking-[0.08em] uppercase text-gray-500 mb-2">{product.num}</div>
-        <h3 className="text-2xl font-bold text-white mb-1.5 whitespace-pre-line leading-tight">{product.name}</h3>
-        <div className="text-sm text-gray-500 mb-4">{product.market}</div>
-        <p className="text-sm text-gray-400 leading-relaxed mb-6 flex-1">{product.desc}</p>
-        <div className="h-px bg-white/[0.07] mb-5" />
+        <div className="text-[11px] font-bold tracking-[0.08em] uppercase text-[var(--color-fg-subtle)] mb-2">{product.num}</div>
+        <h3 className="text-2xl font-bold text-[var(--color-fg)] mb-1.5 whitespace-pre-line leading-tight">{product.name}</h3>
+        <div className="text-sm text-[var(--color-fg-subtle)] mb-4">{product.market}</div>
+        <p className="text-sm text-[var(--color-fg-muted)] leading-relaxed mb-6 flex-1">{product.desc}</p>
+        <div className="h-px bg-[var(--color-border)] mb-5" />
         <ul className="space-y-2 mb-6">
           {product.includes!.map((item) => (
-            <li key={item} className="flex items-start gap-2 text-[13px] text-gray-300">
+            <li key={item} className="flex items-start gap-2 text-[13px] text-[var(--color-fg-muted)]">
               <span className="text-[var(--color-primary)] shrink-0 mt-0.5">—</span>
               {item}
             </li>
           ))}
         </ul>
         <div className="flex items-baseline gap-2 mb-5">
-          <span className="text-3xl font-bold text-white">{product.price}</span>
-          <span className="text-xs text-gray-500">/ month (GST incl.)</span>
+          <span className="text-3xl font-bold text-[var(--color-fg)]">{product.price}</span>
+          <span className="text-xs text-[var(--color-fg-subtle)]">/ month (GST incl.)</span>
         </div>
         <Link
           href={product.href!}
-          className="flex items-center justify-center gap-2 w-full py-3.5 bg-[var(--color-primary)] hover:bg-[var(--color-accent)] text-[var(--color-fg-inverse)] text-[12px] font-bold tracking-[0.12em] uppercase rounded-lg transition-colors"
+          className="flex items-center justify-center gap-2 w-full py-3.5 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white text-[12px] font-bold tracking-[0.12em] uppercase rounded-lg transition-colors"
         >
           View Plans & Subscribe
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
@@ -138,20 +138,20 @@ function ProductCard({ product, onNotify }: { product: Product; onNotify: (name:
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.5 }}
-      className="relative flex flex-col p-8 sm:p-10 bg-[var(--color-bg-card)] border border-white/[0.06] rounded-2xl opacity-80 hover:opacity-100 transition-opacity"
+      className="relative flex flex-col p-8 sm:p-10 bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl opacity-80 hover:opacity-100 transition-opacity"
     >
-      <span className="inline-flex items-center gap-1.5 self-start text-[10px] font-bold tracking-[0.12em] uppercase px-2.5 py-1 rounded-sm bg-white/[0.04] border border-white/[0.07] text-gray-500 mb-6">
+      <span className="inline-flex items-center gap-1.5 self-start text-[10px] font-bold tracking-[0.12em] uppercase px-2.5 py-1 rounded-sm bg-[var(--color-beige-lighter)] border border-[var(--color-border)] text-[var(--color-fg-subtle)] mb-6">
         Coming Soon
       </span>
-      <div className="text-[11px] font-bold tracking-[0.08em] uppercase text-gray-600 mb-2">{product.num}</div>
-      <h3 className="text-2xl font-bold text-gray-500 mb-1.5 whitespace-pre-line leading-tight">{product.name}</h3>
-      <div className="text-sm text-gray-600 mb-4">{product.market}</div>
-      <p className="text-sm text-gray-500 leading-relaxed mb-6 flex-1">{product.desc}</p>
-      <div className="h-px bg-white/[0.05] mb-5" />
-      <p className="text-[13px] text-gray-500 mb-4">Get notified when this opens:</p>
+      <div className="text-[11px] font-bold tracking-[0.08em] uppercase text-[var(--color-fg-subtle)] mb-2">{product.num}</div>
+      <h3 className="text-2xl font-bold text-[var(--color-fg-muted)] mb-1.5 whitespace-pre-line leading-tight">{product.name}</h3>
+      <div className="text-sm text-[var(--color-fg-subtle)] mb-4">{product.market}</div>
+      <p className="text-sm text-[var(--color-fg-subtle)] leading-relaxed mb-6 flex-1">{product.desc}</p>
+      <div className="h-px bg-[var(--color-border)] mb-5" />
+      <p className="text-[13px] text-[var(--color-fg-subtle)] mb-4">Get notified when this opens:</p>
       <button
         onClick={() => onNotify(product.name.replace('\n', ' '))}
-        className="flex items-center justify-center gap-2 w-full py-3 border border-white/[0.08] hover:border-white/20 hover:text-gray-200 text-gray-400 text-[12px] font-semibold tracking-[0.06em] uppercase rounded-lg transition-colors"
+        className="flex items-center justify-center gap-2 w-full py-3 border border-[var(--color-border)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] text-[var(--color-fg-muted)] text-[12px] font-semibold tracking-[0.06em] uppercase rounded-lg transition-colors"
       >
         🔔 Notify Me When Live
       </button>
@@ -174,20 +174,20 @@ export default function InnerCircleHubPage() {
       <Navbar />
 
       {/* ── Breadcrumb ── */}
-      <div className="bg-[var(--color-bg-section)] border-b border-white/[0.05] pt-24 sm:pt-28">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-3 text-xs text-gray-500 flex items-center gap-2">
+      <div className="bg-[var(--color-bg-section)] border-b border-[var(--color-border)] pt-24 sm:pt-28">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-3 text-xs text-[var(--color-fg-subtle)] flex items-center gap-2">
           <Link href="/" className="hover:text-[var(--color-primary)] transition-colors">Home</Link>
-          <span className="text-gray-700">›</span>
+          <span className="text-[var(--color-fg-subtle)]">›</span>
           <Link href="/research-desk" className="hover:text-[var(--color-primary)] transition-colors">Research Desk</Link>
-          <span className="text-gray-700">›</span>
-          <span className="text-gray-300">Inner Circle</span>
+          <span className="text-[var(--color-fg-subtle)]">›</span>
+          <span className="text-[var(--color-fg-muted)]">Inner Circle</span>
         </div>
       </div>
 
       {/* ── Hero ── */}
       <section className="relative bg-[var(--color-bg-card)] pt-14 pb-14 md:pt-20 md:pb-20 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(ellipse_at_right_center,rgba(184,253,75,0.05),transparent_60%)]" />
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(ellipse_at_right_center,rgba(63,139,95,0.05),transparent_60%)]" />
         </div>
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-6">
@@ -201,23 +201,23 @@ export default function InnerCircleHubPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.08] mb-5 max-w-3xl"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--color-fg)] leading-[1.08] mb-5 max-w-3xl"
           >
             Private research.<br />
             Real-time depth.<br />
-            <span className="text-[var(--color-accent)]">Your market.</span>
+            <span className="text-[var(--color-primary)]">Your market.</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-300 text-base md:text-lg max-w-2xl leading-relaxed mb-10"
+            className="text-[var(--color-fg-muted)] text-base md:text-lg max-w-2xl leading-relaxed mb-10"
           >
             The Inner Circle is Logyra&apos;s private research channel — delivering structured, institutional-grade analysis to serious market participants across Indian F&amp;O, Forex, and Crypto. Choose your market. Get the full desk behind it.
           </motion.p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 pt-10 border-t border-white/10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 pt-10 border-t border-[var(--color-border)]">
             {[
               { val: '3+',  label: 'Structured briefs per day' },
               { val: '2–7', label: 'Setups during market hours' },
@@ -231,7 +231,7 @@ export default function InnerCircleHubPage() {
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.07 }}
               >
                 <div className="text-2xl md:text-3xl font-bold text-[var(--color-primary)] mb-1">{stat.val}</div>
-                <div className="text-xs text-gray-500">{stat.label}</div>
+                <div className="text-xs text-[var(--color-fg-subtle)]">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -239,17 +239,17 @@ export default function InnerCircleHubPage() {
       </section>
 
       {/* ── IC Promise ── */}
-      <section className="bg-[var(--color-bg)] py-12 md:py-16 border-b border-white/[0.06]">
+      <section className="bg-[var(--color-bg-section)] py-12 md:py-16 border-b border-[var(--color-border)]">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 bg-[var(--color-bg-card)] border border-white/[0.06] rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(10,10,10,0.06)]">
             {promises.map((p, i) => (
               <div
                 key={p.title}
-                className={`p-7 ${i < promises.length - 1 ? 'border-b sm:border-b-0 sm:border-r border-white/[0.06]' : ''} ${i < 2 ? 'lg:border-b-0' : ''}`}
+                className={`p-7 ${i < promises.length - 1 ? 'border-b sm:border-b-0 sm:border-r border-[var(--color-border)]' : ''} ${i < 2 ? 'lg:border-b-0' : ''}`}
               >
                 <div className="text-2xl mb-3">{p.icon}</div>
-                <h4 className="text-base font-bold text-white mb-2">{p.title}</h4>
-                <p className="text-[13px] text-gray-400 leading-relaxed">{p.desc}</p>
+                <h4 className="text-base font-bold text-[var(--color-fg)] mb-2">{p.title}</h4>
+                <p className="text-[13px] text-[var(--color-fg-muted)] leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
@@ -261,25 +261,25 @@ export default function InnerCircleHubPage() {
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-14">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Choose Your Market</span>
-              <div className="flex-1 h-px bg-white/10" />
+              <span className="text-[var(--color-primary)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Choose Your Market</span>
+              <div className="flex-1 h-px bg-[var(--color-border)]" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-fg)] mb-4">
               Select a segment.<br />
               <span className="text-[var(--color-primary)]">Get the full desk.</span>
             </h2>
-            <p className="text-gray-400 max-w-xl leading-relaxed">
+            <p className="text-[var(--color-fg-muted)] max-w-xl leading-relaxed">
               Every Inner Circle product delivers the same research depth and discipline — applied to your chosen asset class.
             </p>
           </div>
 
           {/* Indian Markets divider */}
           <div className="flex items-center gap-5 mb-9">
-            <div className="flex-1 h-px bg-white/[0.07]" />
+            <div className="flex-1 h-px bg-[var(--color-border)]" />
             <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.12em] uppercase px-4 py-1.5 border border-[var(--color-primary)]/30 text-[var(--color-primary)] rounded-sm whitespace-nowrap">
               🇮🇳 Indian Markets
             </span>
-            <div className="flex-1 h-px bg-white/[0.07]" />
+            <div className="flex-1 h-px bg-[var(--color-border)]" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14">
@@ -290,11 +290,11 @@ export default function InnerCircleHubPage() {
 
           {/* Global Markets divider */}
           <div className="flex items-center gap-5 mb-9">
-            <div className="flex-1 h-px bg-white/[0.07]" />
-            <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.12em] uppercase px-4 py-1.5 border border-white/[0.1] text-gray-400 rounded-sm whitespace-nowrap">
+            <div className="flex-1 h-px bg-[var(--color-border)]" />
+            <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.12em] uppercase px-4 py-1.5 border border-[var(--color-border)] text-[var(--color-fg-muted)] rounded-sm whitespace-nowrap">
               🌐 Forex & Crypto Markets
             </span>
-            <div className="flex-1 h-px bg-white/[0.07]" />
+            <div className="flex-1 h-px bg-[var(--color-border)]" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -306,18 +306,18 @@ export default function InnerCircleHubPage() {
       </section>
 
       {/* ── How It Works ── */}
-      <section className="bg-[var(--color-bg-card)] py-14 md:py-20 lg:py-28">
+      <section className="bg-[var(--color-bg-section)] py-14 md:py-20 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Access Flow</span>
-              <div className="flex-1 h-px bg-white/10" />
+              <span className="text-[var(--color-primary)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Access Flow</span>
+              <div className="flex-1 h-px bg-[var(--color-border)]" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-fg)] mb-4">
               From payment<br />
               <span className="text-[var(--color-primary)]">to private channel.</span>
             </h2>
-            <p className="text-gray-400 max-w-xl leading-relaxed">
+            <p className="text-[var(--color-fg-muted)] max-w-xl leading-relaxed">
               Immediate access upon payment confirmation. No manual delays, no approval required.
             </p>
           </div>
@@ -330,11 +330,11 @@ export default function InnerCircleHubPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className={`p-5 sm:pr-6 ${i < hiwSteps.length - 1 ? 'sm:border-r border-white/[0.07]' : ''}`}
+                className={`p-5 sm:pr-6 ${i < hiwSteps.length - 1 ? 'sm:border-r border-[var(--color-border)]' : ''}`}
               >
-                <div className="text-[11px] font-bold tracking-[0.08em] uppercase text-gray-500 mb-3">{step.num}</div>
-                <h4 className="text-base font-bold text-white mb-2">{step.title}</h4>
-                <p className="text-[13px] text-gray-400 leading-relaxed">{step.desc}</p>
+                <div className="text-[11px] font-bold tracking-[0.08em] uppercase text-[var(--color-fg-subtle)] mb-3">{step.num}</div>
+                <h4 className="text-base font-bold text-[var(--color-fg)] mb-2">{step.title}</h4>
+                <p className="text-[13px] text-[var(--color-fg-muted)] leading-relaxed">{step.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -342,31 +342,31 @@ export default function InnerCircleHubPage() {
       </section>
 
       {/* ── CTA Band ── */}
-      <section className="bg-gradient-to-br from-[var(--color-bg-card)] via-[var(--color-bg-elevated)] to-[var(--color-bg-card)] border-y border-[var(--color-primary)]/25 py-16 md:py-20 text-center">
+      <section className="bg-gradient-to-br from-[var(--color-beige-lighter)] via-[var(--color-beige-light)] to-[var(--color-beige-lighter)] border-y border-[var(--color-primary)]/25 py-16 md:py-20 text-center">
         <div className="max-w-[800px] mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-[1.05]">
+          <h2 className="text-3xl md:text-5xl font-bold text-[var(--color-fg)] mb-4 leading-[1.05]">
             One market.<br />
             <span className="text-[var(--color-primary)]">Full desk intelligence.</span>
           </h2>
-          <p className="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">
+          <p className="text-[var(--color-fg-muted)] text-base md:text-lg mb-8 leading-relaxed">
             Start with Index Options — the only live product. Others are being built and will open segment by segment.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link
               href="/research-desk/inner-circle/index-options"
-              className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-accent)] text-[var(--color-fg-inverse)] text-sm font-bold tracking-[0.06em] uppercase px-7 py-4 rounded-lg transition-colors"
+              className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white text-sm font-bold tracking-[0.06em] uppercase px-7 py-4 rounded-lg transition-colors"
             >
               View Index Options Plans →
             </Link>
             <button
               type="button"
               onClick={openChannel}
-              className="inline-flex items-center gap-2 border border-white/20 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] text-gray-200 text-sm font-semibold px-6 py-4 rounded-lg transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 border border-[var(--color-primary)] hover:bg-[var(--color-primary-tint)] text-[var(--color-primary)] text-sm font-semibold px-6 py-4 rounded-lg transition-colors cursor-pointer"
             >
               Start Free on Telegram
             </button>
           </div>
-          <p className="text-xs text-gray-500 mt-5">Not SEBI registered. Educational research only. Markets involve risk.</p>
+          <p className="text-xs text-[var(--color-fg-subtle)] mt-5">Not SEBI registered. Educational research only. Markets involve risk.</p>
         </div>
       </section>
 
@@ -380,7 +380,7 @@ export default function InnerCircleHubPage() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[200] bg-black/75 backdrop-blur-sm flex items-center justify-center px-4"
+            className="fixed inset-0 z-[200] bg-[rgba(10,10,10,0.45)] backdrop-blur-sm flex items-center justify-center px-4"
             onClick={close}
           >
             <motion.div
@@ -388,21 +388,21 @@ export default function InnerCircleHubPage() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 8 }}
               transition={{ duration: 0.22 }}
-              className="relative bg-[var(--color-bg-card)] border border-[var(--color-primary)]/30 rounded-2xl p-8 sm:p-10 w-full max-w-md"
+              className="relative bg-[var(--color-bg-card)] border border-[var(--color-primary)]/30 rounded-2xl p-8 sm:p-10 w-full max-w-md shadow-[0_4px_24px_rgba(10,10,10,0.06)]"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={close}
                 aria-label="Close"
-                className="absolute top-4 right-5 text-gray-500 hover:text-white text-2xl leading-none transition-colors"
+                className="absolute top-4 right-5 text-[var(--color-fg-subtle)] hover:text-[var(--color-fg)] text-2xl leading-none transition-colors"
               >
                 ×
               </button>
 
               {!submitted ? (
                 <>
-                  <h3 className="text-2xl font-bold text-white mb-2">Stay in the loop</h3>
-                  <p className="text-sm text-gray-400 mb-6">
+                  <h3 className="text-2xl font-bold text-[var(--color-fg)] mb-2">Stay in the loop</h3>
+                  <p className="text-sm text-[var(--color-fg-muted)] mb-6">
                     We&apos;ll notify you when <span className="text-[var(--color-primary)] font-semibold">{notifyProduct}</span> opens for access.
                   </p>
                   <form
@@ -417,33 +417,33 @@ export default function InnerCircleHubPage() {
                       type="text"
                       required
                       placeholder="Your name"
-                      className="w-full px-4 py-3 bg-[var(--color-bg-section)] border border-white/[0.08] focus:border-[var(--color-primary)] rounded-lg text-sm text-white placeholder:text-gray-600 outline-none transition-colors"
+                      className="w-full px-4 py-3 bg-white border border-[var(--color-border)] focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/15 rounded-lg text-sm text-[var(--color-fg)] placeholder:text-[var(--color-fg-subtle)] outline-none transition-colors"
                     />
                     <input
                       type="email"
                       required
                       placeholder="Your email address"
-                      className="w-full px-4 py-3 bg-[var(--color-bg-section)] border border-white/[0.08] focus:border-[var(--color-primary)] rounded-lg text-sm text-white placeholder:text-gray-600 outline-none transition-colors"
+                      className="w-full px-4 py-3 bg-white border border-[var(--color-border)] focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/15 rounded-lg text-sm text-[var(--color-fg)] placeholder:text-[var(--color-fg-subtle)] outline-none transition-colors"
                     />
                     <input
                       type="tel"
                       placeholder="WhatsApp number (optional)"
-                      className="w-full px-4 py-3 bg-[var(--color-bg-section)] border border-white/[0.08] focus:border-[var(--color-primary)] rounded-lg text-sm text-white placeholder:text-gray-600 outline-none transition-colors"
+                      className="w-full px-4 py-3 bg-white border border-[var(--color-border)] focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/15 rounded-lg text-sm text-[var(--color-fg)] placeholder:text-[var(--color-fg-subtle)] outline-none transition-colors"
                     />
                     <button
                       type="submit"
-                      className="w-full py-3.5 bg-[var(--color-primary)] hover:bg-[var(--color-accent)] text-[var(--color-fg-inverse)] text-sm font-bold tracking-[0.06em] uppercase rounded-lg transition-colors mt-1"
+                      className="w-full py-3.5 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white text-sm font-bold tracking-[0.06em] uppercase rounded-lg transition-colors mt-1"
                     >
                       Notify Me When It Opens
                     </button>
                   </form>
-                  <p className="text-[11px] text-gray-500 text-center mt-3">No spam. One email when it launches. That&apos;s it.</p>
+                  <p className="text-[11px] text-[var(--color-fg-subtle)] text-center mt-3">No spam. One email when it launches. That&apos;s it.</p>
                 </>
               ) : (
                 <div className="text-center py-6">
                   <div className="text-4xl mb-3">✓</div>
-                  <h3 className="text-xl font-bold text-white mb-2">Registered.</h3>
-                  <p className="text-sm text-gray-400">We&apos;ll reach you when this product goes live. No spam.</p>
+                  <h3 className="text-xl font-bold text-[var(--color-fg)] mb-2">Registered.</h3>
+                  <p className="text-sm text-[var(--color-fg-muted)]">We&apos;ll reach you when this product goes live. No spam.</p>
                 </div>
               )}
             </motion.div>

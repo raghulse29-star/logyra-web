@@ -9,10 +9,11 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[var(--color-bg-card)] pt-16 sm:pt-20"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-white pt-16 sm:pt-20"
     >
-      {/* Glow — smaller, GPU-composited (opacity only, no blur change on scroll) */}
-      <div className="absolute top-[15%] left-0 w-[300px] h-[300px] bg-[var(--color-primary)] opacity-[0.07] rounded-full blur-[80px] pointer-events-none" />
+      {/* Soft warm glow */}
+      <div className="absolute top-[15%] left-0 w-[420px] h-[420px] bg-[var(--color-accent)] opacity-[0.10] rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-[10%] right-[8%] w-[320px] h-[320px] bg-[var(--color-primary)] opacity-[0.07] rounded-full blur-[90px] pointer-events-none" />
 
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10 w-full">
         <div className="grid lg:grid-cols-[1fr_1.1fr] gap-8 lg:gap-12 items-center py-12 sm:py-16 lg:py-20">
@@ -27,7 +28,7 @@ export default function HeroSection() {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="mb-5 sm:mb-6"
             >
-              <span className="inline-block bg-[var(--color-primary-tint)] text-[var(--color-bg-card)] text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-sm">
+              <span className="inline-block bg-[var(--color-primary)] text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-sm">
                 Read the market. Not the noise.
               </span>
             </motion.div>
@@ -42,10 +43,10 @@ export default function HeroSection() {
               <span className="block text-[2.4rem] sm:text-[3.2rem] md:text-[4rem] lg:text-[5.5rem] leading-[1.05] text-[var(--color-fg)]">
                 Think Like
               </span>
-              <span className="block text-[2.4rem] sm:text-[3.2rem] md:text-[4rem] lg:text-[5.5rem] leading-[1.05] text-[var(--color-primary-tint)] mt-1 sm:mt-2">
+              <span className="block text-[2.4rem] sm:text-[3.2rem] md:text-[4rem] lg:text-[5.5rem] leading-[1.05] text-[var(--color-primary)] mt-1 sm:mt-2">
                 the Market
               </span>
-              <span className="block text-[2.4rem] sm:text-[3.2rem] md:text-[4rem] lg:text-[5.5rem] leading-[1.05] text-[var(--color-primary-tint)] mt-1 sm:mt-2">
+              <span className="block text-[2.4rem] sm:text-[3.2rem] md:text-[4rem] lg:text-[5.5rem] leading-[1.05] text-[var(--color-primary)] mt-1 sm:mt-2">
                 Moves
               </span>
             </motion.h1>
@@ -69,7 +70,7 @@ export default function HeroSection() {
               <button
                 type="button"
                 onClick={openChannel}
-                className="inline-block bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] active:bg-[var(--color-primary-hover)] text-white text-[12px] sm:text-[13px] font-bold tracking-wider px-6 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_0_20px_rgba(94,191,130,0.25)] transition-colors uppercase cursor-pointer"
+                className="inline-block bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] active:bg-[var(--color-primary-hover)] text-white text-[12px] sm:text-[13px] font-bold tracking-wider px-6 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_6px_24px_rgba(63,139,95,0.30)] transition-colors uppercase cursor-pointer"
               >
                 Access the Platform
               </button>

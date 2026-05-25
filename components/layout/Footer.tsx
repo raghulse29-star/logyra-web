@@ -61,7 +61,7 @@ export default function Footer() {
           whileInView={{ scaleX: 1, opacity: 1 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="h-px bg-gradient-to-r from-transparent via-[#4a6b4d] to-transparent mb-12 sm:mb-16 origin-left"
+          className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-12 sm:mb-16 origin-left"
         />
 
         {/* Columns — single whileInView on the grid, no per-item observers */}
@@ -81,22 +81,22 @@ export default function Footer() {
                 alt="Logyra Research"
                 width={203}
                 height={80}
-                className="h-14 sm:h-16 w-auto"
+                className="h-14 sm:h-16 w-auto brightness-0 invert opacity-75"
               />
             </Link>
-            <p className="text-[var(--color-fg-muted)] text-[15px] max-w-[200px] leading-relaxed mb-5">
+            <p className="text-white/70 text-[15px] max-w-[200px] leading-relaxed mb-5">
               Market Intelligence. Research-First.
             </p>
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[var(--color-primary)]" />
-              <span className="text-[var(--color-primary)] text-[11px] font-bold tracking-widest uppercase">Active Research</span>
+              <span className="w-2 h-2 rounded-full bg-[var(--color-accent)]" />
+              <span className="text-[var(--color-accent)] text-[11px] font-bold tracking-widest uppercase">Active Research</span>
             </div>
           </motion.div>
 
           {/* Research Desk */}
           <motion.div variants={wrapVar} className="lg:ml-12">
             <h4 className="text-white text-[11px] font-bold tracking-[0.15em] uppercase mb-5 flex items-center gap-2">
-              <span className="w-4 h-px bg-[var(--color-primary)]" />
+              <span className="w-4 h-px bg-[var(--color-accent)]" />
               RESEARCH DESK
             </h4>
             <ul className="flex flex-col gap-3">
@@ -104,9 +104,9 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="group flex items-center gap-2 text-[var(--color-fg-muted)] hover:text-white text-[15px] transition-colors duration-200"
+                    className="group flex items-center gap-2 text-white/70 hover:text-white text-[15px] transition-colors duration-200"
                   >
-                    <span className="block w-0 group-hover:w-3 h-px bg-[var(--color-primary)] transition-all duration-300" />
+                    <span className="block w-0 group-hover:w-3 h-px bg-[var(--color-accent)] transition-all duration-300" />
                     {link.label}
                   </Link>
                 </li>
@@ -117,7 +117,7 @@ export default function Footer() {
           {/* Company */}
           <motion.div variants={wrapVar}>
             <h4 className="text-white text-[11px] font-bold tracking-[0.15em] uppercase mb-5 flex items-center gap-2">
-              <span className="w-4 h-px bg-[var(--color-primary)]" />
+              <span className="w-4 h-px bg-[var(--color-accent)]" />
               COMPANY
             </h4>
             <ul className="flex flex-col gap-3">
@@ -125,9 +125,9 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="group flex items-center gap-2 text-[var(--color-fg-muted)] hover:text-white text-[15px] transition-colors duration-200"
+                    className="group flex items-center gap-2 text-white/70 hover:text-white text-[15px] transition-colors duration-200"
                   >
-                    <span className="block w-0 group-hover:w-3 h-px bg-[var(--color-primary)] transition-all duration-300" />
+                    <span className="block w-0 group-hover:w-3 h-px bg-[var(--color-accent)] transition-all duration-300" />
                     {link.label}
                   </Link>
                 </li>
@@ -138,10 +138,10 @@ export default function Footer() {
           {/* Connect */}
           <motion.div variants={wrapVar}>
             <h4 className="text-white text-[11px] font-bold tracking-[0.15em] uppercase mb-5 flex items-center gap-2">
-              <span className="w-4 h-px bg-[var(--color-primary)]" />
+              <span className="w-4 h-px bg-[var(--color-accent)]" />
               CONNECT
             </h4>
-            <p className="text-[var(--color-fg-muted)] text-[15px] mb-5">
+            <p className="text-white/70 text-[15px] mb-5">
               Join the Intelligence Channel
             </p>
 
@@ -149,7 +149,7 @@ export default function Footer() {
             <button
               type="button"
               onClick={openChannel}
-              className="inline-flex items-center gap-2 text-[var(--color-primary)] hover:text-[var(--color-primary-hover)] text-[12px] font-bold tracking-wider uppercase mb-7 transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 text-[var(--color-accent)] hover:text-white text-[12px] font-bold tracking-wider uppercase mb-7 transition-colors cursor-pointer"
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="5 3 19 12 5 21 5 3" />
@@ -188,12 +188,12 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.5 }}
-          className="pt-6 border-t border-[var(--color-border)] flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] uppercase tracking-wider text-[var(--color-fg-muted)]"
+          className="pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] uppercase tracking-wider text-white/60"
         >
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-1 text-center md:text-left">
             <span>COPYRIGHT © 2026 LOGYRA RESEARCH PVT LTD. ALL RIGHTS RESERVED.</span>
-            <span className="hidden md:inline text-[var(--color-primary)]">|</span>
-            <span className="text-[var(--color-primary)] font-medium">NOT SEBI REGISTERED | EDUCATIONAL CONTENT ONLY</span>
+            <span className="hidden md:inline text-[var(--color-accent)]">|</span>
+            <span className="text-[var(--color-accent)] font-medium">NOT SEBI REGISTERED | EDUCATIONAL CONTENT ONLY</span>
           </div>
           <div className="flex items-center gap-6">
             {[

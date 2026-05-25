@@ -28,7 +28,7 @@ export default function TickerBar() {
               <span className="text-body-xs font-mono text-[var(--color-text-heading)]">{t.price}</span>
               <span
                 className="text-body-xs font-mono font-semibold"
-                style={{ color: t.up ? '#4ade80' : '#f87171' }}
+                style={{ color: t.up ? '#3F8B5F' : '#DC2626' }}
               >
                 {t.up ? '▲' : '▼'} {t.change}
               </span>

@@ -52,30 +52,30 @@ export default function PayPage() {
       <main className="flex-1 pt-20 sm:pt-24 flex flex-col">
 
         {/* Top bar with plan summary */}
-        <div className="bg-[var(--color-bg-card)] border-b border-white/[0.07]">
+        <div className="bg-[var(--color-bg-card)] border-b border-[var(--color-border)]" style={{ boxShadow: '0 4px 24px rgba(10,10,10,0.06)' }}>
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-center gap-4">
-              <Link href="/research-desk/inner-circle/index-options#plans" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="/research-desk/inner-circle/index-options#plans" className="text-[var(--color-fg-subtle)] hover:text-[var(--color-primary)] transition-colors">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="15 18 9 12 15 6" />
                 </svg>
               </Link>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-[var(--color-accent)] text-[10px] font-bold tracking-[0.15em] uppercase">F&O Inner Circle</span>
-                  <span className="text-gray-600 text-[10px]">·</span>
-                  <span className="text-gray-400 text-[10px] tracking-wide">{config.label}</span>
+                  <span className="text-[var(--color-primary)] text-[10px] font-bold tracking-[0.15em] uppercase">F&O Inner Circle</span>
+                  <span className="text-[var(--color-fg-subtle)] text-[10px]">·</span>
+                  <span className="text-[var(--color-fg-muted)] text-[10px] tracking-wide">{config.label}</span>
                 </div>
                 <div className="flex items-baseline gap-1.5 mt-0.5">
-                  <span className="text-white font-bold text-lg">{config.price}</span>
-                  <span className="text-gray-500 text-xs">Incl. GST · {config.duration}</span>
+                  <span className="text-[var(--color-fg)] font-bold text-lg">{config.price}</span>
+                  <span className="text-[var(--color-fg-subtle)] text-xs">Incl. GST · {config.duration}</span>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-wrap gap-2">
               {config.features.slice(0, 2).map(f => (
-                <span key={f} className="text-[10px] text-gray-400 border border-white/[0.08] px-2 py-1 rounded-sm">
+                <span key={f} className="text-[10px] text-[var(--color-fg-muted)] border border-[var(--color-border)] bg-[var(--color-beige-lighter)] px-2 py-1 rounded-sm">
                   {f}
                 </span>
               ))}
@@ -93,7 +93,7 @@ export default function PayPage() {
                 transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
                 className="w-8 h-8 border-2 border-[var(--color-primary)]/30 border-t-[var(--color-primary)] rounded-full"
               />
-              <p className="text-gray-500 text-sm">Loading payment form…</p>
+              <p className="text-[var(--color-fg-subtle)] text-sm">Loading payment form…</p>
             </div>
           )}
 
@@ -101,21 +101,22 @@ export default function PayPage() {
           {iframeError && (
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-4 bg-[var(--color-bg-card)]">
               <div className="text-center max-w-sm">
-                <div className="w-12 h-12 rounded-full bg-[var(--color-accent)]/10 flex items-center justify-center mx-auto mb-4">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8FD4B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <div className="w-12 h-12 rounded-full bg-[var(--color-primary)]/10 flex items-center justify-center mx-auto mb-4">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F8B5F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
                     <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
                   </svg>
                 </div>
-                <h3 className="text-white font-semibold text-base mb-2">Complete your payment</h3>
-                <p className="text-gray-400 text-sm mb-6">
+                <h3 className="text-[var(--color-fg)] font-semibold text-base mb-2">Complete your payment</h3>
+                <p className="text-[var(--color-fg-muted)] text-sm mb-6">
                   Click below to open the secure payment page for{' '}
-                  <span className="text-white">{config.label}</span> at{' '}
+                  <span className="text-[var(--color-fg)]">{config.label}</span> at{' '}
                   <span className="text-[var(--color-primary)]">{config.price}</span>.
                 </p>
                 <a
                   href={config.cashfreeUrl}
-                  className="inline-block bg-[var(--color-primary)] text-[var(--color-fg-inverse)] font-bold text-sm px-8 py-3.5 rounded-lg hover:bg-[var(--color-accent)] transition-colors"
+                  className="inline-block bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white font-bold text-sm px-8 py-3.5 rounded-lg transition-colors"
+                  style={{ boxShadow: '0 4px 24px rgba(63,139,95,0.18)' }}
                 >
                   Proceed to Payment →
                 </a>

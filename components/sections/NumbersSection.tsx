@@ -63,11 +63,11 @@ const cardVar = {
 
 export default function NumbersSection() {
   return (
-    <section id="numbers" className="relative py-14 md:py-20 lg:py-32 bg-[var(--color-bg-elevated)] flex items-center justify-center">
+    <section id="numbers" className="relative py-10 md:py-14 lg:py-20 bg-white flex items-center justify-center">
       <div className="container mx-auto px-4 max-w-[1200px]">
-        
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-8">
-          
+
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-8">
+
           {/* Left Column: Headline */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -77,52 +77,59 @@ export default function NumbersSection() {
             className="lg:w-1/2 flex flex-col items-start"
           >
             {/* Milestone Badge */}
-            <div className="inline-block border border-[var(--color-border)] bg-[var(--color-bg-card)]/50 text-[var(--color-accent)] text-xs font-bold tracking-[0.15em] px-3.5 py-1.5 mb-8 uppercase rounded-sm">
+            <div className="inline-block border border-[var(--color-border)] bg-white text-[var(--color-primary)] text-[11px] font-bold tracking-[0.15em] px-3 py-1 mb-5 uppercase rounded-sm">
               MILESTONE
             </div>
-            
+
             {/* Main Headline */}
-            <h2 className="text-[2.5rem] md:text-[3.25rem] lg:text-[3.5rem] font-bold text-white leading-[1.15] mb-6 tracking-tight">
+            <h2 className="text-[2rem] md:text-[2.5rem] lg:text-[2.75rem] font-bold text-[var(--color-fg)] leading-[1.15] mb-4 tracking-tight">
               Numbers That<br />Weren&apos;t Announced.<br />They Were Built.
             </h2>
-            
+
             {/* Sub-headline */}
-            <p className="text-[var(--color-fg-muted)] text-lg md:text-xl leading-[1.6] max-w-[90%]">
+            <p className="text-[var(--color-fg-muted)] text-[15px] md:text-base leading-[1.6] max-w-[90%]">
              Across five years and three markets, Logyra&apos;s research frameworks have been tested, refined, and delivered to over twelve thousand participants. The only number we&apos;ve never published is a performance guarantee — because we don&apos;t make one.
             </p>
           </motion.div>
 
-          {/* Right Column: Stats Grid */}
-          <motion.div
-            variants={containerVar}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            className="lg:w-1/2 grid grid-cols-2 gap-4 md:gap-6 w-full max-w-[600px]"
-          >
-            {stats.map((stat) => (
-              <motion.div
-                key={stat.label}
-                variants={cardVar}
-                whileHover={{ y: -8, boxShadow: '0 20px 50px rgba(0,0,0,0.45), 0 0 30px rgba(168,224,44,0.15)', borderColor: '#4D6B56' }}
-                whileTap={{ y: -4, scale: 0.97, boxShadow: '0 12px 30px rgba(0,0,0,0.4), 0 0 20px rgba(168,224,44,0.1)' }}
-                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="bg-[var(--color-bg-elevated)] rounded-[24px] p-6 sm:p-8 flex flex-col items-center justify-center text-center aspect-square sm:aspect-auto sm:h-[220px] shadow-lg border border-transparent cursor-default"
-              >
-                {/* Number Value */}
-                <h3 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-[var(--color-accent)] mb-3 sm:mb-4 leading-none tracking-tight">
-                  {stat.prefix}
-                  <AnimatedNumber value={stat.value} />
-                  {stat.suffix}
-                </h3>
-                
-                {/* Text Label */}
-                <p className="text-[var(--color-fg-muted)] text-sm sm:text-[15px] leading-[1.4] whitespace-pre-line px-2">
-                  {stat.label}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
+          {/* Right Column: Stats Grid on 3D elevated card */}
+          <div className="lg:w-1/2 w-full max-w-[600px] relative">
+            {/* Layered 3D back cards — give depth */}
+            <div aria-hidden className="absolute inset-0 translate-x-3 translate-y-3 rounded-[32px] bg-[var(--color-beige)]/60 -z-20" />
+            <div aria-hidden className="absolute inset-0 translate-x-1.5 translate-y-1.5 rounded-[32px] bg-[var(--color-beige-lighter)] -z-10 shadow-[0_8px_30px_rgba(10,10,10,0.06)]" />
+
+            {/* Front elevated card containing the stats grid */}
+            <motion.div
+              variants={containerVar}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              className="relative grid grid-cols-2 gap-3 md:gap-4 p-4 md:p-5 rounded-[28px] bg-white border border-[var(--color-border)] shadow-[0_20px_50px_rgba(10,10,10,0.10),0_4px_12px_rgba(10,10,10,0.04)]"
+            >
+              {stats.map((stat) => (
+                <motion.div
+                  key={stat.label}
+                  variants={cardVar}
+                  whileHover={{ y: -6, boxShadow: '0 16px 40px rgba(10,10,10,0.10), 0 0 24px rgba(63,139,95,0.18)', borderColor: 'rgba(63,139,95,0.30)' }}
+                  whileTap={{ y: -3, scale: 0.97, boxShadow: '0 10px 24px rgba(10,10,10,0.08), 0 0 16px rgba(63,139,95,0.12)' }}
+                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  className="bg-[var(--color-beige-lighter)] rounded-[18px] p-4 sm:p-5 flex flex-col items-center justify-center text-center aspect-square sm:aspect-auto sm:h-[160px] border border-[var(--color-border)] cursor-default"
+                >
+                  {/* Number Value */}
+                  <h3 className="text-3xl sm:text-4xl lg:text-[2.5rem] font-bold text-[var(--color-primary)] mb-2 leading-none tracking-tight">
+                    {stat.prefix}
+                    <AnimatedNumber value={stat.value} />
+                    {stat.suffix}
+                  </h3>
+
+                  {/* Text Label */}
+                  <p className="text-[var(--color-fg-muted)] text-[12px] sm:text-[13px] leading-[1.4] whitespace-pre-line px-1">
+                    {stat.label}
+                  </p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
 
         </div>
       </div>

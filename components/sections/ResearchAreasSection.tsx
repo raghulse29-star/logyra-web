@@ -54,7 +54,7 @@ const cardVar = {
 
 export default function ResearchAreasSection() {
   return (
-    <section id="research-areas" className="py-14 md:py-20 lg:py-28 bg-[var(--color-bg-card)]">
+    <section id="research-areas" className="py-14 md:py-20 lg:py-28 bg-white">
       <div className="container mx-auto px-4 sm:px-6 max-w-[1200px]">
         {/* Header */}
         <motion.div
@@ -64,10 +64,10 @@ export default function ResearchAreasSection() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-fg)] mb-4 tracking-tight">
             Core Research Areas
           </h2>
-          <p className="text-gray-400 text-[15px] md:text-[17px] leading-relaxed">
+          <p className="text-[var(--color-fg-subtle)] text-[15px] md:text-[17px] leading-relaxed">
             Specialized market intelligence across diverse asset classes and trading domains
           </p>
         </motion.div>
@@ -84,23 +84,23 @@ export default function ResearchAreasSection() {
             <motion.div
               key={idx}
               variants={cardVar}
-              whileHover={{ y: -8, boxShadow: '0 20px 60px rgba(0,0,0,0.35)', borderColor: '#4D5563' }}
-              whileTap={{ y: -4, scale: 0.98, boxShadow: '0 12px 40px rgba(0,0,0,0.3)', borderColor: '#4D5563' }}
+              whileHover={{ y: -8, boxShadow: '0 20px 60px rgba(10,10,10,0.10)', borderColor: 'rgba(63,139,95,0.35)' }}
+              whileTap={{ y: -4, scale: 0.98, boxShadow: '0 12px 40px rgba(10,10,10,0.08)', borderColor: 'rgba(63,139,95,0.35)' }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="h-full rounded-2xl p-6 bg-transparent border border-[var(--color-border)] flex flex-col group cursor-default"
+              className="h-full rounded-2xl p-6 bg-white border border-[var(--color-border)] shadow-[0_4px_18px_rgba(10,10,10,0.04)] flex flex-col group cursor-default"
             >
                 {area.invertLayout ? (
                   /* Layout: Text Top, Image Bottom */
                   <>
                     <div className="mb-5">
-                      <h3 className="text-[1.15rem] font-bold text-white mb-2 tracking-wide transition-colors duration-300 group-hover:text-[var(--color-fg-muted)]">
+                      <h3 className="text-[1.15rem] font-bold text-[var(--color-fg)] mb-2 tracking-wide transition-colors duration-300 group-hover:text-[var(--color-primary)]">
                         {area.title}
                       </h3>
-                      <p className="text-gray-400 text-[0.85rem] leading-relaxed">
+                      <p className="text-[var(--color-fg-subtle)] text-[0.85rem] leading-relaxed">
                         {area.desc}
                       </p>
                     </div>
-                    <div className="relative w-full h-[180px] rounded-xl overflow-hidden bg-[var(--color-bg-button)] mt-auto">
+                    <div className="relative w-full h-[180px] rounded-xl overflow-hidden bg-[var(--color-beige)] mt-auto">
                       <Image
                         src={area.image}
                         alt={area.title}
@@ -113,7 +113,7 @@ export default function ResearchAreasSection() {
                 ) : (
                   /* Layout: Image Top, Text Bottom */
                   <>
-                    <div className="relative w-full h-[180px] mb-5 rounded-xl overflow-hidden bg-[var(--color-bg-button)]">
+                    <div className="relative w-full h-[180px] mb-5 rounded-xl overflow-hidden bg-[var(--color-beige)]">
                       <Image
                         src={area.image}
                         alt={area.title}
@@ -123,10 +123,10 @@ export default function ResearchAreasSection() {
                       />
                     </div>
                     <div>
-                      <h3 className="text-[1.15rem] font-bold text-white mb-2 tracking-wide transition-colors duration-300 group-hover:text-[var(--color-fg-muted)]">
+                      <h3 className="text-[1.15rem] font-bold text-[var(--color-fg)] mb-2 tracking-wide transition-colors duration-300 group-hover:text-[var(--color-primary)]">
                         {area.title}
                       </h3>
-                      <p className="text-gray-400 text-[0.85rem] leading-relaxed">
+                      <p className="text-[var(--color-fg-subtle)] text-[0.85rem] leading-relaxed">
                         {area.desc}
                       </p>
                     </div>

@@ -37,7 +37,7 @@ export default function CandlestickChart() {
           y1={toSVG(v)}
           x2="230"
           y2={toSVG(v)}
-          stroke="rgba(74,222,128,0.06)"
+          stroke="rgba(63,139,95,0.10)"
           strokeWidth="1"
         />
       ))}
@@ -53,7 +53,7 @@ export default function CandlestickChart() {
 
       {/* Candles */}
       {candles.map((c, i) => {
-        const color = c.up ? '#4ade80' : '#f87171';
+        const color = c.up ? '#3F8B5F' : '#DC2626';
         const bodyTop = toSVG(Math.max(c.open, c.close));
         const bodyBottom = toSVG(Math.min(c.open, c.close));
         const bodyH = Math.max(bodyBottom - bodyTop, 2);
@@ -83,8 +83,8 @@ export default function CandlestickChart() {
 
       <defs>
         <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#4ade80" stopOpacity="0.15" />
-          <stop offset="100%" stopColor="#4ade80" stopOpacity="0" />
+          <stop offset="0%" stopColor="#3F8B5F" stopOpacity="0.15" />
+          <stop offset="100%" stopColor="#3F8B5F" stopOpacity="0" />
         </linearGradient>
       </defs>
     </svg>

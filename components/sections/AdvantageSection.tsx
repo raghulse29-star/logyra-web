@@ -27,10 +27,10 @@ const CheckIcon = () => (
   </svg>
 );
 
-const BanIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E05555" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="10"></circle>
-    <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+const TickIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F8B5F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10" fill="rgba(63,139,95,0.10)" stroke="rgba(63,139,95,0.35)" strokeWidth="1.5" />
+    <polyline points="8 12.5 11 15.5 16.5 9.5" />
   </svg>
 );
 
@@ -43,7 +43,7 @@ const whatLogyraIs = [
     colSpan: 1
   },
   {
-    title: 'Market Intelligence',
+    title: 'Logyra Research',
     desc: 'Every Community Interaction Is Grounded In Documented Research Process, Not Personal Opinion Or Market Sentiment.',
     icon: <FlaskIcon />,
     colSpan: 1
@@ -89,7 +89,7 @@ const itemVar = {
 
 export default function AdvantageSection() {
   return (
-    <section id="advantage" className="relative py-14 md:py-20 lg:py-28 bg-[var(--color-bg-card)]">
+    <section id="advantage" className="relative py-14 md:py-20 lg:py-28 bg-white">
       <div className="container mx-auto px-4 sm:px-6 max-w-[1200px]">
         {/* Header */}
         <motion.div
@@ -99,10 +99,10 @@ export default function AdvantageSection() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-fg)] mb-4">
             The Logyra Advantage
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-[15px] md:text-[17px] leading-relaxed">
+          <p className="text-[var(--color-fg-subtle)] max-w-2xl mx-auto text-[15px] md:text-[17px] leading-relaxed">
             Advanced market insights and research-driven trading education built for serious participants
           </p>
         </motion.div>
@@ -116,15 +116,15 @@ export default function AdvantageSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="rounded-[20px] p-8 md:p-10 bg-[var(--color-bg-card)] border border-[var(--color-border)]"
+            className="rounded-[20px] p-8 md:p-10 bg-[var(--color-beige-lighter)] border border-[var(--color-border)] shadow-[0_4px_24px_rgba(10,10,10,0.04)]"
           >
             {/* Custom Header with Lines */}
             <div className="flex items-center gap-4 mb-10">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[#284131]"></div>
-              <h3 className="text-xl font-bold tracking-widest text-white uppercase">
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[var(--color-primary)]/40"></div>
+              <h3 className="text-xl font-bold tracking-widest text-[var(--color-fg)] uppercase">
                 WHAT <span className="text-[var(--color-primary)]">LOGYRA IS</span>
               </h3>
-              <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[#284131]"></div>
+              <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[var(--color-primary)]/40"></div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -132,16 +132,18 @@ export default function AdvantageSection() {
                 <motion.div
                   key={idx}
                   variants={itemVar}
-                  whileHover={{ y: -5, boxShadow: '0 12px 40px rgba(78,209,126,0.12), 0 0 0 1px rgba(78,209,126,0.2)' }}
-                  whileTap={{ y: -3, scale: 0.98, boxShadow: '0 8px 24px rgba(78,209,126,0.1), 0 0 0 1px rgba(78,209,126,0.15)' }}
+                  whileHover={{ y: -5, boxShadow: '0 12px 40px rgba(63,139,95,0.18), 0 0 0 1px rgba(63,139,95,0.25)' }}
+                  whileTap={{ y: -3, scale: 0.98, boxShadow: '0 8px 24px rgba(63,139,95,0.14), 0 0 0 1px rgba(63,139,95,0.20)' }}
                   transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                  className={`bg-[var(--color-bg-elevated)] border border-[var(--color-border)] rounded-xl p-6 group cursor-default ${item.colSpan === 2 ? 'md:col-span-2' : ''}`}
+                  className={`bg-white border border-[var(--color-border)] rounded-xl p-5 group cursor-default ${item.colSpan === 2 ? 'md:col-span-2' : ''}`}
                 >
-                  <div className="mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 group-active:scale-110 group-active:rotate-6 inline-block">
-                    {item.icon}
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-10 h-10 rounded-full bg-[var(--color-primary-tint)] flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 group-active:scale-110 group-active:rotate-6">
+                      {item.icon}
+                    </div>
+                    <h4 className="text-[var(--color-fg)] font-bold text-[15px] md:text-base leading-snug transition-colors duration-300 group-hover:text-[var(--color-primary)] group-active:text-[var(--color-primary)]">{item.title}</h4>
                   </div>
-                  <h4 className="text-white font-bold text-lg mb-2 transition-colors duration-300 group-hover:text-[var(--color-primary)] group-active:text-[var(--color-primary)]">{item.title}</h4>
-                  <p className="text-gray-300 text-sm leading-relaxed">{item.desc}</p>
+                  <p className="text-[var(--color-fg-muted)] text-[13px] md:text-sm leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -153,15 +155,15 @@ export default function AdvantageSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="rounded-[20px] p-8 md:p-10 bg-[var(--color-error)]/10 border border-[var(--color-error)]/20"
+            className="rounded-[20px] p-8 md:p-10 bg-[var(--color-beige-lighter)] border border-[var(--color-border)] shadow-[0_4px_24px_rgba(10,10,10,0.04)]"
           >
             {/* Custom Header with Lines */}
             <div className="flex items-center gap-4 mb-10">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[#4a2b2b]"></div>
-              <h3 className="text-xl font-bold tracking-widest text-white uppercase">
-                LOGYRA <span className="text-[var(--color-error)]">IS NOT</span>
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[var(--color-primary)]/40"></div>
+              <h3 className="text-xl font-bold tracking-widest text-[var(--color-fg)] uppercase">
+                LOGYRA <span className="text-[var(--color-primary)]">IS NOT</span>
               </h3>
-              <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[#4a2b2b]"></div>
+              <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[var(--color-primary)]/40"></div>
             </div>
 
             <div className="flex flex-col gap-12">
@@ -169,15 +171,15 @@ export default function AdvantageSection() {
                 <motion.div
                   key={idx}
                   variants={itemVar}
-                  whileHover={{ x: 6, boxShadow: '0 8px 30px rgba(239,68,68,0.12), 0 0 0 1px rgba(239,68,68,0.2)' }}
-                  whileTap={{ x: 4, scale: 0.98, boxShadow: '0 6px 20px rgba(239,68,68,0.1), 0 0 0 1px rgba(239,68,68,0.15)' }}
+                  whileHover={{ x: 6, boxShadow: '0 8px 30px rgba(63,139,95,0.14), 0 0 0 1px rgba(63,139,95,0.28)' }}
+                  whileTap={{ x: 4, scale: 0.98, boxShadow: '0 6px 20px rgba(63,139,95,0.12), 0 0 0 1px rgba(63,139,95,0.22)' }}
                   transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                  className="flex items-center gap-4 bg-[var(--color-error)]/10 border border-[var(--color-error)]/20 rounded-xl p-7 group cursor-default"
+                  className="flex items-center gap-4 bg-white border border-[var(--color-border)] rounded-xl p-7 group cursor-default"
                 >
-                  <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12 group-active:scale-110 group-active:rotate-12">
-                    <BanIcon />
+                  <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-110 group-active:scale-110">
+                    <TickIcon />
                   </div>
-                  <p className="text-white font-medium text-base transition-colors duration-300 group-hover:text-[var(--color-error)] group-active:text-[var(--color-error)]">{text}</p>
+                  <p className="text-[var(--color-fg)] font-medium text-base transition-colors duration-300 group-hover:text-[var(--color-primary)] group-active:text-[var(--color-primary)]">{text}</p>
                 </motion.div>
               ))}
             </div>
