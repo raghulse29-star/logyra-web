@@ -31,9 +31,9 @@ export default function ContactSection() {
     'w-full px-4 py-3 rounded-[8px] text-base text-[var(--color-fg)] bg-white border border-[var(--color-border)] focus:outline-none focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/15 transition-all placeholder:text-[var(--color-fg-subtle)] font-sans disabled:opacity-60';
 
   return (
-    <section id="contact" className="py-14 md:py-20 lg:py-32 bg-white">
+    <section id="contact" className="py-10 md:py-14 lg:py-20 bg-[var(--color-grey-section)]">
       <div className="container mx-auto px-4 max-w-[1200px]">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center bg-white rounded-[28px] border border-[var(--color-border-subtle)] shadow-[0_10px_40px_rgba(10,10,10,0.05)] p-7 sm:p-9 lg:p-12">
 
           {/* Left Side: Text and Form */}
           <motion.div
@@ -41,11 +41,11 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="w-full lg:w-[55%]"
+            className="w-full lg:w-[52%]"
           >
             {/* Header */}
             <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-fg)] mb-4 tracking-tight leading-tight">
-              Get in Touch
+              Write to Us
             </h2>
             <p className="text-[var(--color-fg-muted)] text-[15px] md:text-[17px] mb-10 max-w-md leading-relaxed">
               Have a question or need assistance? Drop us a message and we&apos;ll get back to you promptly.
@@ -223,18 +223,16 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-            className="w-full lg:w-[45%] flex items-center justify-center h-full pt-10 lg:pt-0"
+            className="w-full lg:w-[48%] flex items-center justify-center pt-6 lg:pt-0"
           >
-            <div className="w-full h-full min-h-[400px] lg:min-h-[600px] flex items-center justify-center relative">
-              <Image
-                src="/images/img11.webp"
-                alt="Logyra trading chart graphic"
-                width={500}
-                height={500}
-                sizes="(min-width: 1024px) 500px, 100vw"
-                className="w-full h-auto object-contain max-w-[500px]"
-              />
-            </div>
+            <Image
+              src="/icons/Contact us-rafiki.svg"
+              alt="Contact Logyra"
+              width={720}
+              height={720}
+              sizes="(min-width: 1024px) 720px, 100vw"
+              className="w-full h-auto object-contain max-w-[720px]"
+            />
           </motion.div>
 
         </div>

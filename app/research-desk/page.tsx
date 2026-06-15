@@ -92,9 +92,8 @@ export default function ResearchDeskPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--color-fg)] leading-[1.08] mb-5 max-w-3xl"
           >
-            One platform.<br />
-            Two levels of{' '}
-            <span className="text-[var(--color-primary)]">market intelligence.</span>
+            We Read the Market.<br />
+            <span className="text-[var(--color-primary)]">You Decide What to Do With It.</span>
           </motion.h1>
 
           <motion.p
@@ -103,38 +102,27 @@ export default function ResearchDeskPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-[var(--color-fg-muted)] text-base md:text-lg max-w-2xl leading-relaxed mb-10"
           >
-            Logyra&apos;s Research Desk delivers structured, institutional-grade market analysis across Indian and global markets — through a free open channel and a private paid tier for serious participants.
+            Every market day, our desk publishes analysis across Indian Equity, Derivatives &amp; Commodity, Forex, and Crypto — free for those exploring, private for those who trade.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-wrap gap-2"
+            className="flex flex-wrap gap-3"
           >
-            {[
-              { label: 'Open Channel',    href: '/research-desk/open-channel',  external: false },
-              { label: 'Inner Circle',    href: '/research-desk/inner-circle',  external: false },
-              { label: 'Compare Tiers',   href: '#compare',                     external: false, anchor: true },
-              // { label: 'Markets Covered', href: '#markets',                     external: false, anchor: true },
-            ].map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                onClick={(e) => {
-                  if (!item.anchor) return;
-                  e.preventDefault();
-                  const el = document.getElementById(item.href.slice(1));
-                  if (!el) return;
-                  const navbar = window.innerWidth < 640 ? 80 : 96;
-                  const top = el.getBoundingClientRect().top + window.scrollY - navbar - 16;
-                  window.scrollTo({ top, behavior: 'smooth' });
-                }}
-                className="text-[12px] text-[var(--color-fg-muted)] border border-[var(--color-border)] hover:border-[var(--color-primary)]/60 hover:text-[var(--color-primary)] px-3 py-1.5 rounded-sm transition-all duration-200 tracking-wide cursor-pointer"
-              >
-                {item.label}
-              </Link>
-            ))}
+            <Link
+              href="/research-desk/open-channel"
+              className="inline-flex items-center justify-center text-[12px] font-bold tracking-[0.12em] uppercase border border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary-tint)] px-5 py-2.5 rounded-lg transition-colors cursor-pointer"
+            >
+              Explore Free Channel
+            </Link>
+            <Link
+              href="/research-desk/inner-circle"
+              className="inline-flex items-center justify-center text-[12px] font-bold tracking-[0.12em] uppercase bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-5 py-2.5 rounded-lg transition-colors cursor-pointer"
+            >
+              View Inner Circle
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -154,19 +142,19 @@ export default function ResearchDeskPage() {
       </div>
 
       {/* ── Two Tiers ── */}
-      <section className="bg-white py-14 md:py-20 lg:py-28" id="tiers">
+      <section className="bg-white pt-14 pb-10 md:pt-20 md:pb-12 lg:pt-28 lg:pb-16" id="tiers">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-14">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[var(--color-primary)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Choose Your Access Level</span>
+              <span className="text-[var(--color-primary)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Two Tiers. One Framework</span>
               <div className="flex-1 h-px bg-[var(--color-border)]" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-fg)] mb-4">
-              Start free.<br />
-              <span className="text-[var(--color-primary)]">Upgrade when ready.</span>
+              Start with the open feed.<br />
+              <span className="text-[var(--color-primary)]">Move inside when the depth matters.</span>
             </h2>
             <p className="text-[var(--color-fg-muted)] max-w-xl leading-relaxed">
-              Both tiers deliver structured research. The difference is in depth, timing, and the level of direct engagement with our desk.
+              Same framework. Same desk. What&apos;s different: how much you see, and when you see it.
             </p>
           </div>
 
@@ -190,7 +178,7 @@ export default function ResearchDeskPage() {
               </div>
               <h3 className="text-2xl font-bold text-[var(--color-fg)] mb-2">Open Channel</h3>
               <p className="text-[var(--color-fg-muted)] text-sm leading-relaxed mb-6">
-                Logyra&apos;s public intelligence feed — daily market reads, educational setups, and performance visibility. Zero cost. Zero noise.
+                Our open intelligence feed. Daily market reads, educational setups, and desk performance — visible to anyone. Zero cost. Zero noise.
               </p>
               <div className="h-px bg-[var(--color-border)] mb-6" />
               <ul className="space-y-3 mb-8 flex-1">
@@ -231,7 +219,7 @@ export default function ResearchDeskPage() {
               </div>
               <h3 className="text-2xl font-bold text-[var(--color-fg)] mb-2">Inner Circle</h3>
               <p className="text-[var(--color-fg-muted)] text-sm leading-relaxed mb-6">
-                Private Telegram access. Full research depth. Real-time market structure coverage across your chosen market — every market day.
+                Private access. Real-time depth. Every setup the desk identifies — delivered to your Telegram as it happens, not after the fact.
               </p>
               <div className="h-px bg-[var(--color-border)] mb-6" />
               <ul className="space-y-3 mb-8 flex-1">
@@ -246,7 +234,7 @@ export default function ResearchDeskPage() {
                 href="/research-desk/inner-circle"
                 className="flex items-center justify-center gap-2 w-full py-3.5 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white text-[12px] font-bold tracking-[0.15em] uppercase rounded-lg transition-colors"
               >
-                View Inner Circle Products
+                Join Inner Circle
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
               </Link>
             </motion.div>
@@ -255,7 +243,7 @@ export default function ResearchDeskPage() {
       </section>
 
       {/* ── Comparison Table ── */}
-      <section className="bg-[var(--color-grey-section)] py-14 md:py-20 lg:py-28" id="compare">
+      <section className="bg-[var(--color-grey-section)] pt-12 pb-14 md:pt-14 md:pb-20 lg:pt-16 lg:pb-28" id="compare">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-5">
@@ -270,6 +258,10 @@ export default function ResearchDeskPage() {
               Both tiers share the same research framework. What changes is depth, timing, and how much of the desk&apos;s work you see.
             </p>
           </div>
+
+          <p className="text-sm md:text-[15px] text-[var(--color-fg-muted)] max-w-2xl leading-relaxed mb-6 border-l-2 border-[var(--color-primary)] pl-4">
+            Open Channel content is intentionally delayed and partial. It exists to demonstrate the quality and consistency of our research — not replace it.
+          </p>
 
           <div className="border border-[var(--color-border)] rounded-xl overflow-hidden bg-[var(--color-bg-card)] overflow-x-auto" style={{ boxShadow: '0 4px 24px rgba(10,10,10,0.06)' }}>
             <div className="min-w-[560px]">
@@ -297,9 +289,6 @@ export default function ResearchDeskPage() {
               ))}
             </div>
           </div>
-          <p className="text-xs text-[var(--color-fg-subtle)] mt-4 italic">
-            * Open Channel content is intentionally delayed and partial. It exists to demonstrate the quality and consistency of our research — not replace it.
-          </p>
         </div>
       </section>
 
@@ -308,12 +297,12 @@ export default function ResearchDeskPage() {
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-5">
-              <span className="text-[var(--color-primary)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Self-Qualify</span>
+              <span className="text-[var(--color-primary)] text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Who Is This For</span>
               <div className="flex-1 h-px bg-[var(--color-border)]" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-fg)] mb-4">
-              Which tier<br />
-              <span className="text-[var(--color-primary)]">is right for you?</span>
+              Where are you<br />
+              <span className="text-[var(--color-primary)]">right now?</span>
             </h2>
             <p className="text-[var(--color-fg-muted)] max-w-xl leading-relaxed">
               Both require the same commitment — to read the market correctly, not to follow instructions. Choose based on where you are.
@@ -324,7 +313,7 @@ export default function ResearchDeskPage() {
             {[
               {
                 title: 'Open Channel is for you if…',
-                desc: 'You want to understand how institutional research works, track our desk\'s performance, and build market awareness before committing to a paid channel.',
+                desc: 'You\'re not ready to commit yet — and that\'s fine. The open channel is where you verify us before you trust us.',
                 dot: '#3F8B5F',
                 points: [
                   'You\'re exploring structured market analysis for the first time',
@@ -337,7 +326,7 @@ export default function ResearchDeskPage() {
               },
               {
                 title: 'Inner Circle is for you if…',
-                desc: 'You are an active market participant who needs real-time structured research delivered to your private Telegram — and you operate with your own execution discipline.',
+                desc: 'You trade. You have your own execution process. You need the desk\'s full read & live trade setups, reference and data — before the market opens and when it\'s live, not after it closes.',
                 dot: '#3F8B5F',
                 points: [
                   'You trade actively and need intraday structure and positioning context',

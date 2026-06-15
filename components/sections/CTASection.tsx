@@ -13,7 +13,7 @@ const TelegramIcon = () => (
 export default function CTASection() {
   const { open: openChannel } = useOpenChannel();
   return (
-    <section id="cta" className="relative py-14 md:py-20 lg:py-32 bg-white flex items-center justify-center px-4">
+    <section id="cta" className="relative py-10 md:py-14 lg:py-20 bg-white flex items-center justify-center px-4">
       <div className="container mx-auto max-w-[900px] relative z-10">
 
         <motion.div

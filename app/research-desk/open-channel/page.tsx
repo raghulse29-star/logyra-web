@@ -61,7 +61,7 @@ const whatsInside = [
   {
     time: 'Weekly + Occasional',
     title: 'Weekly Reviews & Community Sessions',
-    desc: 'Weekly structure reviews, sector reads, and occasional awareness sessions — live discussions on market structure, framework application, and reader questions.',
+    desc: 'Weekly structure reviews, sector reads, and occasional live sessions — open discussions on market structure, framework application, and participant questions.',
     icon: <><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8M12 17v4" /></>,
   },
 ];
@@ -97,7 +97,7 @@ const markets = [
   {
     dot: '#3F8B5F',
     title: 'Crypto Markets',
-    desc: 'Bitcoin and major altcoin structure reads — on-chain context, liquidity zone mapping, and market structure analysis for digital asset participants.',
+    desc: 'Bitcoin and major altcoin structure reads — on-chain context, liquidity zone mapping, and market structure analysis for crypto traders operating with their own framework.',
     tags: ['BTCUSD', 'ETHUSD', 'Altcoin Structure', 'Crypto OI'],
   },
 ];
@@ -112,7 +112,7 @@ const whyJoin = [
 const funnelSteps = [
   { num: '01', title: 'Join Free',              desc: 'Enter the Open Channel with zero cost. Start tracking daily briefs and performance reports.' },
   { num: '02', title: 'Track the Desk',         desc: 'Watch the EOD summaries. See how the Inner Circle performs. Build conviction through observation.' },
-  { num: '03', title: 'Develop the Framework',  desc: 'Apply educational setups and framework references to your own market reading daily.' },
+  { num: '03', title: 'Start Reading the Market Yourself',  desc: 'Using the same framework, the same lens — without waiting for someone to tell you what to do.' },
   { num: '04', title: 'Decide to Upgrade',      desc: 'When you want the full depth, real-time setups, and direct research access — Inner Circle is ready.' },
 ];
 
@@ -135,7 +135,7 @@ export default function OpenChannelPage() {
       </div>
 
       {/* ── Hero ── */}
-      <section className="relative bg-[var(--color-bg-card)] pt-14 pb-14 md:pt-20 md:pb-24 overflow-hidden">
+      <section className="relative bg-[var(--color-bg-card)] pt-6 pb-14 md:pt-10 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-[480px] h-[480px] bg-[var(--color-primary)]/8 blur-[140px] rounded-full" />
         </div>
@@ -164,7 +164,7 @@ export default function OpenChannelPage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-[var(--color-fg-muted)] text-base md:text-lg max-w-lg leading-relaxed mb-8"
               >
-                Logyra&apos;s Open Channel is a free public intelligence feed — structured market research, educational setups, and real-time performance visibility, delivered every trading day on Telegram.
+                Logyra&apos;s Open Channel is a free public insights feed — market research, educational setups, and real-time performance visibility, delivered every trading day on Telegram.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
@@ -239,7 +239,7 @@ export default function OpenChannelPage() {
               <span className="text-[var(--color-primary)]">Structured intelligence.</span>
             </h2>
             <p className="text-[var(--color-fg-muted)] max-w-xl leading-relaxed">
-              Every piece of content in the Open Channel has a purpose — to help you read the market better, track our desk&apos;s performance, and understand what precision research actually looks like.
+              Every piece of content in the Open Channel has a purpose — to help you read the market better, track our desk daily, and see exactly how structured research is built.
             </p>
           </div>
 
@@ -307,7 +307,7 @@ export default function OpenChannelPage() {
                     className="inline-block text-[10px] font-bold tracking-[0.08em] uppercase px-2 py-0.5 rounded-sm"
                     style={
                       item.badge === 'ic'
-                        ? { background: 'rgba(63,139,95,0.1)', color: '#3F8B5F', border: '1px solid rgba(63,139,95,0.25)' }
+                        ? { background: 'rgba(63,139,95,0.2)', color: '#2f6f49', border: '1.5px solid rgba(63,139,95,0.7)', boxShadow: '0 0 12px rgba(63,139,95,0.35)' }
                         : { background: 'rgba(63,139,95,0.12)', color: '#3F8B5F', border: '1px solid rgba(63,139,95,0.25)' }
                     }
                   >
@@ -336,7 +336,7 @@ export default function OpenChannelPage() {
               <span className="text-[var(--color-primary)]">One channel.</span>
             </h2>
             <p className="text-[var(--color-fg-muted)] max-w-xl leading-relaxed">
-              The Open Channel covers all asset classes that Logyra tracks — Indian equities and derivatives, global Forex, metals, and crypto. Broad by design, so every type of participant finds relevant context.
+              The Open Channel covers all asset classes that Logyra tracks — Indian equities and derivatives, global Forex, metals, and crypto. Broad by design, so every participant — regardless of market — finds structure and context daily.
             </p>
           </div>
 
@@ -469,9 +469,9 @@ export default function OpenChannelPage() {
             Join @logyra_insights on Telegram
           </button>
           <p className="text-xs text-[var(--color-fg-subtle)] mt-5">
-            Already convinced you want the full Inner Circle?{' '}
+            Already convinced?{' '}
             <Link href="/research-desk/inner-circle" className="text-[var(--color-primary)] hover:text-[var(--color-accent)] font-semibold transition-colors">
-              See Inner Circle Products →
+              Join the Inner Circle →
             </Link>
           </p>
         </div>

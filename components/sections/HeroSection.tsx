@@ -2,10 +2,9 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useOpenChannel } from '@/components/providers/OpenChannelProvider';
+import Link from 'next/link';
 
 export default function HeroSection() {
-  const { open: openChannel } = useOpenChannel();
   return (
     <section
       id="hero"
@@ -16,7 +15,7 @@ export default function HeroSection() {
       <div className="absolute bottom-[10%] right-[8%] w-[320px] h-[320px] bg-[var(--color-primary)] opacity-[0.07] rounded-full blur-[90px] pointer-events-none" />
 
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10 w-full">
-        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-8 lg:gap-12 items-center py-12 sm:py-16 lg:py-20">
+        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-8 lg:gap-12 items-center py-8 sm:py-10 lg:py-14">
 
           {/* Left content */}
           <div className="relative z-20">
@@ -40,14 +39,14 @@ export default function HeroSection() {
               transition={{ duration: 0.65, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="mb-5 sm:mb-6 font-bold tracking-tight"
             >
-              <span className="block text-[2.4rem] sm:text-[3.2rem] md:text-[4rem] lg:text-[5.5rem] leading-[1.05] text-[var(--color-fg)]">
-                Think Like
+              <span className="block text-[1.7rem] sm:text-[2.2rem] md:text-[2.7rem] lg:text-[3.6rem] leading-[1.05] text-[var(--color-fg)]">
+                Logyra
               </span>
-              <span className="block text-[2.4rem] sm:text-[3.2rem] md:text-[4rem] lg:text-[5.5rem] leading-[1.05] text-[var(--color-primary)] mt-1 sm:mt-2">
-                the Market
+              <span className="block text-[1.7rem] sm:text-[2.3rem] md:text-[2.8rem] lg:text-[3.6rem] leading-[1.1] text-[var(--color-primary)] mt-2 sm:mt-3 whitespace-nowrap">
+                Logical Reasoning
               </span>
-              <span className="block text-[2.4rem] sm:text-[3.2rem] md:text-[4rem] lg:text-[5.5rem] leading-[1.05] text-[var(--color-primary)] mt-1 sm:mt-2">
-                Moves
+              <span className="block text-[1.7rem] sm:text-[2.3rem] md:text-[2.8rem] lg:text-[3.6rem] leading-[1.1] text-[var(--color-primary)] mt-1 whitespace-nowrap">
+                & Analysis
               </span>
             </motion.h1>
 
@@ -58,7 +57,7 @@ export default function HeroSection() {
               transition={{ duration: 0.55, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
               className="text-[var(--color-fg-muted)] text-[15px] sm:text-base lg:text-lg max-w-[460px] mb-8 sm:mb-10 leading-relaxed"
             >
-              Logyra equips you with institutional frameworks, risk discipline, and real market understanding — so you operate with clarity, not emotion.
+              We work on delivering institutional frameworks, risk discipline, and real market understanding — so you operate with clarity, not emotion.
             </motion.p>
 
             {/* CTA */}
@@ -67,13 +66,12 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.34, ease: [0.22, 1, 0.36, 1] }}
             >
-              <button
-                type="button"
-                onClick={openChannel}
+              <Link
+                href="/research-desk/open-channel"
                 className="inline-block bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] active:bg-[var(--color-primary-hover)] text-white text-[12px] sm:text-[13px] font-bold tracking-wider px-6 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_6px_24px_rgba(63,139,95,0.30)] transition-colors uppercase cursor-pointer"
               >
                 Access the Platform
-              </button>
+              </Link>
             </motion.div>
           </div>
 
@@ -85,7 +83,7 @@ export default function HeroSection() {
             className="hidden lg:flex items-center justify-center h-[460px] xl:h-[520px] relative"
           >
             <Image
-              src="/images/img1.webp"
+              src="/icons/Digital presentation-amico.svg"
               alt="Logyra market intelligence chart visualization"
               fill
               priority
@@ -102,7 +100,7 @@ export default function HeroSection() {
             className="lg:hidden w-full flex items-center justify-center"
           >
             <Image
-              src="/images/img1.webp"
+              src="/icons/Digital presentation-amico.svg"
               alt="Logyra market intelligence chart visualization"
               width={320}
               height={320}

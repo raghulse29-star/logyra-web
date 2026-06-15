@@ -9,7 +9,7 @@ const platforms = [
   {
     badge: 'FREE · OPEN · ALWAYS ON',
     title: 'Logyra Research — Telegram',
-    desc: 'Daily market bias. Multi-asset research notes. HTF context and liquidity zone analysis. Zero noise.',
+    desc: 'Daily market bias. Multi-asset research notes. Context and liquidity zone analysis.',
     cta: 'JOIN FREE ON TELEGRAM',
     ctaLink: '#',
     image: '/images/img8.webp',
@@ -52,7 +52,7 @@ const cardVar = {
 export default function TeachSection() {
   const { open: openChannel } = useOpenChannel();
   return (
-    <section id="teach" className="relative py-14 md:py-20 lg:py-32 bg-[var(--color-grey-section)]">
+    <section id="teach" className="relative py-10 md:py-14 lg:py-20 bg-[var(--color-grey-section)]">
       <div className="container mx-auto px-4 max-w-[1200px]">
 
         {/* Header */}

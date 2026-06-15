@@ -38,12 +38,12 @@ const TickIcon = () => (
 const whatLogyraIs = [
   {
     title: 'Market Intelligence',
-    desc: 'Daily Analysis Across Indian Equities, F&O, Forex, And Crypto, Delivered A Consistent Research Framework.',
+    desc: 'Daily Analysis Across Indian Equities, F&O, Forex, And Crypto, Delivered. A Consistent Research Framework.',
     icon: <ChartIcon />,
     colSpan: 1
   },
   {
-    title: 'Logyra Research',
+    title: 'Research First',
     desc: 'Every Community Interaction Is Grounded In Documented Research Process, Not Personal Opinion Or Market Sentiment.',
     icon: <FlaskIcon />,
     colSpan: 1
@@ -73,7 +73,7 @@ const logyraIsNot = [
   'Not Investment Advisory Or SEBI-Registered',
   'Not A Profit-Guarantee Service',
   'Not A Copy-Trade Platform',
-  // 'Not For Passive Followers'
+  'Not For Passive Followers',
 ];
 
 // --- Animation Variants ---
@@ -89,7 +89,7 @@ const itemVar = {
 
 export default function AdvantageSection() {
   return (
-    <section id="advantage" className="relative py-14 md:py-20 lg:py-28 bg-white">
+    <section id="advantage" className="relative py-10 md:py-14 lg:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 max-w-[1200px]">
         {/* Header */}
         <motion.div
@@ -103,7 +103,7 @@ export default function AdvantageSection() {
             The Logyra Advantage
           </h2>
           <p className="text-[var(--color-fg-subtle)] max-w-2xl mx-auto text-[15px] md:text-[17px] leading-relaxed">
-            Advanced market insights and research-driven trading education built for serious participants
+            Precision research and structured market education — built for participants who want to understand, not just reach
           </p>
         </motion.div>
 
@@ -166,7 +166,7 @@ export default function AdvantageSection() {
               <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[var(--color-primary)]/40"></div>
             </div>
 
-            <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-4">
               {logyraIsNot.map((text, idx) => (
                 <motion.div
                   key={idx}

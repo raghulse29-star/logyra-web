@@ -41,7 +41,7 @@ const plans = [
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="bg-[var(--color-grey-section)] py-20 md:py-28">
+    <section id="pricing" className="bg-[var(--color-grey-section)] py-12 md:py-16 lg:py-20">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
 
         <div className="mb-14">

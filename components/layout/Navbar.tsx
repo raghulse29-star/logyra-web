@@ -36,7 +36,7 @@ const navLinks: MenuItem[] = [
     ]
   },
   { label: 'About us', href: '/about', activeOn: ['/about'] },
-  { label: 'Legal', href: '/legal', activeOn: ['/legal'] },
+  // { label: 'Legal', href: '/legal', activeOn: ['/legal'] },
   // { label: 'Contact Us', href: '/#contact' },
 ];
 
@@ -52,13 +52,12 @@ function DesktopSubMenuItem({ item }: { item: MenuItem }) {
       onMouseLeave={() => setIsHovered(false)}
     >
       <Link href={item.href} className="flex items-center justify-between gap-3 text-[14px] whitespace-nowrap">
-        <span style={item.accent ? { color: item.accent } : undefined} className={item.accent ? 'font-semibold' : 'text-[var(--color-fg-muted)] group-hover:text-[var(--color-primary)]'}>
+        <span className={`text-black group-hover:text-[var(--color-primary)] transition-colors ${item.accent ? 'font-semibold' : ''}`}>
           {item.label}
         </span>
         {item.tag && (
           <span
-            className="text-[9px] font-bold tracking-[0.12em] uppercase px-1.5 py-0.5 rounded-sm border"
-            style={{ color: item.accent, borderColor: `${item.accent}66`, backgroundColor: `${item.accent}1a` }}
+            className="text-[9px] font-bold tracking-[0.12em] uppercase px-1.5 py-0.5 rounded-sm border-2 text-[var(--color-primary)] border-[var(--color-primary)]"
           >
             {item.tag}
           </span>

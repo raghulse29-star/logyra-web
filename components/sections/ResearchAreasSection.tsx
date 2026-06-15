@@ -54,7 +54,7 @@ const cardVar = {
 
 export default function ResearchAreasSection() {
   return (
-    <section id="research-areas" className="py-14 md:py-20 lg:py-28 bg-white">
+    <section id="research-areas" className="py-10 md:py-14 lg:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 max-w-[1200px]">
         {/* Header */}
         <motion.div

@@ -43,12 +43,6 @@ const stats = [
     suffix: '',
     label: 'Asset Classes Covered',
   },
-  {
-    value: 0,
-    prefix: '₹',
-    suffix: '',
-    label: 'Promised. Ever.',
-  },
 ];
 
 const containerVar = {
@@ -63,7 +57,7 @@ const cardVar = {
 
 export default function NumbersSection() {
   return (
-    <section id="numbers" className="relative py-10 md:py-14 lg:py-20 bg-white flex items-center justify-center">
+    <section id="numbers" className="relative py-8 md:py-10 lg:py-12 bg-white flex items-center justify-center">
       <div className="container mx-auto px-4 max-w-[1200px]">
 
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-8">
@@ -88,7 +82,7 @@ export default function NumbersSection() {
 
             {/* Sub-headline */}
             <p className="text-[var(--color-fg-muted)] text-[15px] md:text-base leading-[1.6] max-w-[90%]">
-             Across five years and three markets, Logyra&apos;s research frameworks have been tested, refined, and delivered to over twelve thousand participants. The only number we&apos;ve never published is a performance guarantee — because we don&apos;t make one.
+             Across five years and three markets, Logyra&apos;s research frameworks have been tested, refined, and delivered to over twelve thousand participants.
             </p>
           </motion.div>
 
@@ -104,7 +98,7 @@ export default function NumbersSection() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              className="relative grid grid-cols-2 gap-3 md:gap-4 p-4 md:p-5 rounded-[28px] bg-white border border-[var(--color-border)] shadow-[0_20px_50px_rgba(10,10,10,0.10),0_4px_12px_rgba(10,10,10,0.04)]"
+              className="relative grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 p-4 md:p-5 rounded-[28px] bg-white border border-[var(--color-border)] shadow-[0_20px_50px_rgba(10,10,10,0.10),0_4px_12px_rgba(10,10,10,0.04)]"
             >
               {stats.map((stat) => (
                 <motion.div

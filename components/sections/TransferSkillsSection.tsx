@@ -37,7 +37,7 @@ const cardVar = {
 export default function TransferSkillsSection() {
   const { open: openChannel } = useOpenChannel();
   return (
-    <section id="transfer-skills" className="relative py-14 md:py-20 lg:py-32 bg-white overflow-hidden">
+    <section id="transfer-skills" className="relative py-10 md:py-14 lg:py-20 bg-white overflow-hidden">
 
       {/* Subtle background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--color-primary)] opacity-[0.05] rounded-full blur-[120px] pointer-events-none" />
