@@ -86,6 +86,7 @@ The market has a structure; we read it.
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="h-full"
             >
+              {/* comment */}
               <div className="bg-[var(--color-beige-lighter)] hover:bg-white active:bg-white transition-colors duration-300 rounded-[14px] p-4 h-full flex flex-col text-left group relative overflow-hidden border border-[var(--color-border)] shadow-[0_4px_18px_rgba(10,10,10,0.04)] hover:shadow-[0_0_40px_rgba(63,139,95,0.14),0_18px_50px_rgba(10,10,10,0.08)] active:shadow-[0_0_40px_rgba(63,139,95,0.14),0_18px_50px_rgba(10,10,10,0.08)]">
 
                 {/* Shimmer sweep on hover/tap */}
